@@ -10,14 +10,17 @@ const Header = () => {
     "About Us",
   ];
   return (
-    <header className="relative z-10 bg-zinc-600 w-full">
+    <header className="relative z-10  w-full">
       <ContentWrapper>
         <div className="flex flex-row justify-between items-center py-4">
           {/* Left */}
           <div className="">logo</div>
           {/* Middle */}
-          <div className="hidden  text-zinc-700 flex flex-row gap-8 ">
+          <div className="hidden lg:block  text-zinc-700">
+            <div className=" flex flex-row gap-8">
+
             {options.map((option) => <p className="cursor-pointer text-[--text-builtIt] hover:scale-[1.09]  poppins-regular text-[1rem] transition duration-300" key={option}>{option}</p>)}
+            </div>
           </div>
           {/* Right */}
           

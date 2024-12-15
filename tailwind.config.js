@@ -7,9 +7,9 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
+        contactUsBtn: "var(--contactUs-btn)",
       },
       backgroundColor: {
-        contactUsBtn: "var(--contactUs-btn)",
       contactUsBtnHover: 'var(--contactUs-btn-hover)',
 
     },
