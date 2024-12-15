@@ -1,0 +1,129 @@
+:root {
+  --contactUs-btn: linear-gradient(
+    92deg,
+    #36b68a 0.07%,
+    #34b18b 11.97%,
+    #33ab8c 22.91%,
+    #31a68d 33.32%,
+    #2fa08d 43.22%,
+    #2d9b8d 53.12%,
+    #2c958d 64.05%,
+    #2a908c 74.99%,
+    #28898a 87.49%,
+    #278085 100.07%
+  );
+  --contactUs-btn-hover: #36b68a;
+  --text-bg-gradient: linear-gradient(
+    92deg,
+    #36b68a,
+    #34b18b 6.25%,
+    #33ab8c 12.5%,
+    #31a68d 18.75%,
+    #2fa08d 25%,
+    #2d9b8d 31.25%,
+    #2c958d 37.5%,
+    #2a908c 43.75%,
+    #28898a 50%,
+    #278085 56.25%,
+    #25777f 62.5%,
+    #236e7a 68.75%,
+    #226574 75%,
+    #205d6f 81.25%,
+    #1e5569 87.5%,
+    #1d4d64 93.75%,
+    #1b465e
+  );
+  --text-builtIt: #295a74;
+
+  /* --text-navigationText: #295a74; */
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.poppins-medium {
+  font-family: "Poppins", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.text-gradient {
+  background: linear-gradient(
+    92deg,
+    #36b68a,
+    #34b18b 6.25%,
+    #33ab8c 12.5%,
+    #31a68d 18.75%,
+    #2fa08d 25%,
+    #2d9b8d 31.25%,
+    #2c958d 37.5%,
+    #2a908c 43.75%,
+    #28898a 50%,
+    #278085 56.25%,
+    #25777f 62.5%,
+    #236e7a 68.75%,
+    #226574 75%,
+    #205d6f 81.25%,
+    #1e5569 87.5%,
+    #1d4d64 93.75%,
+    #1b465e
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.contactUsBtnHover:hover {
+  background-color: #36b68a;
+}
+
+.bg-navy-gradient-200 {
+  background-image: radial-gradient(at 49% 0, #e3f2f8 0, transparent 50%),
+    radial-gradient(at 69% 37%, #e2f2f9 0, transparent 50%),
+    radial-gradient(at 38% 35%, #e2f2f9 0, transparent 50%),
+    radial-gradient(at 15% 26%, rgba(225, 247, 254, 0.57) 0, transparent 50%),
+    radial-gradient(at 75% 29%, rgba(225, 242, 249, 0.42) 0, transparent 50%),
+    radial-gradient(at 62% 89%, rgba(188, 230, 240, 0.1) 0, transparent 50%),
+    radial-gradient(at 32% 55%, rgba(219, 243, 255, 0.64) 0, transparent 50%),
+    radial-gradient(at 93% 90%, rgba(165, 216, 233, 0.5) 0, transparent 50%),
+    radial-gradient(at 94% 86%, rgba(185, 248, 234, 0.5) 0, transparent 50%),
+    radial-gradient(at 16% 81%, #e0f7ff 0, transparent 50%),
+    radial-gradient(at 90% 88%, rgba(185, 218, 212, 0.14) 0, transparent 50%),
+    radial-gradient(at 98% 96%, rgba(156, 180, 196, 0.11) 0, transparent 50%);
+    background-color: #f5fbff;
+}
+
+.typed-fade {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.typed-active {
+  opacity: 1;
+}
+
+/* .hero-waves__animated-stroke {
+  opacity: .2;
+  animation: hero-waves 3s infinite;
+  animation-delay: calc(.1s* var(--idx));
+  transition-property: opacity, transform;
+}
+
+@keyframes hero-waves {
+  0% {
+    opacity: .2;
+}
+50% {
+    opacity: 1;
+}
+
+100% {
+    opacity: .2;
+}
+} */
