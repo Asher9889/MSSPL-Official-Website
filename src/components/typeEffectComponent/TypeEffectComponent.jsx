@@ -27,18 +27,20 @@ const TypeEffectComponent = () => {
   }, []);
 
   return (
-    <ContentWrapper>
-      <div className=" w-full h-fit h-[250px] md:h-60 py-[6%] rounded-[40px] bg-navy-gradient-200 text-wrap">
-        <h1 className="text-center poppins-semibold text-[1.8rem] md:text-[2.5rem] text-[--text-builtIt] ">
-          Product challenges? We take them head-on.
-        </h1>
+    <>
+      <ContentWrapper>
+        <div className=" w-full h-[250px] md:h-60 py-[6%] rounded-[40px] bg-navy-gradient-200 text-wrap">
+          <h1 className="text-center poppins-semibold text-[1.8rem] md:text-[2.5rem] text-[--text-builtIt] ">
+            Product challenges? We take them head-on.
+          </h1>
 
-        <h3
-          className=" poppins-semibold text-[1.8rem] text-center text-[--text-builtIt] text-wrap"
-          ref={el}
-        ></h3>
-      </div>
-    </ContentWrapper>
+          <h3
+            className=" poppins-semibold text-[1.8rem] text-center text-[--text-builtIt] text-wrap"
+            ref={el}
+          ></h3>
+        </div>
+      </ContentWrapper>
+    </>
   );
 };
 

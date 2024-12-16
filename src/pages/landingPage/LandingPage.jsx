@@ -15,8 +15,9 @@ const LandingPage = () => {
             <h1 className=" text-center text-gradient poppins-semibold text-[2rem] lg:text-[3.5rem] ">
               Product Promises. Delivered
             </h1>
+            <h5 className="text-[--text-builtIt] font-semibold text-2xl"></h5>
             <h2 className="poppins-regular text-[1.6rem] lg:text-3xl text-[--text-builtIt]">
-              You Think it. We Build it.
+              You Think it. We Build it. <br /> <p className="bebas-neue-regular text-center">Incubated at IIT Kanpur</p>
             </h2>
             <button className=" mt-5 text-xl lg:text-2xl text-red-500 cursor-pointer px-6 py-2 rounded-md text-white poppins-regular bg-contactUsBtn hover:bg-gradient-to-r from-[--contactUs-btn-hover] to-[--contactUs-btn-hover] transition-all duration-700">
               Get into touch

@@ -6,6 +6,11 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "poppins-black": [ "Poppins-black" ,'sans-serif'],
+        netFlixMd: [' "netFlixMd" ','sans-serif'],
+        netFlixRg: [' "netFlixRg" ','sans-serif'],
+      },
       backgroundImage: {
         contactUsBtn: "var(--contactUs-btn)",
       },

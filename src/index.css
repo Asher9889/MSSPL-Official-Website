@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base{
+    @font-face {
+    font-family: 'Poppins-black';
+    src: url(/src/assests/fonts/FontsFree-Net-Poppins-Black.ttf) format('ttf');
+  }
+}
