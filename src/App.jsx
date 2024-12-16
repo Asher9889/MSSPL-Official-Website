@@ -1,4 +1,4 @@
-import { LandingPage, Outcome } from './pages'
+import { LandingPage, Outcome, TechStack } from './pages'
 
 import './App.css'
 import { TypeEffectComponent } from './components'
@@ -12,6 +12,7 @@ function App() {
       <Outcome />
       <TypeEffectComponent />
       <Services />
+      <TechStack />
     </>
   )
 }

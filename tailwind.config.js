@@ -16,6 +16,10 @@ export default {
     transitionProperty: {
       background: 'background-image',
     },
+    textColor: {
+      seeMore: 'var(--contactUs-btn-hover)',
+
+    }
   },
   plugins: [],
 }
