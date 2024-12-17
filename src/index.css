@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 @layer base{
-    @font-face {
-    font-family: 'Poppins-black';
-    src: url(/src/assests/fonts/FontsFree-Net-Poppins-Black.ttf) format('ttf');
-  }
+}
+
+@font-face {
+font-family: "poppinsBlack";
+src: url(/src/assets/fonts/Poppins-Black.ttf)format('truetype');
 }

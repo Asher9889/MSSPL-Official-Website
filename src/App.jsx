@@ -1,4 +1,4 @@
-import { LandingPage, OurProducts, Outcome, TechStack } from './pages'
+import { LandingPage, OurProducts, OurServices, Outcome, TechStack, Work } from './pages'
 
 import './App.css'
 import { TypeEffectComponent } from './components'
@@ -10,8 +10,8 @@ function App() {
     <>
       <LandingPage />
       <Outcome />
-      
-
+      <Work />
+      <OurServices />
       <TypeEffectComponent />
       <OurProducts />
       <Services />
