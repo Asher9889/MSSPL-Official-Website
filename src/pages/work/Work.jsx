@@ -2,7 +2,7 @@ import { ContentWrapper } from "../../components";
 import { clutch, mobile, bg, star } from "../../assets/index.js";
 const Work = () => {
   return (
-    <div className=" bg-[--main-black-color] pt-32 mt-20 ">
+    <div className=" bg-[--main-black-color] pt-32 mt-20  ">
       <ContentWrapper>
         <div className="">
           <h1 className=" mb-20 text-white text-[30px] leading-[30px] md:text-[60px] md:leading-[60px] font-poppinsBlack font-bold">
