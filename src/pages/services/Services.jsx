@@ -13,7 +13,7 @@ const data = [
     paragraph4: "Maintenance",
   },
   {
-    title: "Web application Development",
+    title: "Web Application Development",
     pic: wSoftwareDev,
     paragraph1: "Frontend development",
     paragraph2: "Backend development",

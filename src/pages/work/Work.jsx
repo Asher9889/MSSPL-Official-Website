@@ -2,10 +2,10 @@ import { ContentWrapper } from "../../components";
 import { clutch, mobile, bg, star } from "../../assets/index.js";
 const Work = () => {
   return (
-    <div className=" bg-[--main-black-color] pt-32 mt-20  ">
+    <div className=" bg-white pt-32 mt-20  ">
       <ContentWrapper>
         <div className="">
-          <h1 className=" mb-20 text-white text-[30px] leading-[30px] md:text-[60px] md:leading-[60px] font-poppinsBlack font-bold">
+          <h1 className=" mb-20 text-[--main-blue-color] text-[30px] leading-[30px] md:text-[50px] md:leading-[60px] poppins-bold">
             CUSTOM WEB AND MOBILE <br />
             APP DEVELOPMENT
             <br /> COMPANY
@@ -20,7 +20,7 @@ const Work = () => {
         <img className="absolute mobile  h-56 md:h-96 bottom-10 left-[55%] transform -translate-x-1/2" src={mobile} alt="mobile" />
         <img className="w-28 md:w-40  absolute transform -translate-x-1/2 bottom-[43vh] md:bottom-[58vh] right-[0%] sm:right-[0%] md:right-[0%] xl:right-[10%]" src={clutch} alt="clutch" />
 
-        <div className="absolute bottom-0 w-full poppins-medium bg-[--red-strip-color] flex flex-row justify-between text-xl overflow-x-hidden md:text-[2rem] text-white py-4 ">
+        <div className="absolute bottom-0 w-full poppins-medium bg-[--contactUs-btn-hover] flex flex-row justify-between text-xl overflow-x-hidden md:text-[2rem] text-white py-4 ">
           <p className="shrink-0">Design</p>
           <img className="text-white " src={star} alt="" />
           <p className="shrink-0">Web Development</p>

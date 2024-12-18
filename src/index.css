@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
+body{
+    background-color: var(--main-bg-color);
+    /* color: var(--main-text-color); */
 }
+
+
 
 @font-face {
 font-family: "poppinsBlack";

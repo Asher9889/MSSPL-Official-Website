@@ -42,8 +42,8 @@ const OurProducts = () => {
   return (
     <div className="w-full mt-20">
       <ContentWrapper>
-        <h1 className="poppins-semibold text-zinc-950 text-[2.5rem] my-8 text-zinc-700 text-center ">
-          Our Products
+        <h1 className="poppins-bold text-[36px] text-[--main-text-color]  ">
+          OUR PRODUCTS :
         </h1>
         <div className="w-full flex flex-row flex-wrap gap-[10%] justify-center ">
           {data.map((product)=> (

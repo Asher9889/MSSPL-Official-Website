@@ -27,16 +27,16 @@ const mobileServices = [
 
 const OurServices = () => {
   return (
-    <section className=" bg-[--main-black-color] pt-44 ">
+    <section className=" bg-white pt-44 pb-20">
       <ContentWrapper>
         <div>
-          <h1 className="poppins-bold text-white text-[28px] md:text-[36px]">
+          <h1 className="poppins-bold text-[--main-text-color] text-[28px] md:text-[36px]">
             {"our software".toLocaleUpperCase()} <br />{" "}
             {"development services".toLocaleUpperCase()}{" "}
             <img className="w-14 inline" src={eye} alt="eye" />
           </h1>
-          <DevServices title={"web development"} titleColor={"text-white"} img={laptop} services={services} bg={"bg-[--red-strip-color]"}/>
-          <DevServices title={"Mobile app development"} titleColor={"text-black"} img={mobileDev} services={mobileServices} bg={"bg-white"} />
+          <DevServices title={"web development"} titleColor={"text-[--dark-heading-color]"} img={laptop} services={services} bg={"bg-[--card-bg-color]"}/>
+          <DevServices title={"Mobile app development"} titleColor={"text-[--dark-heading-color]"} img={mobileDev} services={mobileServices} bg={"bg-[--card-bg-color]"} />
         </div>
       </ContentWrapper>
     </section>

@@ -1,24 +1,29 @@
-import { LandingPage, NewOurProducts, OurProducts, OurServices, Outcome, TechStack, Work } from './pages'
+import { LandingPage, NewOurProducts,  OurServices, Outcome, TechStack } from './pages/index.js'
 
 import './App.css'
-import { TypeEffectComponent } from './components'
+import { TypeEffectComponent, LogoCorousel } from './components'
 import Services from './pages/services/Services'
 import WorkSatisfaction from './pages/workSatisfaction/WorkSatisfaction'
+
 // import Outcome from './pages/outcome/Outcome'
 
 function App() {
   return (
     <>
+    {/* <div className='bg-[--main-bg-color]'> */}
+
       <LandingPage />
+      <LogoCorousel />
       <Outcome />
-      <Work />
+      {/* <Work /> */}
       <OurServices />
       <WorkSatisfaction />
       <NewOurProducts />
       <TypeEffectComponent />
-      <OurProducts />
+      {/* <OurProducts /> */}
       <Services />
       <TechStack />
+    {/* </div> */}
     </>
   )
 }

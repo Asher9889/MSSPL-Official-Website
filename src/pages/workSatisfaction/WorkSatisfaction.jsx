@@ -23,22 +23,22 @@ const qualities = [
 ];
 const WorkSatisfaction = () => {
   return (
-    <div className="w-full bg-[--main-black-color] pt-32 pb-32">
+    <div className="w-full  pt-32 pb-32 ">
       <ContentWrapper>
         <div className="w-full">
             <div className="flex flex-row flex-wrap gap-20 md:gap-28">
                 <div className="w-full flex-1 ">
-                    <h1 className="poppins-bold text-[36px] text-white">
-                        <span className="text-[--yellow-color]">
+                    <h1 className="poppins-bold text-[36px] text-[--main-text-color]">
+                        <span className="text-gradient">
                         MSSPL SOFTWARE PVT LTD
                         </span>
                         <br /> - SOFTWARE DEVELOPMENT COMPANY WITH A <br /> UNIQUE{" "}
-                        <span className="text-[--red-strip-color]">APPROACH</span>
+                        <span className="">APPROACH</span>
                     </h1>
                 </div>
 
-                <div className="flex-1 poppins-regular text-[18px] text-white">
-                    <p className="text-wrap w-full">
+                <div className="flex-1 poppins-regular text-[18px] text-[--main-text-color]">
+                    <p className="text-wrap w-full font-semibold">
                         In 4+ years of work, we have helped more than 35 companies
                         develop their products and enter the market. We are trusted by
                         companies around the world. We work with

@@ -28,8 +28,8 @@ const Outcome = () => {
     <section className=" w-full mt-[10%]">
       <ContentWrapper>
         <div className="flex flex-col  lg:flex-row gap-20 ">
-          <p className="flex-1  text-center poppins-medium text-[2rem] leading-[2.5rem] md:text-[3rem] md:leading-[4rem] text-zinc-900">
-            For <b className="text-[--contactUs-btn-hover]">12+ years</b> now we
+          <p className="flex-1  text-center poppins-medium text-[2rem] leading-[2.5rem] md:text-[3rem] md:leading-[4rem] text-[--main-blue-color]">
+            For <b className="text-[--button-bg-color]">12+ years</b> now we
             have been responsible for your projects and we are proud of it!
           </p>
           <div className="flex-1 flex flex-row justify-start justify-center gap-4 flex-wrap ">
