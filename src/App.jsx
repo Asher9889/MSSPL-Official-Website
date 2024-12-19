@@ -1,4 +1,4 @@
-import { LandingPage, NewOurProducts,  OurServices, Outcome, TechStack } from './pages/index.js'
+import { LandingPage, NewOurProducts,  OurServices, Outcome, TechStack, ContactUs } from './pages/index.js'
 import './App.css'
 import { TypeEffectComponent } from './components'
 import Services from './pages/services/Services'
@@ -23,6 +23,7 @@ function App() {
       <Services />
       <TechStack />
       {/* <MapComponent /> */}
+      <ContactUs />
     {/* </div> */}
     </>
   )

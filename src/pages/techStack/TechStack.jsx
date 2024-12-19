@@ -57,7 +57,7 @@ const TechStack = () => {
     }
     
   return (
-    <section className="w-full bg-green-950 mt-10 py-20 mb-20 ">
+    <section className="w-full bg-green-950 mt-10 py-20 pb-20 ">
       <ContentWrapper>
         <div>
           <h1 className="poppins-semibold text-white text-[2rem] md:text-[3rem] mb-10">

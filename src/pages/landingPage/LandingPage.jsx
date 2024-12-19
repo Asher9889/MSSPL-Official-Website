@@ -1,7 +1,17 @@
+import { useNavigate } from "react-router";
 import trident from "../../assets/trident.png";
 import { LogoCorousel } from "../../components";
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 const LandingPage = () => {
+  const navigate = useNavigate();
+
+
+  // const handleLinkNavigation = (option)=>{
+  //   navigate(`/${option}`)
+  //   // navigate is a sync that's after completing navigate settimeout get reference as priority
+  //   setTimeout(() => {
+  //     window.scrollTo(0, 0);
+  //   }, 0);
   return (
     <section className="w-full">
       <img
@@ -19,7 +29,7 @@ const LandingPage = () => {
             <h2 className="poppins-regular text-[1.6rem] lg:text-3xl text-[--text-builtIt] text-center">
             <p className=" poppins-regular text-center">MSSPL Incubated at IIT Kanpur</p>  You Think it. We Build it. 
             </h2>
-            <button className=" mt-6 text-xl lg:text-2xl  cursor-pointer px-6 py-2 rounded-md text-white poppins-regular bg-[--button-bg-color]  hover:bg-[--button-bg-hover-color] transition-all duration-400">
+            <button onClick={()=> navigate("/contact")} className=" mt-6 text-xl lg:text-2xl  cursor-pointer px-6 py-2 rounded-md text-white poppins-regular bg-[--button-bg-color]  hover:bg-[--button-bg-hover-color] transition-all duration-400">
               Get into touch
             </button>
           </div>
