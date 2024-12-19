@@ -1,6 +1,6 @@
 import { LandingPage, NewOurProducts,  OurServices, Outcome, TechStack } from './pages/index.js'
 import './App.css'
-import { TypeEffectComponent, LogoCorousel, MapComponent } from './components'
+import { TypeEffectComponent } from './components'
 import Services from './pages/services/Services'
 import WorkSatisfaction from './pages/workSatisfaction/WorkSatisfaction'
 
@@ -12,7 +12,7 @@ function App() {
     {/* <div className='bg-[--main-bg-color]'> */}
 
       <LandingPage />
-      <LogoCorousel />
+     
       <Outcome />
       {/* <Work /> */}
       <OurServices />
@@ -22,7 +22,7 @@ function App() {
       {/* <OurProducts /> */}
       <Services />
       <TechStack />
-      <MapComponent />
+      {/* <MapComponent /> */}
     {/* </div> */}
     </>
   )

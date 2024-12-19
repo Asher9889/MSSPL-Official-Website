@@ -14,11 +14,12 @@
   );
   /* new added color */
   --main-bg-color: #FAFAFA;
-  /* --main-bg-color: #F38181; */
   --main-text-color: #004A7C;
   --card-bg-color: #E8F1F5; 
   --button-bg-color: #005691;
+  --button-bg-hover-color: rgb(37 99 235);
   --dark-heading-color: #2C3145;
+
   
   --card-color: #cfeef5;
   /* --button-color: #64687A; */

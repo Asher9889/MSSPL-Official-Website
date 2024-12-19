@@ -18,7 +18,7 @@ const Header = () => {
           {/* Right */}
           
 
-          <button className="cursor-pointer px-6 py-2 rounded-md text-white poppins-regular bg-[--button-bg-color] hover:bg-gradient-to-r from-[--contactUs-btn-hover] to-[--contactUs-btn-hover] transition-all duration-700">Contact Us</button>
+          <button className="cursor-pointer px-6 py-2 rounded-md text-white poppins-regular bg-[--button-bg-color] hover:bg-[--button-bg-hover-color] transition-all duration-400">Contact Us</button>
         
         </div>
       </ContentWrapper>

@@ -27,7 +27,7 @@ const mobileServices = [
 
 const OurServices = () => {
   return (
-    <section className=" bg-white pt-44 pb-20">
+    <section className=" pt-44 pb-20">
       <ContentWrapper>
         <div>
           <h1 className="poppins-bold text-[--main-text-color] text-[28px] md:text-[36px]">

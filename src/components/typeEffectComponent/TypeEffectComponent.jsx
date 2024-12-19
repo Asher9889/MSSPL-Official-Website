@@ -29,7 +29,7 @@ const TypeEffectComponent = () => {
   return (
     <>
       <ContentWrapper>
-        <div className=" w-full h-[250px] md:h-60 py-[6%] rounded-[40px] bg-navy-gradient-200 text-wrap">
+        <div className=" w-full h-[250px] md:h-60 py-[6%] rounded-[40px] bg-navy-gradient-200 text-wrap my-40">
           <h1 className="text-center poppins-semibold text-[1.8rem] md:text-[2.5rem] text-[--text-builtIt] ">
             Product challenges? We take them head-on.
           </h1>

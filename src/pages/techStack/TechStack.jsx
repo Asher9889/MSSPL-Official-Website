@@ -57,18 +57,18 @@ const TechStack = () => {
     }
     
   return (
-    <section className="w-full bg-green-950 mt-10 pt-10 mb-20 pb-20">
+    <section className="w-full bg-green-950 mt-10 py-20 mb-20 ">
       <ContentWrapper>
         <div>
           <h1 className="poppins-semibold text-white text-[2rem] md:text-[3rem] mb-10">
             Our Tech Stack
           </h1>
 
-            <div className="mb-20 overflow-x-auto">
+            <div className="mb-20 overflow-x-auto ">
                 <ul  className="flex flex-row justify-center md:justify-start  justify-start items-center gap-6 text-white text-lg ">
                 {buttons.map((btn) => (
                         <li key={btn} onClick={()=>handleActiveSection(btn)} className="text-lg shrink-0 mb-2">
-                            <button  className={ activeSection == btn ? "px-8 py-2 rounded-full bg-blue-500" : ""}>
+                            <button  className={` ${ activeSection == btn ? "px-8 py-2 rounded-full bg-blue-500" : "" }`}>
                                 {btn}
                             </button>
                         </li>
