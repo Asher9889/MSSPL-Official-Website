@@ -1,7 +1,6 @@
 import { LandingPage, NewOurProducts,  OurServices, Outcome, TechStack } from './pages/index.js'
-
 import './App.css'
-import { TypeEffectComponent, LogoCorousel } from './components'
+import { TypeEffectComponent, LogoCorousel, MapComponent } from './components'
 import Services from './pages/services/Services'
 import WorkSatisfaction from './pages/workSatisfaction/WorkSatisfaction'
 
@@ -23,6 +22,7 @@ function App() {
       {/* <OurProducts /> */}
       <Services />
       <TechStack />
+      <MapComponent />
     {/* </div> */}
     </>
   )

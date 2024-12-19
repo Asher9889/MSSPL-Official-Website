@@ -3,12 +3,12 @@ import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 const Outcome = () => {
   const data = [
     {
-      value: "200+",
+      value: "100+",
       description: "Developed custom solutions",
     },
     {
-      value: "25+",
-      description: "Countries, including the USA",
+      value: "15+",
+      description: "Working govt. projects",
     },
     {
       value: "3+",
@@ -29,7 +29,7 @@ const Outcome = () => {
       <ContentWrapper>
         <div className="flex flex-col  lg:flex-row gap-20 ">
           <p className="flex-1  text-center poppins-medium text-[2rem] leading-[2.5rem] md:text-[3rem] md:leading-[4rem] text-[--main-blue-color]">
-            For <b className="text-[--button-bg-color]">12+ years</b> now we
+            For <b className="text-[--button-bg-color]">19+ years</b> now we
             have been responsible for your projects and we are proud of it!
           </p>
           <div className="flex-1 flex flex-row justify-start justify-center gap-4 flex-wrap ">

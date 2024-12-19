@@ -12,13 +12,13 @@ const qualities = [
     title: "hq office",
     // icon: <IoStar />,
     description:
-      "Our Head Quarter office is based in Poland, Warsaw, where we welcome clients to visit us",
+      "Our Head Quarter office is based in Gumti No.5, Kanpur Nagar, India. We welcome clients to visit us",
   },
   {
-    title: "2m+ users",
+    title: "10 lakhs+ users",
     icon: "🧑‍💻",
     description:
-      "Over 2 million people worldwide use the apps we have developed for our clients",
+      "Over 10 lakhs+ people in India use the apps and softwares we have developed for our clients",
   },
 ];
 const WorkSatisfaction = () => {
@@ -39,11 +39,9 @@ const WorkSatisfaction = () => {
 
                 <div className="flex-1 poppins-regular text-[18px] text-[--main-text-color]">
                     <p className="text-wrap w-full font-semibold">
-                        In 4+ years of work, we have helped more than 35 companies
-                        develop their products and enter the market. We are trusted by
-                        companies around the world. We work with
-                        the USA USA Europe Europe UAE UAE Australia Australia and other
-                        countries.
+                        In 19+ years of work, we have helped more than 35 companies
+                        develop their products and enter the market. We have successfully completed various projects like Library ,FTS Software, Campus Software, Mobile Software, Retail sales software, E-commerce Website Design Development and many more can be added to our credit. We are trusted by
+                        companies around the India.
                     </p>
                 </div>
             </div>

@@ -5,7 +5,7 @@ const DevServiceCard = ({title, icon, description}) => {
         <span>
           {/* <icon className="text-yellow-500 text-[24px]" />
           {} */}
-       <p className="text-[--main-text-color] text-[24px]">{icon}</p>
+       <p className="text-[--main-text-color] text-[24px] text-yellow-400">{icon}</p>
           <b className="text-[--main-text-color] poppins-bold">{title.toLocaleUpperCase()}</b>
         </span>
         <p className="poppins-regular text-[--main-text-color] text-[16px]">
