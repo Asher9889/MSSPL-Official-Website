@@ -10,6 +10,9 @@ import ProjectProposal from "./project-proposal/ProjectProposal";
 import ProjectDesign from "./project-design/ProjectDesign"
 import ProjectDevelopment from "./project-development/ProjectDevelopment";
 import Installation from "./installation/Installation";
+import LibraryAutomationSystem from "./library-automation-system/LibraryAutomationSystem"
+import CampsysErpManagement from "./campsys-erp-management/CampsysErpManagement";
+
 
 
 export {
@@ -24,5 +27,7 @@ export {
   ProjectProposal,
   ProjectDesign,
   ProjectDevelopment,
-  Installation
+  Installation,
+  LibraryAutomationSystem,
+  CampsysErpManagement
 };

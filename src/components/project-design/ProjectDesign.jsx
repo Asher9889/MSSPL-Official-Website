@@ -26,7 +26,7 @@ const ProjectDesign = ()=>{
       ];
       
     return (
-        <div className="w-full documentation-container my-20">
+        <div className="w-full  my-20">
         <ContentWrapper>
           <h1 className="poppins-bold text-[--main-text-color] text-center text-[1rem] md:text-[1.8rem] underline hover:scale-[1.09] transition-all duration-300">
             {"project design".toUpperCase()}

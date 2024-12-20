@@ -1,10 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router";
-import { Header, Footer, RequirementAnalysis, ProjectProposal, ProjectDesign, ProjectDevelopment, Installation  } from "./components/index.js";
+import { Header, Footer, RequirementAnalysis, ProjectProposal, ProjectDesign, ProjectDevelopment, Installation, LibraryAutomationSystem  } from "./components/index.js";
 import "./index.css";
 import App from "./App.jsx";
-import { ContactUs, OurProcesses } from "./pages/index.js";
+import { OurProcesses, Products } from "./pages/index.js";
 import AcceptanceTesting from "./components/acceptance-testing/AcceptanceTesting.jsx";
 
 createRoot(document.getElementById("root")).render(
@@ -23,7 +23,9 @@ createRoot(document.getElementById("root")).render(
           <Route path="installation" element={<Installation />} />
         </Route>
       
-        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/products" element={<Products />} >
+          <Route  path="library_automation_system" element={<LibraryAutomationSystem />}/>
+        </Route>
       </Routes>
       <Footer />
     </BrowserRouter>

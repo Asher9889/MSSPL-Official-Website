@@ -7,6 +7,8 @@ import OurServices from "./ourServices/OurServices";
 import NewOurProducts from "./ourProducts/newOurProducts";
 import ContactUs from "./contact-us/ContactUs";
 import OurProcesses from "./our-processes/OurProcesses";
+import Products from "./products/Products";
+
 
 export {
   LandingPage,
@@ -17,5 +19,6 @@ export {
   OurServices,
   NewOurProducts,
   ContactUs,
-  OurProcesses
+  OurProcesses,
+  Products
 };

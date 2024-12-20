@@ -27,6 +27,9 @@ import project_proposal from "./project_proposal.webp";
 import project_design from "./project_design.webp";
 import project_development from "./project_development.webp";
 import installation from "./installation.webp"; 
+import libraries from "./libraries.webp";
+import libraryComp from "./libraryComp.webp"; 
+import library_quality from "./library_quality.webp";
 
 
 export {
@@ -58,5 +61,8 @@ export {
   project_proposal,
   project_design,
   project_development,
-  installation
+  installation,
+  libraries,
+  libraryComp,
+  library_quality
 };
