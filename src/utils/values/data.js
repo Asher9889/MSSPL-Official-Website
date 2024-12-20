@@ -1,4 +1,4 @@
-import { libraryComp, library_quality} from "../../assets";
+import { libraryComp, library_quality, fts} from "../../assets";
 
 
 
@@ -235,16 +235,9 @@ const headerOption = [
       content: [
         {
           title: "Salient Features",
-          description: [
-            "Fully web-based application supports various browsers like IE, Firefox, over internet/intranet with TCP/IP protocol.",
-            "Accessible worldwide (24x7) and easy to use.",
-            "Configurable through extensive parameterization in the Admin module.",
-            "Fully integrated modules to eliminate redundant data entry.",
-            "User-specific menus and role-based access for personalization.",
-            "Supports MS-SQL, MySQL, and Oracle as RDBMS.",
-            "Scalable for any number of members/users.",
-            "Online Campus Query System for Fee and Registration queries."
-          ]
+          description: 
+            "Fully web-based application supports various browsers like IE, Firefox, over internet/intranet with TCP/IP protocol. Accessible worldwide (24x7) and easy to use. Configurable through extensive parameterization in the Admin module.Fully integrated modules to eliminate redundant data entry.User-specific menus and role-based access for personalization.Supports MS-SQL, MySQL, and Oracle as RDBMS. Scalable for any number of members/users. Online Campus Query System for Fee and Registration queries."
+          
         }
       ]
     },
@@ -279,7 +272,7 @@ const headerOption = [
     const systemFeatures = [
       {
         category: "File Tracking System",
-        items: [
+        services: [
           "Employees Management",
           "Authorities Management",
           "Security Management",
@@ -296,7 +289,7 @@ const headerOption = [
       },
       {
         category: "Bar-Association Management",
-        items: [
+        services: [
           "Member Registration",
           "Fees Management",
           "Overdue Collection",
@@ -307,7 +300,7 @@ const headerOption = [
       },
       {
         category: "Contact Management System",
-        items: [
+        services: [
           "Contact Creation",
           "Group Creation",
           "Sharing of Contact among Users",
@@ -331,7 +324,7 @@ const headerOption = [
             title: "Overview",
             description:
               "RFID (Radio Frequency Identification) is the latest technology used in Library Theft Detection Systems. Unlike EM (Electro-Mechanical) and RF (Radio Frequency) systems, which have been used in libraries for decades, RFID-based systems move beyond security to become tracking systems. These systems combine security with more efficient tracking of materials throughout the library, including easier and faster charge and discharge, inventorying, and materials handling.",
-            img: ""
+            img: fts
           }
         ]
       },
@@ -350,12 +343,9 @@ const headerOption = [
         content: [
           {
             title: "Key Features",
-            description: [
-              "Combines security with efficient material tracking.",
-              "Facilitates easier and faster charge and discharge of materials.",
-              "Enables streamlined inventorying and material handling.",
-              "Provides advanced theft detection systems."
-            ]
+            description: 
+              "Combines security with efficient material tracking. Facilitates easier and faster charge and discharge of materials. Enables streamlined inventorying and material handling. Provides advanced theft detection systems."
+            
           }
         ]
       },
@@ -366,7 +356,7 @@ const headerOption = [
             title: "Quality Assurance",
             description:
               "Our Quality Management System ensures quality at all stages of the software development process. We adopt suitable development models based on project requirements, offering both onsite and offshore support. We align our services for client IT resource optimization, ensuring cost savings and peace of mind.",
-            img: ""
+            img: library_quality
           }
         ]
       },

@@ -12,8 +12,10 @@ import ProjectDevelopment from "./project-development/ProjectDevelopment";
 import Installation from "./installation/Installation";
 import LibraryAutomationSystem from "./library-automation-system/LibraryAutomationSystem"
 import CampsysErpManagement from "./campsys-erp-management/CampsysErpManagement";
-
-
+import FileTrackingSystem from "./file-tracking-system/FileTrackingSystem";
+import AndroidApps from "./android-apps/AndroidApps"
+import ESecure from "./e-secure/ESecure";
+import BeOurPartner from "./be-our-partner/BeOurPartner";
 
 export {
   Header,
@@ -29,5 +31,9 @@ export {
   ProjectDevelopment,
   Installation,
   LibraryAutomationSystem,
-  CampsysErpManagement
+  CampsysErpManagement,
+  FileTrackingSystem,
+  AndroidApps,
+  ESecure,
+  BeOurPartner
 };

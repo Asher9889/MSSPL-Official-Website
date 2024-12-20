@@ -28,11 +28,11 @@ const ProjectDesign = ()=>{
     return (
         <div className="w-full  my-20">
         <ContentWrapper>
-          <h1 className="poppins-bold text-[--main-text-color] text-center text-[1rem] md:text-[1.8rem] underline hover:scale-[1.09] transition-all duration-300">
+          <h1 className="poppins-bold text-[--main-text-color] text-center text-[1rem] md:text-[1.8rem] underline hover:scale-[1.02] transition-all duration-300">
             {"project design".toUpperCase()}
           </h1>
           <img
-            className="w-[80vw] mx-auto  border-[1px] border-zinc-200 my-20 drop-shadow-xl hover:scale-[1.09] transition-all duration-300"
+            className="w-[80vw] mx-auto  border-[1px] border-zinc-200 my-20 drop-shadow-xl hover:scale-[1.02] transition-all duration-300"
             src={project_design}
             alt=""
           />

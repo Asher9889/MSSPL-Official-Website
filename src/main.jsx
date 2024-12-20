@@ -1,11 +1,12 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router";
-import { Header, Footer, RequirementAnalysis, ProjectProposal, ProjectDesign, ProjectDevelopment, Installation, LibraryAutomationSystem, CampsysErpManagement  } from "./components/index.js";
+import { Header, Footer, RequirementAnalysis, ProjectProposal, ProjectDesign, ProjectDevelopment, Installation, LibraryAutomationSystem, CampsysErpManagement, FileTrackingSystem, AndroidApps, ESecure  } from "./components/index.js";
 import "./index.css";
 import App from "./App.jsx";
 import { OurProcesses, Products } from "./pages/index.js";
 import AcceptanceTesting from "./components/acceptance-testing/AcceptanceTesting.jsx";
+import ECommerceDevelopment from "./components/e-commerce-development/ECommerceDevelopment.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -26,6 +27,10 @@ createRoot(document.getElementById("root")).render(
         <Route path="/products" element={<Products />} >
           <Route  path="library_automation_system" element={<LibraryAutomationSystem />}/>
           <Route  path="campsys_erp_management" element={<CampsysErpManagement />}/>
+          <Route  path="file_tracking_system" element={<FileTrackingSystem />}/>
+          <Route  path="android_apps" element={<AndroidApps />}/>
+          <Route  path="e-commerce_development" element={<ECommerceDevelopment />}/>
+          <Route  path="e-secure" element={<ESecure />}/>
         </Route>
       </Routes>
       <Footer />

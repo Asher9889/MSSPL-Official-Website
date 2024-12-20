@@ -32,8 +32,14 @@ import libraryComp from "./libraryComp.webp";
 import library_quality from "./library_quality.webp";
 import academic_campus from "./academic_campus.webp";
 import file_tracking from "./file_tracking.webp";
-
-
+import fts from "./fts.webp";
+import mobile_dev from "./mobile_dev.webp";
+import ecommerce from "./ecommerce.webp";
+import e_secure_hardware from "./e-secure_hardware.webp";
+import kiosk1 from "./kiosk1.webp"
+import kiosk2 from "./kiosk2.webp"
+import kiosk3 from "./kiosk3.webp"
+import kiosk4 from "./kiosk4.webp"
 
 export {
   docs,
@@ -69,5 +75,13 @@ export {
   libraryComp,
   library_quality,
   academic_campus,
-  file_tracking
+  file_tracking,
+  fts,
+  mobile_dev,
+  ecommerce,
+  e_secure_hardware,
+  kiosk1,
+  kiosk2,
+  kiosk3,
+  kiosk4
 };

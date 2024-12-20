@@ -12,7 +12,7 @@ const LibraryAutomationSystem = () => {
   return (
     <div className="w-full my-10 md:my-20">
       <ContentWrapper>
-        <h1 className="poppins-bold text-[--main-text-color] text-center text-[2rem] md:text-[1.8rem] underline hover:scale-[1.09] transition-all duration-300">
+        <h1 className="poppins-bold text-[--main-text-color] text-center text-[2rem] md:text-[1.8rem] underline hover:scale-[1.02] transition-all duration-300">
           {"CampSys ERP Management(DAC)".toUpperCase()}
         </h1>
         <img
