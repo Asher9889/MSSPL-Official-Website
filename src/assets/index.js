@@ -30,6 +30,9 @@ import installation from "./installation.webp";
 import libraries from "./libraries.webp";
 import libraryComp from "./libraryComp.webp"; 
 import library_quality from "./library_quality.webp";
+import academic_campus from "./academic_campus.webp";
+import file_tracking from "./file_tracking.webp";
+
 
 
 export {
@@ -64,5 +67,7 @@ export {
   installation,
   libraries,
   libraryComp,
-  library_quality
+  library_quality,
+  academic_campus,
+  file_tracking
 };

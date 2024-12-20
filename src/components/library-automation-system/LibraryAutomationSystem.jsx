@@ -17,7 +17,7 @@ const LibraryAutomationSystem = () => {
         />
         <div className="w-full flex md:flex-row flex-col flex-wrap">
           {/* left */}
-          <div className=" p-4 border-[1px] border-zinc-500 ">
+          <div className=" p-4 border-[1px] border-zinc-500 h-fit">
             <div>
               <ul>
                 {libraryAutomationServices.map((obj, index) => (

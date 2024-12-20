@@ -1,4 +1,4 @@
-import { libraryComp, library_quality } from "../../assets";
+import { libraryComp, library_quality} from "../../assets";
 
 
 
@@ -132,7 +132,6 @@ const headerOption = [
     },
   ];
 
-
   const libraryAutomationServices = [
     {
       category: "Library Automation",
@@ -180,4 +179,212 @@ const headerOption = [
     },
   ];
 
-export { options, products, headerOption, softGranthInfo, libraryAutomationServices };
+  //------ For campsys_erp_management page ------------->
+
+  // This is List
+  const digitalAcademicsCampus = [
+    { category: "DIGITAL ACADEMICS CAMPUS", services: 
+    
+       [ "Member Patron",
+         "College Management Software",
+        "Students Admission",
+        "Establish Management System",
+        "Fee Management",
+        "Student Records",
+        "Student Attendance",
+        "Examination",
+        "Financial Accounting",
+        "Payroll",
+        "Library",
+        "Hostel",
+        "Inventory",
+        "Transportation",
+        "Student Health",
+        "Alumni",
+        "Campus Placement",
+        "Sports Management"
+    ]
+    }];
+  
+
+  // this is content data
+  const campSysInfo = [
+    {
+      section: "Introduction",
+      content: [
+        {
+          title: "Overview",
+          description:
+            "CampSys is an 'Academic Campus Automation Software' developed with over two decades of expertise from IIT Kanpur campus experts, further enriched by knowledge from other campus experts and online resources. It incorporates state-of-the-art cutting-edge technology, making it superior to existing solutions. The software is completely web-based, operating on both internet and intranet, and developed at SIIC, IIT Kanpur under the supervision of computer experts.",
+          img: libraryComp
+          }
+      ]
+    },
+    {
+      section: "Objective",
+      content: [
+        {
+          title: "CampSys Objective",
+          description:
+            "The objective of CampSys is to completely automate daily campus functions such as Registration, Entrance Tests, Fee Management, Hostel Management, Transport, Assessment, Payroll, and more. Through the Campus Network and Internet, members can access the Student/Staff Online Query System to obtain up-to-date, relevant information."
+        }
+      ]
+    },
+    {
+      section: "Features",
+      content: [
+        {
+          title: "Salient Features",
+          description: [
+            "Fully web-based application supports various browsers like IE, Firefox, over internet/intranet with TCP/IP protocol.",
+            "Accessible worldwide (24x7) and easy to use.",
+            "Configurable through extensive parameterization in the Admin module.",
+            "Fully integrated modules to eliminate redundant data entry.",
+            "User-specific menus and role-based access for personalization.",
+            "Supports MS-SQL, MySQL, and Oracle as RDBMS.",
+            "Scalable for any number of members/users.",
+            "Online Campus Query System for Fee and Registration queries."
+          ]
+        }
+      ]
+    },
+    {
+      section: "Software Quality",
+      content: [
+        {
+          title: "Quality Assurance",
+          description:
+            "Our Quality Management System ensures quality at all stages of the software development process. We adopt suitable development models based on project requirements, offering both onsite and offshore support. We align our services for client IT resource optimization, ensuring cost savings and peace of mind.",
+            img: library_quality
+        }
+      ]
+    },
+    {
+      section: "Additional Information",
+      content: [
+        {
+          title: "Online Demo",
+          description: "An online demo of the CampSys Automation System (DAC) is available."
+        },
+        {
+          title: "Presentation Download",
+          description: "The CampSys presentation can be downloaded as 'CampSys.pptx'."
+        }
+      ]
+    }
+  ];
+
+   //------ For file_tracking_system page ------------->
+    // This is List
+    const systemFeatures = [
+      {
+        category: "File Tracking System",
+        items: [
+          "Employees Management",
+          "Authorities Management",
+          "Security Management",
+          "Register Management",
+          "Files Management",
+          "Route",
+          "Barcode",
+          "Dynamic Letters",
+          "E-mail & SMS services",
+          "File on Desk",
+          "Reports",
+          "Search/Indexing Search"
+        ]
+      },
+      {
+        category: "Bar-Association Management",
+        items: [
+          "Member Registration",
+          "Fees Management",
+          "Overdue Collection",
+          "Reporting",
+          "Digital Lib",
+          "OPAC N-Driod Apps"
+        ]
+      },
+      {
+        category: "Contact Management System",
+        items: [
+          "Contact Creation",
+          "Group Creation",
+          "Sharing of Contact among Users",
+          "E-Mail & SMS Services",
+          "Notes Management",
+          "OCR Integration",
+          "Events Management",
+          "Level Designing",
+          "Imports/Exports Contacts",
+          "Searching"
+        ]
+      }
+    ];
+
+    // this is content data
+    const rfidSystemInfo = [
+      {
+        section: "Introduction",
+        content: [
+          {
+            title: "Overview",
+            description:
+              "RFID (Radio Frequency Identification) is the latest technology used in Library Theft Detection Systems. Unlike EM (Electro-Mechanical) and RF (Radio Frequency) systems, which have been used in libraries for decades, RFID-based systems move beyond security to become tracking systems. These systems combine security with more efficient tracking of materials throughout the library, including easier and faster charge and discharge, inventorying, and materials handling.",
+            img: ""
+          }
+        ]
+      },
+      {
+        section: "Objective",
+        content: [
+          {
+            title: "Purpose of RFID in Libraries",
+            description:
+              "The objective of RFID technology is to enhance library operations by providing efficient tracking and security of materials, reducing manual effort, and ensuring seamless handling of library resources."
+          }
+        ]
+      },
+      {
+        section: "Features",
+        content: [
+          {
+            title: "Key Features",
+            description: [
+              "Combines security with efficient material tracking.",
+              "Facilitates easier and faster charge and discharge of materials.",
+              "Enables streamlined inventorying and material handling.",
+              "Provides advanced theft detection systems."
+            ]
+          }
+        ]
+      },
+      {
+        section: "Software Quality",
+        content: [
+          {
+            title: "Quality Assurance",
+            description:
+              "Our Quality Management System ensures quality at all stages of the software development process. We adopt suitable development models based on project requirements, offering both onsite and offshore support. We align our services for client IT resource optimization, ensuring cost savings and peace of mind.",
+            img: ""
+          }
+        ]
+      },
+      {
+        section: "Additional Information",
+        content: [
+          {
+            title: "Online Demo",
+            description: "An online demo of the File Tracking System (FTS) is available."
+          },
+          {
+            title: "Presentation Download",
+            description: "The FTS presentation can be downloaded as 'FTS.pptx'."
+          }
+        ]
+      }
+    ];
+    
+    
+
+export { options, products, headerOption, softGranthInfo, libraryAutomationServices, campSysInfo, digitalAcademicsCampus, systemFeatures, rfidSystemInfo };

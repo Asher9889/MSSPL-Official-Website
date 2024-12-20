@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router";
-import { Header, Footer, RequirementAnalysis, ProjectProposal, ProjectDesign, ProjectDevelopment, Installation, LibraryAutomationSystem  } from "./components/index.js";
+import { Header, Footer, RequirementAnalysis, ProjectProposal, ProjectDesign, ProjectDevelopment, Installation, LibraryAutomationSystem, CampsysErpManagement  } from "./components/index.js";
 import "./index.css";
 import App from "./App.jsx";
 import { OurProcesses, Products } from "./pages/index.js";
@@ -25,6 +25,7 @@ createRoot(document.getElementById("root")).render(
       
         <Route path="/products" element={<Products />} >
           <Route  path="library_automation_system" element={<LibraryAutomationSystem />}/>
+          <Route  path="campsys_erp_management" element={<CampsysErpManagement />}/>
         </Route>
       </Routes>
       <Footer />
