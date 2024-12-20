@@ -22,6 +22,12 @@ import client4 from "./logos/Client-4.jpg";
 import client5 from "./logos/Client-5.jpg";
 import client6 from "./logos/Client-6.png";
 import requirement_analysis from "./requirement_analysis.webp";
+import accepting_testing from "./accepting_testing.webp";
+import project_proposal from "./project_proposal.webp";
+import project_design from "./project_design.webp";
+import project_development from "./project_development.webp";
+import installation from "./installation.webp"; 
+
 
 export {
   docs,
@@ -47,5 +53,10 @@ export {
   client4,
   client5,
   client6,
-  requirement_analysis
+  requirement_analysis,
+  accepting_testing,
+  project_proposal,
+  project_design,
+  project_development,
+  installation
 };

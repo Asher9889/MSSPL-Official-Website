@@ -6,6 +6,11 @@ import DevServiceCard from "./devServiceCard/DevServiceCard";
 import LogoCorousel from "./logoCorousel/LogoCorousel";
 import MapComponent from "./googleMap/MapComponent";
 import RequirementAnalysis from "./requirement-analysis/RequirementAnalysis";
+import ProjectProposal from "./project-proposal/ProjectProposal";
+import ProjectDesign from "./project-design/ProjectDesign"
+import ProjectDevelopment from "./project-development/ProjectDevelopment";
+import Installation from "./installation/Installation";
+
 
 export {
   Header,
@@ -15,5 +20,9 @@ export {
   DevServiceCard,
   LogoCorousel,
   MapComponent,
-  RequirementAnalysis
+  RequirementAnalysis,
+  ProjectProposal,
+  ProjectDesign,
+  ProjectDevelopment,
+  Installation
 };
