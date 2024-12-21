@@ -32,10 +32,10 @@ const Outcome = () => {
             For <b className="text-[--button-bg-color]">19+ years</b> now we
             have been responsible for your projects and we are proud of it!
           </p>
-          <div className="flex-1 flex flex-row justify-start justify-center gap-4 flex-wrap ">
+          <div className="flex-1 flex flex-row justify-start justify-center gap-6 flex-wrap ">
             {data.map((data) => (
               <span key={data.value} className="w-64">
-                <p className="text-[3rem] poppins-regular text-blue-950">
+                <p className={` text-[3rem] poppins-regular text-blue-950`}>
                   {data.value}
                 </p>
                 <p className="text-zinc-600 text-[1rem] font-semibold">

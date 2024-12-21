@@ -12,9 +12,9 @@ const TypeEffectComponent = () => {
         "Can’t-miss deadlines and Impossibly tight budgets?",
         "New product development requests outpacing your team capacity? ",
       ],
-      typeSpeed: 30, // Typing speed
-      backSpeed: 50, // Backspacing speed
-      backDelay: 2000, // Delay after typing a string
+      typeSpeed: 80, // Typing speed
+      backSpeed: 30, // Backspacing speed
+      backDelay: 4000, // Delay after typing a string
       startDelay: 500, // Initial delay before typing starts
       loop: true, // Looping enabled
       cursorChar: "", // Blinking cursor

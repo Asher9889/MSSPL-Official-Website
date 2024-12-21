@@ -2,6 +2,7 @@ import ContentWrapper from "../contentWrapper/ContentWrapper";
 // import { options } from "../../utils/values/data";
 import { useNavigate } from "react-router";
 import { headerOption } from "../../utils/values/data";
+import { msspl_logo } from "../../assets";
 
 
 const Header = () => {
@@ -28,11 +29,11 @@ const Header = () => {
   };
 
   return (
-    <header className="relative z-10  w-full bg-[--main-bg-color]">
+    <header className="relative z-10  w-full ">
       <ContentWrapper>
         <div className="flex flex-row justify-between items-center py-4">
           {/* Left */}
-          <div className="">logo</div>
+          <img className="w-16" src={msspl_logo} alt="" />
           {/* Middle */}
           <div className="hidden lg:block  text-zinc-700">
             <div className=" flex flex-row gap-8">

@@ -3,14 +3,11 @@ import {
   client2,
   client3,
   client4,
-  client5,
-  client6,
 } from "../../assets";
 import { Virtual, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/virtual";
-// import { ImGift } from "react-icons/im";
 
 const slides = [
   client1,

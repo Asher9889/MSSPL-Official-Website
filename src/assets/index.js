@@ -44,6 +44,7 @@ import partner from "./partner.webp";
 import partnership from "./partnership.webp";
 import aboutus from "./aboutus.webp";
 import foundermd from "./foundermd.webp";
+import msspl_logo from "./msspl_logo.webp";
 
 
 export {
@@ -92,5 +93,6 @@ export {
   partner,
   partnership,
   aboutus,
-  foundermd
+  foundermd,
+  msspl_logo
 };

@@ -39,7 +39,7 @@ const Footer = forwardRef((_,ref) => {
                     {/* <img src={"msg"} alt="" />
                                     < */}
                     <MdEmail className="text-3xl" />
-                    <p className="text-[20px] poppins-medium cursor-pointer">
+                    <p href="mailto:msspl.mspl@gmail.com" className="text-[20px] poppins-medium cursor-pointer">
                     msspl.mspl@gmail.com
                     </p>
                 </span>

@@ -28,12 +28,11 @@ const WorkSatisfaction = () => {
         <div className="w-full">
             <div className="flex flex-row flex-wrap gap-20 md:gap-28">
                 <div className="w-full flex-1 ">
-                    <h1 className="poppins-bold text-[36px] text-[--main-text-color]">
+                    <h1 className="poppins-bold text-[32px] text-[--main-text-color]">
                         <span className="text-gradient">
-                        Multifacet Software Systems (P) Ltd.
+                        Multifacet Software Systems Pvt. Ltd.
                         </span>
-                        <br /> - SOFTWARE DEVELOPMENT COMPANY WITH A <br /> UNIQUE{" "}
-                        <span className="">APPROACH</span>
+                        <br /> - SOFTWARE DEVELOPMENT COMPANY WITH A  UNIQUE APPROACH
                     </h1>
                 </div>
 
@@ -45,7 +44,7 @@ const WorkSatisfaction = () => {
                     </p>
                 </div>
             </div>
-            <div className="flex flex-row flex-wrap md:gap-6">
+            <div className="flex flex-row flex-wrap md:gap-8">
                 {qualities.map((quality, index) => (
                 <DevServiceCard
                     key={index * 10}

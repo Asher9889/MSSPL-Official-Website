@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router";
-import { Header, Footer, RequirementAnalysis, ProjectProposal, ProjectDesign, ProjectDevelopment, Installation, LibraryAutomationSystem, CampsysErpManagement, FileTrackingSystem, AndroidApps, ESecure, BeOurPartner, CompanyProfile, Objectives, ManagementStaff, ITService, Career  } from "./components/index.js";
+import { Header, Footer, RequirementAnalysis, ProjectProposal, ProjectDesign, ProjectDevelopment, Installation, LibraryAutomationSystem, CampsysErpManagement, FileTrackingSystem, AndroidApps, ESecure, BeOurPartner, CompanyProfile, Objectives, ManagementStaff, ITService, Career, HeaderTopLinks  } from "./components/index.js";
 import "./index.css";
 import App from "./App.jsx";
 import { AboutUs, OurProcesses, Products, TechStack } from "./pages/index.js";
@@ -18,7 +18,7 @@ createRoot(document.getElementById("root")).render(
     <ContactFormProvider>
 
 
-    
+      <HeaderTopLinks />
       <Header />
       <Routes>
         <Route path="/" element={<Navigate to="/home" replace />} />

@@ -23,6 +23,9 @@ import ITService from "./it-service/ITService";
 import Career from "./career/Career";
 import SocialLinks from "./social-links/SocialLinks";
 import ContactUsForm from "./contact-us-form/ContactUsForm";
+import HeaderTopLinks from "./header-top-links/HeaderTopLinks";
+
+
 
 export {
   Header,
@@ -49,5 +52,6 @@ export {
   ITService,
   Career,
   SocialLinks,
-  ContactUsForm
+  ContactUsForm,
+  HeaderTopLinks
 };
