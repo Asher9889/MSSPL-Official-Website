@@ -42,6 +42,7 @@ const MapComponent = () => {
       zoom={20} // Adjust this value for desired zoom level
       onLoad={onLoad}
       onUnmount={onUnmount}
+      
     >
       {/* Marker to display location */}
       <Marker position={center} onClick={()=> handleMarkerClick()} />

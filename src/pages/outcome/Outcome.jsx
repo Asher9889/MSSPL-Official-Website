@@ -3,23 +3,23 @@ import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 const Outcome = () => {
   const data = [
     {
-      value: "100+",
+      value: "500+",
       description: "Developed custom solutions",
     },
     {
-      value: "15+",
+      value: "110+",
       description: "Working govt. projects",
     },
     {
-      value: "3+",
-      description: "Years’ Client engagement",
+      value: "Consistent",
+      description: "Client engagement",
     },
     {
       value: "70%",
       description: "Senior engineers",
     },
     {
-      value: "98%",
+      value: "99.9%",
       description: "Satisfaction rate",
     },
   ];
@@ -34,7 +34,7 @@ const Outcome = () => {
           </p>
           <div className="flex-1 flex flex-row justify-start justify-center gap-4 flex-wrap ">
             {data.map((data) => (
-              <span key={data.value} className="w-40">
+              <span key={data.value} className="w-64">
                 <p className="text-[3rem] poppins-regular text-blue-950">
                   {data.value}
                 </p>

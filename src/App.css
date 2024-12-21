@@ -149,4 +149,15 @@
   background: linear-gradient(90deg, #1f3b73, #3a75d1);
 }
 
+/* Landing Page Contact Us Page */
+.gradient-black{
+
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
+}
+
+
+
+
+
+
 

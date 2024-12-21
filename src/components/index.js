@@ -21,7 +21,8 @@ import Objectives from "./objectives/Objectives";
 import ManagementStaff from "./management-&-staff/ManagementStaff";
 import ITService from "./it-service/ITService";
 import Career from "./career/Career";
-
+import SocialLinks from "./social-links/SocialLinks";
+import ContactUsForm from "./contact-us-form/ContactUsForm";
 
 export {
   Header,
@@ -46,5 +47,7 @@ export {
   Objectives,
   ManagementStaff,
   ITService,
-  Career
+  Career,
+  SocialLinks,
+  ContactUsForm
 };

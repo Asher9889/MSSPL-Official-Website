@@ -1,21 +1,29 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router";
-import { Header, Footer, RequirementAnalysis, ProjectProposal, ProjectDesign, ProjectDevelopment, Installation, LibraryAutomationSystem, CampsysErpManagement, FileTrackingSystem, AndroidApps, ESecure, BeOurPartner, CompanyProfile, Objectives, ManagementStaff, ITService  } from "./components/index.js";
+import { Header, Footer, RequirementAnalysis, ProjectProposal, ProjectDesign, ProjectDevelopment, Installation, LibraryAutomationSystem, CampsysErpManagement, FileTrackingSystem, AndroidApps, ESecure, BeOurPartner, CompanyProfile, Objectives, ManagementStaff, ITService, Career  } from "./components/index.js";
 import "./index.css";
 import App from "./App.jsx";
 import { AboutUs, OurProcesses, Products, TechStack } from "./pages/index.js";
 import AcceptanceTesting from "./components/acceptance-testing/AcceptanceTesting.jsx";
 import ECommerceDevelopment from "./components/e-commerce-development/ECommerceDevelopment.jsx";
 import OurClients from "./pages/our-clients/OurClients.jsx";
+import { ContactFormProvider } from './utils/context/context.jsx'
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
+   
+    <ContactFormProvider>
+
+
+    
       <Header />
       <Routes>
         <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<App />} />
+        
         <Route path="/our_processes" element={<OurProcesses />} >
           <Route path="requirement_analysis" element={<RequirementAnalysis />} />
           <Route path="acceptance_testing" element={<AcceptanceTesting />} />
@@ -47,8 +55,14 @@ createRoot(document.getElementById("root")).render(
             <Route path="it_service" element={<ITService />}/>
         </Route>
 
+        <Route path="/career" element={<Career />}/>
+
       </Routes>
-      <Footer />
+      <Footer  />
+
+   
+     
+    </ContactFormProvider>
     </BrowserRouter>
   </StrictMode>
 );

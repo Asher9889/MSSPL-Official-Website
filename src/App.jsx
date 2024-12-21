@@ -1,12 +1,16 @@
-import { LandingPage, NewOurProducts,  OurServices, Outcome, TechStack, ContactUs } from './pages/index.js'
+import { LandingPage, NewOurProducts, Outcome, TechStack } from './pages/index.js'
+
 import './App.css'
 import { TypeEffectComponent } from './components'
 import Services from './pages/services/Services'
 import WorkSatisfaction from './pages/workSatisfaction/WorkSatisfaction'
-
 // import Outcome from './pages/outcome/Outcome'
 
+
 function App() {
+
+  
+
   return (
     <>
     {/* <div className='bg-[--main-bg-color]'> */}
@@ -15,7 +19,7 @@ function App() {
      
       <Outcome />
       {/* <Work /> */}
-      <OurServices />
+      {/* <OurServices /> */}
       <WorkSatisfaction />
       <NewOurProducts />
       <TypeEffectComponent />
@@ -23,10 +27,12 @@ function App() {
       <Services />
       <TechStack />
       {/* <MapComponent /> */}
-      <ContactUs />
+      {/* <ContactUs /> */}
     {/* </div> */}
     </>
   )
 }
 
 export default App
+
+

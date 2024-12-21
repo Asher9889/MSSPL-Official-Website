@@ -88,7 +88,7 @@ const Services = () => {
             Services we offer
           </h1>
           {/* bottom */}
-          <div className="flex flex-row justify-center md:justify-between flex-wrap gap-4 ">
+          <div className="flex flex-row justify-center md:justify-center flex-wrap gap-8 ">
             {data.map((elem, index) => (
               <div
                 key={index}

@@ -30,7 +30,7 @@ const WorkSatisfaction = () => {
                 <div className="w-full flex-1 ">
                     <h1 className="poppins-bold text-[36px] text-[--main-text-color]">
                         <span className="text-gradient">
-                        MSSPL SOFTWARE PVT LTD
+                        Multifacet Software Systems (P) Ltd.
                         </span>
                         <br /> - SOFTWARE DEVELOPMENT COMPANY WITH A <br /> UNIQUE{" "}
                         <span className="">APPROACH</span>
@@ -40,7 +40,7 @@ const WorkSatisfaction = () => {
                 <div className="flex-1 poppins-regular text-[18px] text-[--main-text-color]">
                     <p className="text-wrap w-full font-semibold">
                         In 19+ years of work, we have helped more than 35 companies
-                        develop their products and enter the market. We have successfully completed various projects like Library ,FTS Software, Campus Software, Mobile Software, Retail sales software, E-commerce Website Design Development and many more can be added to our credit. We are trusted by
+                        develop their products. We have successfully completed various projects like Library Management , Vehicle tracking, Mobile Software, Retail sales software, E-commerce Website Design Development and many more can be added to our credit. We are trusted by
                         companies around the India.
                     </p>
                 </div>
