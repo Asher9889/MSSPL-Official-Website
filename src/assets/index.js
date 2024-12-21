@@ -40,6 +40,11 @@ import kiosk1 from "./kiosk1.webp"
 import kiosk2 from "./kiosk2.webp"
 import kiosk3 from "./kiosk3.webp"
 import kiosk4 from "./kiosk4.webp"
+import partner from "./partner.webp"; 
+import partnership from "./partnership.webp";
+import aboutus from "./aboutus.webp";
+import foundermd from "./foundermd.webp";
+
 
 export {
   docs,
@@ -83,5 +88,9 @@ export {
   kiosk1,
   kiosk2,
   kiosk3,
-  kiosk4
+  kiosk4,
+  partner,
+  partnership,
+  aboutus,
+  foundermd
 };

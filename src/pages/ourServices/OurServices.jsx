@@ -4,12 +4,12 @@ import DevServices from "../../components/devServices/DevServices";
 
 const services = [
   "Web design",
-  "Frontend web development",
-  "Backend development",
-  "Node.js development",
-  "React web development",
-  "JavaScript development",
-  "MVP software development",
+  "Frontend",
+  "Backend",
+  "Node.js",
+  "React",
+  "JavaScript ",
+  // "MVP software ",
   "Custom web development",
   "Full stack web development",
 ];

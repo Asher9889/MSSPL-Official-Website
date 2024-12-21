@@ -144,4 +144,9 @@
   border-radius: 10px;
 }
 
+/* For About  Us page */
+.gradient{
+  background: linear-gradient(90deg, #1f3b73, #3a75d1);
+}
+
 

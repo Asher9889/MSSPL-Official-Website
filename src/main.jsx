@@ -1,12 +1,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router";
-import { Header, Footer, RequirementAnalysis, ProjectProposal, ProjectDesign, ProjectDevelopment, Installation, LibraryAutomationSystem, CampsysErpManagement, FileTrackingSystem, AndroidApps, ESecure  } from "./components/index.js";
+import { Header, Footer, RequirementAnalysis, ProjectProposal, ProjectDesign, ProjectDevelopment, Installation, LibraryAutomationSystem, CampsysErpManagement, FileTrackingSystem, AndroidApps, ESecure, BeOurPartner, CompanyProfile, Objectives, ManagementStaff, ITService  } from "./components/index.js";
 import "./index.css";
 import App from "./App.jsx";
-import { OurProcesses, Products } from "./pages/index.js";
+import { AboutUs, OurProcesses, Products, TechStack } from "./pages/index.js";
 import AcceptanceTesting from "./components/acceptance-testing/AcceptanceTesting.jsx";
 import ECommerceDevelopment from "./components/e-commerce-development/ECommerceDevelopment.jsx";
+import OurClients from "./pages/our-clients/OurClients.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -32,6 +33,20 @@ createRoot(document.getElementById("root")).render(
           <Route  path="e-commerce_development" element={<ECommerceDevelopment />}/>
           <Route  path="e-secure" element={<ESecure />}/>
         </Route>
+
+        <Route path="/our_clients" element={<OurClients />}>
+          <Route path="be_our_partner" element={<BeOurPartner />} />
+        </Route>
+
+        <Route path="/our_technology" element={<TechStack />} />
+
+        <Route path="/about_us" element={<AboutUs />} >
+            <Route path="company_profile" element={<CompanyProfile />}/>
+            <Route path="objectives" element={<Objectives />}/>
+            <Route path="management_&_staff" element={<ManagementStaff />}/>
+            <Route path="it_service" element={<ITService />}/>
+        </Route>
+
       </Routes>
       <Footer />
     </BrowserRouter>

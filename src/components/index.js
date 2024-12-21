@@ -16,6 +16,12 @@ import FileTrackingSystem from "./file-tracking-system/FileTrackingSystem";
 import AndroidApps from "./android-apps/AndroidApps"
 import ESecure from "./e-secure/ESecure";
 import BeOurPartner from "./be-our-partner/BeOurPartner";
+import CompanyProfile from "./company-profile/CompanyProfile";
+import Objectives from "./objectives/Objectives";
+import ManagementStaff from "./management-&-staff/ManagementStaff";
+import ITService from "./it-service/ITService";
+import Career from "./career/Career";
+
 
 export {
   Header,
@@ -35,5 +41,10 @@ export {
   FileTrackingSystem,
   AndroidApps,
   ESecure,
-  BeOurPartner
+  BeOurPartner,
+  CompanyProfile,
+  Objectives,
+  ManagementStaff,
+  ITService,
+  Career
 };
