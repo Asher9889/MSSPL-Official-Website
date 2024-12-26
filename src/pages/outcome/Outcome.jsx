@@ -6,7 +6,7 @@ const Outcome = () => {
   const data = [
     { value: 500, suffix: "+", description: "Developed custom solutions" },
     { value: 110, suffix: "+", description: "Working govt. projects" },
-    { value: "Consistent", description: "Consistent Client engagement" }, 
+    { value: "Consistent", description: "Client engagement" }, 
     { value: 70, suffix: "%", description: "Senior engineers" },
     { value: 99.9, suffix: "%", description: "Satisfaction rate" },
   ];

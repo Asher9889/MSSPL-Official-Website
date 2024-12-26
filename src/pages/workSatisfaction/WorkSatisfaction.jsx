@@ -29,10 +29,10 @@ const WorkSatisfaction = () => {
             <div className="flex flex-row flex-wrap gap-20 md:gap-28">
                 <div className="w-full flex-1 ">
                     <h1 className="poppins-bold text-[32px] text-[--main-text-color]">
-                        <span className="text-gradient">
-                        Multifacet Software Systems Pvt. Ltd.
-                        </span>
-                        <br /> - SOFTWARE DEVELOPMENT COMPANY WITH A  UNIQUE APPROACH
+                        <span className="text-blue-600">
+                        Multifacet Software Systems Pvt. Ltd. &nbsp;
+                         </span>
+                        - SOFTWARE DEVELOPMENT COMPANY WITH A  UNIQUE APPROACH
                     </h1>
                 </div>
 

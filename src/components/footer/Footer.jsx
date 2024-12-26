@@ -1,10 +1,10 @@
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import { IoLocationOutline } from "react-icons/io5";
-import { MdEmail } from "react-icons/md";
 import { IoIosCall } from "react-icons/io";
 import MapComponent from "../googleMap/MapComponent";
 import SocialLinks from "../social-links/SocialLinks";
 import { forwardRef } from "react";
+import { gmail } from "../../assets";
 // const footer = forwardRef(()=> ())
 
 /* eslint-disable */
@@ -16,12 +16,12 @@ const Footer = forwardRef((_, ref) => {
   };
 
   return (
-    <footer ref={ref} className=" pb-20 bg-zinc-950 pt-32">
+    <footer ref={ref} className=" pb-20  pt-32 bg-black opacity-[0.9]">
       <ContentWrapper>
       
-        <div className="flex flex-col md:flex-row gap-10 text-white">
+        <div className="flex flex-col md:flex-row gap-10 text-blue-600">
           <div className="flex-1 flex flex-col gap-8">
-            <h1 className="poppins-bold text-[40px] text-white">
+            <h1 className="poppins-bold text-[40px]  ">
               Multifacet Software Systems Pvt. Ltd.
             </h1>
 
@@ -30,14 +30,16 @@ const Footer = forwardRef((_, ref) => {
               <IoLocationOutline className="text-3xl" />
               <p
                 onClick={handleMarkerClick}
-                className="text-[20px] poppins-medium cursor-pointer"
+                className="text-[20px] poppins-medium cursor-pointer "
               >
                 109/421,80 feet road, Kanpur(U.P),India
               </p>
             </span>
             <span className="flex gap-2 flex-row items-center">
               
-              <MdEmail className="text-3xl" />
+              {/* <MdEmail className="text-3xl" /> */}
+              {/* <a href="https://www.flaticon.com/free-icons/gmail" title="gmail icons">Gmail icons created by Tinti Nodarse - Flaticon</a> */}
+              <img className="w-10" src={gmail} alt="" />
               <p
                 href="mailto:msspl.mspl@gmail.com"
                 className="text-[20px] poppins-medium cursor-pointer"
@@ -56,7 +58,7 @@ const Footer = forwardRef((_, ref) => {
 
             
           </div>
-          <div className="flex-1  bg-black">
+          <div className="flex-1  bg-black border-blue-800 border-[4px] opacity-[0.7] rounded-md">
             <MapComponent />
           </div>
         </div>

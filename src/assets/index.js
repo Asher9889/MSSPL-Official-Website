@@ -45,7 +45,7 @@ import partnership from "./partnership.webp";
 import aboutus from "./aboutus.webp";
 import foundermd from "./foundermd.webp";
 import msspl_logo from "./msspl_logo.webp";
-
+import gmail from "./gmail.png"
 
 export {
   docs,
@@ -94,5 +94,6 @@ export {
   partnership,
   aboutus,
   foundermd,
-  msspl_logo
+  msspl_logo,
+  gmail
 };
