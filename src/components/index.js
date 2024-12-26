@@ -24,6 +24,8 @@ import Career from "./career/Career";
 import SocialLinks from "./social-links/SocialLinks";
 import ContactUsForm from "./contact-us-form/ContactUsForm";
 import HeaderTopLinks from "./header-top-links/HeaderTopLinks";
+import SplitTextAnimation from "./splite-text-animation/SplitTextAnimation"
+import CountUpAnimation from "./count-up-animation/CountUpAnimation";
 
 
 
@@ -53,5 +55,7 @@ export {
   Career,
   SocialLinks,
   ContactUsForm,
-  HeaderTopLinks
+  HeaderTopLinks,
+  SplitTextAnimation,
+  CountUpAnimation
 };

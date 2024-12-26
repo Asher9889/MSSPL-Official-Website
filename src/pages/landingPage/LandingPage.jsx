@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import trident from "../../assets/trident.png";
-import { ContactUsForm, LogoCorousel } from "../../components";
+import { ContactUsForm, LogoCorousel, SplitTextAnimation } from "../../components";
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 import { useContext } from "react";
 import { ContactFormContext } from "../../utils/context/context";
+
 
 
 const LandingPage = () => {
@@ -26,9 +27,10 @@ const LandingPage = () => {
       <ContentWrapper>
         <section className="w-full ">
           <div className="w-full flex flex-col justify-center items-center pt-[10%] gap-3 lg:gap-5">
-            <h1 className=" text-center text-gradient poppins-semibold text-[2.5rem] md:text-[3.5rem] ">
-              Multifacet Software Systems Pvt. Ltd.
-            </h1>
+            {/* <h1 className=" text-center text-gradient poppins-semibold text-[2.5rem] md:text-[3.5rem] "> */}
+              {/* Landing Page Heading */}
+             <SplitTextAnimation text="Multifacet Software Systems Pvt. Ltd." className="z-50 relative text-center  poppins-semibold text-[2.5rem] md:text-[3.5rem]" delay={200} />
+            {/* </h1> */}
             <h2 className="poppins-regular text-[1.6rem] lg:text-3xl text-[--text-builtIt] text-center">
               <p className=" poppins-regular text-center">Incubated at IIT Kanpur</p> You Think it. We Build it.
             </h2>
