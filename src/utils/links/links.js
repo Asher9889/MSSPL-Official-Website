@@ -14,4 +14,8 @@ const qualityAssurance = "https://cdn.prod.website-files.com/6256688a7a5e476c6db
 const techSupport = "https://cdn.prod.website-files.com/6256688a7a5e476c6dbfec98/6667cf8a89ed7ce9f6837cb8_850258077d0654a06063a2f91bbf2d0b.webp";
 
 const ProjManagment = "https://cdn.prod.website-files.com/6256688a7a5e476c6dbfec98/6667cf8b00fd11ac5cb97236_827b4b7f5ea110d759b23828280ad5bc.webp";
-export { cSoftwareDev, wSoftwareDev, uiux, mobileDev, devOps, qualityAssurance, techSupport, ProjManagment };
+
+const googleMapUrl = "https://www.google.com/maps/place/Multifacet+Software+Systems+Pvt+Ltd/@26.4726595,80.3236151,49m/data=!3m1!1e3!4m6!3m5!1s0x399c3880bcee05c7:0xd7ffc1af02582e8c!8m2!3d26.4726406!4d80.3239828!16s%2Fg%2F11fy4v6lrc?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D";
+
+
+export { cSoftwareDev, wSoftwareDev, uiux, mobileDev, devOps, qualityAssurance, techSupport, ProjManagment, googleMapUrl };

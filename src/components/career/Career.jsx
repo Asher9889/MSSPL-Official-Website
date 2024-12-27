@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
+import emailjs from '@emailjs/browser';
 
 const CareersForm = () => {
   const [formData, setFormData] = useState({
@@ -18,6 +19,8 @@ const CareersForm = () => {
     post: "",
     resume: null,
   });
+  // const [loading, setLoading] = useState(false);
+  const form = useRef();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -31,8 +34,27 @@ const CareersForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // Add form submission logic (API or email integration)
-  };
+      // setLoading(true);
+      // setErrorMessage(""); 
+      emailjs
+      .sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID_CAREER, form.current, {
+        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          // setLoading(false);
+          // setShowSuccessMessage(true); // Show the success message
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          // setLoading(false);
+        },
+      );
+
+  }
+  
+
 
   return (
     <ContentWrapper>
@@ -52,13 +74,14 @@ const CareersForm = () => {
         {/* Form Section */}
         <div className="container mx-auto bg-[#f0f8ff] border-[1px] border-zinc-300 shadow-lg rounded-lg p-8 mt-8">
           <h2 className="text-2xl font-bold text-blue-700 mb-6">Apply Now</h2>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form ref={form} onSubmit={handleSubmit} className="space-y-6">
             {/* Full Name */}
             <div>
               <label className="block text-gray-700 font-medium mb-2">Full Name</label>
               <input
                 type="text"
                 name="fullName"
+                // name="user_name"
                 value={formData.fullName}
                 onChange={handleInputChange}
                 className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -79,6 +102,25 @@ const CareersForm = () => {
                 placeholder="Enter your father's name"
                 required
               />
+            </div>
+
+            {/* Gender */}
+            <div>
+              <label className="block text-gray-700 font-medium mb-2">Gender</label>
+              <select
+                name="gender"
+                value={formData.gender}
+                onChange={handleInputChange}
+                className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                required
+              >
+                <option value="" disabled>
+                  Select Gender
+                </option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
             </div>
 
             {/* Post */}
@@ -143,24 +185,7 @@ const CareersForm = () => {
               </div>
             ))}
 
-            {/* Gender */}
-            <div>
-              <label className="block text-gray-700 font-medium mb-2">Gender</label>
-              <select
-                name="gender"
-                value={formData.gender}
-                onChange={handleInputChange}
-                className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-                required
-              >
-                <option value="" disabled>
-                  Select Gender
-                </option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
+            
 
             {/* Resume Upload */}
             <div>
@@ -175,6 +200,7 @@ const CareersForm = () => {
             {/* Submit Button */}
             <button
               type="submit"
+              onSubmit={handleSubmit}
               className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
             >
               Submit
@@ -194,7 +220,9 @@ const CareersForm = () => {
         </footer>
       </div>
     </ContentWrapper>
-  );
-};
+);
+}
+
+
 
 export default CareersForm;

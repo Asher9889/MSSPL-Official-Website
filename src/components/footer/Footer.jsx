@@ -1,18 +1,16 @@
 import ContentWrapper from "../contentWrapper/ContentWrapper";
-import { IoLocationOutline } from "react-icons/io5";
-import { IoIosCall } from "react-icons/io";
 import MapComponent from "../googleMap/MapComponent";
 import SocialLinks from "../social-links/SocialLinks";
 import { forwardRef } from "react";
-import { gmail } from "../../assets";
+import { gmail, phone, map} from "../../assets";
+import { googleMapUrl } from "../../utils/links/links";
 // const footer = forwardRef(()=> ())
 
 /* eslint-disable */
 const Footer = forwardRef((_, ref) => {
   const handleMarkerClick = () => {
-    googleMapsURL =
-      "https://www.google.com/maps/place/Multifacet+Software+Systems+Pvt+Ltd/@26.4726595,80.3236151,49m/data=!3m1!1e3!4m6!3m5!1s0x399c3880bcee05c7:0xd7ffc1af02582e8c!8m2!3d26.4726406!4d80.3239828!16s%2Fg%2F11fy4v6lrc?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D";
-    window.open(googleMapsURL, "_blank");
+  //  url for google map nav
+    window.open(googleMapUrl, "_blank");
   };
 
   return (
@@ -27,10 +25,11 @@ const Footer = forwardRef((_, ref) => {
 
             <span className="flex gap-2 flex-row items-center ">
              
-              <IoLocationOutline className="text-3xl" />
+              {/* <IoLocationOutline className="text-3xl" /> */}
+              <img className="w-8" src={map} alt="" />
               <p
                 onClick={handleMarkerClick}
-                className="text-[20px] poppins-medium cursor-pointer "
+                className="text-[20px] poppins-medium cursor-pointer hover:scale-[1.01] transition-all duration-300"
               >
                 109/421,80 feet road, Kanpur(U.P),India
               </p>
@@ -42,7 +41,7 @@ const Footer = forwardRef((_, ref) => {
               <img className="w-10" src={gmail} alt="" />
               <p
                 href="mailto:msspl.mspl@gmail.com"
-                className="text-[20px] poppins-medium cursor-pointer"
+                className="text-[20px] poppins-medium cursor-pointer hover:scale-[1.01] transition-all duration-300"
               >
                 msspl.mspl@gmail.com
               </p>
@@ -50,19 +49,20 @@ const Footer = forwardRef((_, ref) => {
 
             <span className="flex gap-2 flex-row items-center">
               {/* <img src={"call"} alt="" /> */}
-              <IoIosCall className="text-3xl" />
-              <p className="text-[20px] poppins-medium cursor-pointer">
+              {/* <IoIosCall className="text-3xl" /> */}
+              <img className="w-10" src={phone} alt="phone_number" />
+              <p className="text-[20px] poppins-medium cursor-pointer hover:scale-[1.01] transition-all duration-300">
                 +91-9336810652, 9335148620, 9621509393
               </p>
             </span>
 
             
           </div>
-          <div className="flex-1  bg-black border-blue-800 border-[4px] opacity-[0.7] rounded-md">
+          <div className="flex-1 h-fit bg-black border-blue-800 border-[4px] opacity-[0.7] rounded-md">
             <MapComponent />
           </div>
         </div>
-        <div className="w-fit mt-6">
+        <div className="w-fit ">
               <SocialLinks />
           </div>
       </ContentWrapper>
