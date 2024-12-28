@@ -1,7 +1,8 @@
 import { useRef, useState } from "react";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import emailjs from '@emailjs/browser';
-
+import "./style.css";
+import { Navigate} from "react-router";
 
 const CareersForm = () => {
   const [formData, setFormData] = useState({
@@ -22,8 +23,10 @@ const CareersForm = () => {
     
   });
   
+  const [loading, setLoading] = useState(false);
   // const [loading, setLoading] = useState(false);
   const form = useRef();
+  // const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -36,18 +39,24 @@ const CareersForm = () => {
 
   //----- Handeling Submit button ----->
   const handleSubmit = async (e) => {
+    if(loading ) return;
+
+    setLoading(true);
     e.preventDefault();
   
     if (!formData.resume) {
       alert("Please upload a resume!");
+      setLoading(false);
       return;
     }
   
     // Create FormData for Cloudinary upload
     const formDataObj = new FormData();
-    console.log(formData.resume)
+
     if(!formData.resume){
       alert("file is not uploaded");
+      setLoading(false);
+      return;
 
     }
     formDataObj.append("resource_type", "pdf"); // Define the resource type
@@ -63,7 +72,8 @@ const CareersForm = () => {
   
       const data = await response.json();
   
-      if (!response.ok) {
+      if (!data) {
+        setLoading(false);
         throw new Error(data.error?.message || "Failed to upload resume. Please try again.");
       }
       console.log("Uploaded file URL:", data.secure_url);
@@ -85,9 +95,27 @@ const CareersForm = () => {
       );
   
       alert("Form submitted successfully!");
+      setFormData({
+        fullName: "",
+        fatherName: "",
+        otherDetails: "",
+        address: "",
+        city: "",
+        state: "",
+        email: "",
+        mobile: "",
+        pinCode: "",
+        qualification: "",
+        education: "",
+        gender: "",
+        post: "",
+        resume: null,
+      })
     } catch (error) {
       console.error("Error:", error.message);
       alert("An error occurred. Please try again.");
+    } finally{
+      setLoading(false);
     }
   };
   
@@ -241,9 +269,10 @@ const CareersForm = () => {
             <button
               type="submit"
               onClick={handleSubmit}
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
+              className="bg-blue-600 flex flex-row gap-4 items-center justify-center text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
             >
               Submit
+             {loading &&  <div className="loader"></div>}
             </button>
           </form>
         </div>
