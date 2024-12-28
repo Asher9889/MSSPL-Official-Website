@@ -3,6 +3,9 @@ import { cSoftwareDev, wSoftwareDev, uiux, mobileDev,  qualityAssurance, techSup
 import { GoSquareFill } from "react-icons/go";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { motion } from "motion/react";
+import { useNavigate } from "react-router";
+
+
 const data = [
   {
     title: " Custom Software Development",
@@ -11,6 +14,7 @@ const data = [
     paragraph2: "Business analysis",
     paragraph3: "Software architecture",
     paragraph4: "Maintenance",
+    link: "/products/android_apps"
   },
   {
     title: "Web Application Development",
@@ -19,6 +23,7 @@ const data = [
     paragraph2: "Backend development",
     paragraph3: "Software architecture",
     paragraph4: "Maintenance of lagacy system",
+    link: "/products/library_automation_system"
   },
   {
     title: "UI/UX Design",
@@ -27,6 +32,7 @@ const data = [
     paragraph2: "Business analysis",
     paragraph3: "Software architecture",
     paragraph4: "Maintenance",
+    link: "/products/campsys_erp_management"
   },
   {
     title: " Mobile App Development",
@@ -67,6 +73,7 @@ const data = [
     paragraph2: "Change management",
     paragraph3: "Project management consultation",
     paragraph4: "Project scoping and delivary",
+    link: "/products/e-commerce_development"
   },
   // {
   //   title: " Custom Software Development",
@@ -79,6 +86,13 @@ const data = [
 ];
 
 const Services = () => {
+
+  const navigate = useNavigate();
+
+  function handleNavigation (link){
+    navigate(link);
+    window.scrollTo(0, 0); 
+  }
   return (
     <section className="w-full mt-20">
       <ContentWrapper>
@@ -231,7 +245,7 @@ const Services = () => {
           </motion.ul>
 
           {/* "See More" Link */}
-          <motion.span
+          {elem.link && <motion.span
             className="absolute bottom-0 w-full p-4 z-10"
             variants={{
               rest: { opacity: 0, y: 20 },
@@ -239,10 +253,10 @@ const Services = () => {
             }}
             transition={{ duration: 0.3 }}
           >
-            <p className="flex flex-row gap-4 items-center poppins-regular text-cyan-600 hover:text-cyan-400 hover:underline  cursor-pointer">
+            <p onClick={()=> handleNavigation(elem.link)} className="flex flex-row gap-4 items-center poppins-regular text-cyan-600 hover:text-cyan-400 hover:underline  cursor-pointer">
               See more <IoIosArrowRoundForward className="text-4xl " />
             </p>
-          </motion.span>
+          </motion.span>}
         </motion.div>
       ))}
     </div>
