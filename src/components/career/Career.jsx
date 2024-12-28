@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import emailjs from '@emailjs/browser';
 import "./style.css";
-import { Navigate} from "react-router";
 
 const CareersForm = () => {
   const [formData, setFormData] = useState({
