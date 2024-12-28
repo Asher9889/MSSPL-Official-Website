@@ -84,7 +84,7 @@ const Services = () => {
       <ContentWrapper>
         <div className="">
           {/* top */}
-          <h1 className="poppins-semibold text-[2.5rem] my-8">
+          <h1 className="poppins-bold text-[36px] text-[--main-text-color] pb-10 pt-20">
             Services we offer
           </h1>
           {/* bottom */}

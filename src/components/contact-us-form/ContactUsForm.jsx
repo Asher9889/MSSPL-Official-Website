@@ -20,7 +20,7 @@ const ContactUsForm = ({ setShowContactForm }) => {
     return "";
   }
 
-  function sendEmail(e) {
+  async function sendEmail(e) {
     // console.log(form);
 
     e.preventDefault();
@@ -31,7 +31,7 @@ const ContactUsForm = ({ setShowContactForm }) => {
     }
     setLoading(true);
     setErrorMessage("");
-    emailjs
+    await emailjs
       .sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
@@ -130,7 +130,7 @@ const ContactUsForm = ({ setShowContactForm }) => {
           </div>
         )}
       </div>
-      {/* Success Message Popup */}
+     
     </>
   );
 };

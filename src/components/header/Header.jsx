@@ -24,14 +24,12 @@ const Header = () => {
   //   window.scrollY("1000px")
   // }
 
-  function handleScrollToFooter () {
-    
-  };
+ 
 
   return (
     <header className="relative z-10  w-full ">
       <ContentWrapper>
-        <div className="flex flex-row justify-between items-center py-4">
+        <div className="flex flex-row justify-between items-center my-4">
           {/* Left */}
           <img className="w-16" src={msspl_logo} alt="" />
           {/* Middle */}
@@ -44,8 +42,8 @@ const Header = () => {
                   key={option.title}
                 >
                   <p className="">{option.title}</p>
-                  <div className="absolute group-hover:block w-fit hidden bg-white ">
-                    <ul className="py-2">
+                  <div className="absolute group-hover:block w-fit hidden ">
+                    <ul className="my-2 bg-white">
                       {
                         option?.child?.map((el) => (
                           <li onClick={(e)=> {
@@ -67,7 +65,7 @@ const Header = () => {
 
           <button
           //  onClick={() => setShowContactForm(!showContactForm)}
-          onClick={handleScrollToFooter}
+          onClick={() => navigate("/contact_us")}
             className="cursor-pointer px-6 py-2 rounded-md text-white poppins-regular bg-[--button-bg-color] hover:bg-[--button-bg-hover-color] transition-all duration-400"
           >
             Contact Us

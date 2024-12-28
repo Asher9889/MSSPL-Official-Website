@@ -29,7 +29,7 @@ const Footer = forwardRef((_, ref) => {
               <img className="w-8" src={map} alt="" />
               <p
                 onClick={handleMarkerClick}
-                className="text-[20px] poppins-medium cursor-pointer hover:scale-[1.01] transition-all duration-300"
+                className="text-[20px] poppins-medium cursor-pointer hover:scale-[1.01] hover:underline transition-all duration-300"
               >
                 109/421,80 feet road, Kanpur(U.P),India
               </p>
@@ -39,12 +39,12 @@ const Footer = forwardRef((_, ref) => {
               {/* <MdEmail className="text-3xl" /> */}
               {/* <a href="https://www.flaticon.com/free-icons/gmail" title="gmail icons">Gmail icons created by Tinti Nodarse - Flaticon</a> */}
               <img className="w-10" src={gmail} alt="" />
-              <p
-                href="mailto:msspl.mspl@gmail.com"
-                className="text-[20px] poppins-medium cursor-pointer hover:scale-[1.01] transition-all duration-300"
+              <a
+                href="mailto:msspl.mspl@gmail.com" 
+                className="hover:underline  text-[20px] poppins-medium cursor-pointer hover:scale-[1.01] transition-all duration-300"
               >
                 msspl.mspl@gmail.com
-              </p>
+              </a>
             </span>
 
             <span className="flex gap-2 flex-row items-center">

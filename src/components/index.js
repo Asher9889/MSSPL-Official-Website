@@ -26,7 +26,7 @@ import ContactUsForm from "./contact-us-form/ContactUsForm";
 import HeaderTopLinks from "./header-top-links/HeaderTopLinks";
 import SplitTextAnimation from "./splite-text-animation/SplitTextAnimation"
 import CountUpAnimation from "./count-up-animation/CountUpAnimation";
-
+import ContactUs from "./contact-us/ContactUs";
 
 
 export {
@@ -57,5 +57,6 @@ export {
   ContactUsForm,
   HeaderTopLinks,
   SplitTextAnimation,
-  CountUpAnimation
+  CountUpAnimation,
+  ContactUs
 };
