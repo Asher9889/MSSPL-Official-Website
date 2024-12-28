@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import emailjs from '@emailjs/browser';
 
+
 const CareersForm = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -18,7 +19,9 @@ const CareersForm = () => {
     gender: "",
     post: "",
     resume: null,
+    
   });
+  
   // const [loading, setLoading] = useState(false);
   const form = useRef();
 
@@ -31,28 +34,64 @@ const CareersForm = () => {
     setFormData({ ...formData, resume: e.target.files[0] });
   };
 
-  const handleSubmit = (e) => {
+  //----- Handeling Submit button ----->
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-      // setLoading(true);
-      // setErrorMessage(""); 
-      emailjs
-      .sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID_CAREER, form.current, {
-        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-      })
-      .then(
-        () => {
-          console.log('SUCCESS!');
-          // setLoading(false);
-          // setShowSuccessMessage(true); // Show the success message
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
-          // setLoading(false);
-        },
-      );
+  
+    if (!formData.resume) {
+      alert("Please upload a resume!");
+      return;
+    }
+  
+    // Create FormData for Cloudinary upload
+    const formDataObj = new FormData();
+    console.log(formData.resume)
+    if(!formData.resume){
+      alert("file is not uploaded");
 
-  }
+    }
+    formDataObj.append("resource_type", "pdf"); // Define the resource type
+    formDataObj.append("file", formData.resume); // File to upload
+    formDataObj.append("upload_preset", "MSSPl_Career"); // Replace with your Cloudinary unsigned preset
+  
+    try {
+      // Upload file to Cloudinary
+      const response = await fetch("https://api.cloudinary.com/v1_1/saurabhbackend/raw/upload", {
+        method: "POST",
+        body: formDataObj,
+      });
+  
+      const data = await response.json();
+  
+      if (!response.ok) {
+        throw new Error(data.error?.message || "Failed to upload resume. Please try again.");
+      }
+      console.log("Uploaded file URL:", data.secure_url);
+      // const secureUrl = await fetchCloudinaryResource(data.public_id);
+      // console.log("Secure urk is ",secureUrl);
+      const updatedFormData = { ...formData, resume: data.secure_url };
+  
+     
+      const emailData = {
+        ...updatedFormData,
+      };
+  
+     
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID_CAREER,
+        emailData,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+  
+      alert("Form submitted successfully!");
+    } catch (error) {
+      console.error("Error:", error.message);
+      alert("An error occurred. Please try again.");
+    }
+  };
+  
+  
   
 
 
@@ -192,6 +231,7 @@ const CareersForm = () => {
               <label className="block text-gray-700 font-medium mb-2">Resume</label>
               <input
                 type="file"
+                accept=".pdf"
                 onChange={handleFileChange}
                 className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
@@ -200,7 +240,7 @@ const CareersForm = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              onSubmit={handleSubmit}
+              onClick={handleSubmit}
               className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
             >
               Submit
