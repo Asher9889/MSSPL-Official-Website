@@ -46,7 +46,7 @@ import { useEffect, useRef, useState } from 'react';
         <animated.span
           key={index}
           style={props}
-          className="inline-block transform will-change-transform will-change-opacity  text-blue-600"
+          className="inline-block transform will-change-transform will-change-opacity  text-blue-800"
         >
           {words[index]}
           {index < words.length - 1 && <span>&nbsp;</span>}
