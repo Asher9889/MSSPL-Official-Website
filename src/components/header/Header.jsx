@@ -40,7 +40,9 @@ const Header = () => {
   // For Parent Navigation Small Screen
   function handleParentNavigation(title) {
     if (activeParent === title) {
-      setActiveParent(""); // Collapse if already active
+      setActiveParent(""); 
+      console.log("Active parent: ", activeParent, "Title is: ", title)
+      // Collapse if already active
     } else {
 
       setActiveParent(title); 
@@ -122,60 +124,60 @@ const Header = () => {
           {/* for small screen */}
           <div className="">
             {!showMenu ? (
-              <AiOutlineMenu onClick={handleShowMenu} className="h-8 w-8" />
+              <AiOutlineMenu onClick={handleShowMenu} className="h-8 w-8 block lg:hidden" />
             ) : (
-              <AiOutlineClose onClick={handleShowMenu} className="h-8 w-8" />
+              <AiOutlineClose onClick={handleShowMenu} className="h-8 w-8 block lg:hidden" />
             )}
           </div>
 
           {showMenu && (
-  <AnimatePresence>
-    <motion.div
-      key="menu"
-      initial={{ opacity: 0, y: -50 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -50 }}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="absolute top-[100%] left-0 w-full h-fit bg-[--main-text-color] text-white px-2 z-50"
-    >
-      <div className="py-4">
-        {headerOption.map((option) => (
-          <div key={option.title}>
-            <div
-              onClick={() => handleParentNavigation(option.title)}
-              className={`w-full text-xl py-[5px] poppins-regular cursor-pointer border-b-[1px] border-zinc-400 ${
-                activeParent === option.title ? "font-bold" : ""
-              }`}
-            >
-              {option.title}
-            </div>
-
             <AnimatePresence>
-              {option.title === activeParent && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="overflow-hidden flex flex-col px-4 mt-2"
-                >
-                  {option.child.map((child) => (
-                    <div
-                      key={child}
-                      onClick={() => handleChildNavigation(option.title, child)}
-                      className="text-lg py-[5px] poppins-regular hover:text-lg transition-all cursor-pointer"
-                    >
-                      {child}
+              <motion.div
+                key="menu"
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -50 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                className="block lg:hidden absolute top-[100%] left-0 w-full h-fit bg-[--main-text-color] text-white px-2 z-50"
+              >
+                <div className="py-4">
+                  {headerOption.map((option) => (
+                    <div key={option.title}>
+                      <div
+                        onClick={() => handleParentNavigation(option.title)}
+                        className={`w-full text-xl py-[5px] poppins-regular cursor-pointer border-b-[1px] border-zinc-400 ${
+                          activeParent == option.title ? "font-bold text-2xl" : ""
+                        }`}
+                      >
+                        {option.title}
+                      </div>
+
+                      <AnimatePresence>
+                        {option.title === activeParent && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                            className="overflow-hidden flex flex-col px-4 mt-2"
+                          >
+                            {option.child.map((child) => (
+                              <div
+                                key={child}
+                                onClick={() => handleChildNavigation(option.title, child)}
+                                className="text-lg py-[5px] poppins-regular hover:text-lg transition-all cursor-pointer"
+                              >
+                                {child}
+                              </div>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                   ))}
-                </motion.div>
-              )}
+                </div>
+              </motion.div>
             </AnimatePresence>
-          </div>
-        ))}
-      </div>
-    </motion.div>
-  </AnimatePresence>
 )}
           {/* Right */}
 

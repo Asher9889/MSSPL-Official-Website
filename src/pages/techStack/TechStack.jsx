@@ -17,7 +17,7 @@ const database = [msSQL, msAzure, redis, mongoDB, sql, oracle];
 
 const TechStack = () => {
 
-  const [activeSection, setActiveSection] = useState("Development Framework");
+  const [activeSection, setActiveSection] = useState(buttons[0]);
 
   const sections = {
     "Development Framework": frameWork,
@@ -30,24 +30,22 @@ const TechStack = () => {
   const handleActiveSection = (btn) => setActiveSection(btn);
 
   return (
-    <section className="w-full bg-green-950 mt-10 py-20 pb-40">
+    <section className="w-full bg-green-950 mt-10 py-20 pb-40 ">
       <ContentWrapper>
         <h1 className="poppins-semibold text-white text-[2rem] md:text-[3rem] mb-10">
           Our Tech Stack
         </h1>
 
         {/* Buttons */}
-        <div className="mb-20 overflow-x-auto">
-          <ul className="flex justify-center md:justify-start items-center gap-6 text-white text-lg">
+        <div className="w-full mb-20 overflow-x-auto ">
+          <ul className="w-full flex flex-row  lg:justify-start items-center gap-6 text-white text-lg">
             {buttons.map((btn) => (
-              <li key={btn} onClick={() => handleActiveSection(btn)} className="text-lg shrink-0 mb-2">
-                <button
-                  className={`${
-                    activeSection === btn ? "px-8 py-2 rounded-full bg-blue-500" : ""
-                  }`}
-                >
+              <li key={btn} onClick={() => handleActiveSection(btn)} className={`w-fit text-lg shrink-0 mb-2 ${activeSection === btn ? "px-8 py-2 rounded-full bg-blue-500" : ""}`}>
+                {/* <button
+                 
+                > */}
                   {btn}
-                </button>
+                {/* </button> */}
               </li>
             ))}
           </ul>

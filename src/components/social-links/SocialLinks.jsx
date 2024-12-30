@@ -83,7 +83,7 @@ const SocialLinks = () => {
       ></path>
     </svg>
   </li>
-  <li className="icon instagram">
+  <li className="icon instagram" onClick={()=> window.open("https://www.instagram.com/multifacetsoftwaresystems/",  "_blank")}>
     <span className="tooltip">Instagram</span>
     <svg
       xmlns="http://www.w3.org/2000/svg"
