@@ -4,6 +4,7 @@ import { headerOption } from "../../utils/values/data";
 import { msspl_logo } from "../../assets";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai"; // Hamburger icons
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 
 const Header = () => {
@@ -128,35 +129,53 @@ const Header = () => {
           </div>
 
           {showMenu && (
-          <div className="absolute top-[100%] left-0 w-full h-fit bg-[--main-text-color] text-white px-2 z-50">
-            <div className="py-6">
-              {headerOption.map((option) => (
-                <div key={option.title}>
-                  <div
-                    onClick={() => handleParentNavigation(option.title)}
-                    className={`text-lg poppins-regular cursor-pointer ${
-                      activeParent === option.title ? "font-bold" : ""
-                    }`}
-                  >
-                    {option.title}
-                  </div>
-                  {option.title === activeParent && (
-                    <div className="flex flex-col px-4 mt-2">
-                      {option.child.map((child) => (
-                        <div
-                          key={child}
-                          onClick={() => handleChildNavigation(option.title, child)}
-                          className="text-base poppins-regular hover:text-lg transition-all cursor-pointer"
-                        >
-                          {child}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
+  <AnimatePresence>
+    <motion.div
+      key="menu"
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      className="absolute top-[100%] left-0 w-full h-fit bg-[--main-text-color] text-white px-2 z-50"
+    >
+      <div className="py-4">
+        {headerOption.map((option) => (
+          <div key={option.title}>
+            <div
+              onClick={() => handleParentNavigation(option.title)}
+              className={`w-full text-xl py-[5px] poppins-regular cursor-pointer border-b-[1px] border-zinc-400 ${
+                activeParent === option.title ? "font-bold" : ""
+              }`}
+            >
+              {option.title}
             </div>
+
+            <AnimatePresence>
+              {option.title === activeParent && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden flex flex-col px-4 mt-2"
+                >
+                  {option.child.map((child) => (
+                    <div
+                      key={child}
+                      onClick={() => handleChildNavigation(option.title, child)}
+                      className="text-lg py-[5px] poppins-regular hover:text-lg transition-all cursor-pointer"
+                    >
+                      {child}
+                    </div>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
+        ))}
+      </div>
+    </motion.div>
+  </AnimatePresence>
 )}
           {/* Right */}
 
