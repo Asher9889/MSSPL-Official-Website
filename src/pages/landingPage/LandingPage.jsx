@@ -35,7 +35,7 @@ const LandingPage = () => {
               <p className=" poppins-regular text-center">Incubated at IIT Kanpur</p> You Think it. We Build it.
             </h2>
             <button
-              className=" mt-6 text-xl lg:text-2xl cursor-pointer px-6 py-2 rounded-md text-white poppins-regular bg-[--button-bg-color] hover:bg-[--button-bg-hover-color] transition-all duration-400"
+              className="relative z-30 mt-6 text-xl lg:text-2xl cursor-pointer px-6 py-2 rounded-md text-white poppins-regular bg-[--button-bg-color] hover:bg-[--button-bg-hover-color] transition-all duration-400"
               onClick={() => setShowContactForm(!showContactForm)} // Toggle form visibility
             >
               Get in touch
