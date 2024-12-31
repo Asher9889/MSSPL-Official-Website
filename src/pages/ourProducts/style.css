@@ -82,3 +82,25 @@
     fill: transparent;
   }
   
+
+  /* For Scroller */
+  .custom-scroller::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+    height: 8px; /* Height of the scrollbar (for horizontal scroll) */
+  }
+  
+  .custom-scroller::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #0a74e5, #05b3d2); /* Gradient for the thumb */
+    border-radius: 4px; /* Round edges for the thumb */
+  }
+  
+
+  
+
+  
+
+  .custom-scroller {
+    scrollbar-width: thin; /* For Firefox - thin scrollbar */
+    scrollbar-color: #258ddd #f0f0f0; /* For Firefox - thumb and track colors */
+  }
+  

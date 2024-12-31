@@ -2,7 +2,7 @@ import LandingPage from "./landingPage/LandingPage";
 import Outcome from "./outcome/Outcome";
 import TechStack from "./techStack/TechStack";
 import OurProducts from "./ourProducts/OurProducts";
-import Work from "./work/Work";
+// import Work from "./work/Work";
 import OurServices from "./ourServices/OurServices";
 import NewOurProducts from "./ourProducts/newOurProducts";
 import ContactUs from "./contact-us/ContactUs";
@@ -15,7 +15,7 @@ export {
   Outcome,
   TechStack,
   OurProducts,
-  Work,
+  // Work,
   OurServices,
   NewOurProducts,
   ContactUs,

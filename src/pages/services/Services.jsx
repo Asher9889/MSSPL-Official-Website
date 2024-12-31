@@ -1,81 +1,23 @@
 import { ContentWrapper } from "../../components";
-import {
-  cSoftwareDev,
-  wSoftwareDev,
-  uiux,
-  mobileDev,
-  qualityAssurance,
-  techSupport,
-  ProjManagment,
-} from "../../utils/links/links";
 import { GoSquareFill } from "react-icons/go";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router";
+import { data } from "../../utils/values/data";
+import { useInView } from "react-intersection-observer";
 
-// Data for services
-const data = [
-  {
-    title: "Custom Software Development",
-    pic: cSoftwareDev,
-    paragraph1: "Web and mobile application development",
-    paragraph2: "Business analysis",
-    paragraph3: "Software architecture",
-    paragraph4: "Maintenance",
-    link: "/products/android_apps",
-  },
-  {
-    title: "Web Application Development",
-    pic: wSoftwareDev,
-    paragraph1: "Frontend development",
-    paragraph2: "Backend development",
-    paragraph3: "Software architecture",
-    paragraph4: "Maintenance of legacy systems",
-    link: "/products/library_automation_system",
-  },
-  {
-    title: "UI/UX Design",
-    pic: uiux,
-    paragraph1: "Mobile app design",
-    paragraph2: "Business analysis",
-    paragraph3: "Software architecture",
-    paragraph4: "Maintenance",
-    link: "/products/campsys_erp_management",
-  },
-  {
-    title: "Mobile App Development",
-    pic: mobileDev,
-    paragraph1: "iOS app development",
-    paragraph2: "Android App development",
-    paragraph3: "Cross-platform development",
-  },
-  {
-    title: "Quality Assurance",
-    pic: qualityAssurance,
-    paragraph1: "Manual Testing",
-    paragraph2: "Automation Testing",
-    paragraph3: "Functional Testing",
-    paragraph4: "Security Testing",
-  },
-  {
-    title: "Technical Support",
-    pic: techSupport,
-    paragraph1: "Software Maintenance",
-    paragraph2: "Infrastructure Support",
-  },
-  {
-    title: "Project Management",
-    pic: ProjManagment,
-    paragraph1: "Project portfolio management",
-    paragraph2: "Change management",
-    paragraph3: "Project management consultation",
-    paragraph4: "Project scoping and delivery",
-    link: "/products/e-commerce_development",
-  },
-];
 
 const Services = () => {
   const navigate = useNavigate();
+
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Ensures animation runs only once
+    threshold: 0.1,    // Triggers when 20% of the element is in view
+  });
+  const headingVariants = {
+    hidden: { opacity: 0, y: 50 }, // Start off-screen and faded
+    visible: { opacity: 1, y: 0 }, // End in place and fully visible
+  };
 
   // Function to handle navigation
   function handleNavigation(link) {
@@ -88,13 +30,27 @@ const Services = () => {
       <ContentWrapper>
         <div>
           {/* Section title */}
-          <h1 className="poppins-bold text-[36px] text-[--main-text-color] pb-10 pt-20">
+          <motion.h1 variants={headingVariants}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              transition={{
+                duration: 1, // Animation duration
+                ease: "easeOut", // Smooth easing
+              }}  className="poppins-bold text-[36px] text-[--main-text-color] pb-10 pt-20">
             {"Services we offer".toUpperCase()}
-          </h1>
+          </motion.h1>
 
           {/* Services Grid */}
-          <div className="flex flex-row justify-center md:justify-center flex-wrap gap-8">
+          <div ref={ref}  className="flex flex-row justify-center md:justify-center flex-wrap gap-8">
             {data.map((elem, index) => (
+              <motion.div  variants={headingVariants}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              transition={{
+                duration: 1, // Animation duration
+                ease: "easeOut", // Smooth easing
+              }} 
+              key={index}>
               <motion.div
                 key={index}
                 className="w-[380px] h-[400px] relative text-white bg-red-800 overflow-hidden"
@@ -175,6 +131,7 @@ const Services = () => {
                     </p>
                   </motion.span>
                 )}
+              </motion.div>
               </motion.div>
             ))}
           </div>

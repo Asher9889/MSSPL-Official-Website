@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ContentWrapper } from "../../components";
 import { AnimatePresence, motion } from "motion/react";
+import { useInView } from "react-intersection-observer";
 import { oracle, sql, mongoDB, redis, msAzure, msSQL, flutter, reactNative, kotlin, nodeJS, dotNetCore, dotNet, aspDotNetCore, angular, react, bootstrap, typeScript, javaScript, python  } from "../../utils/links/links";
 
 const buttons = ["Development Framework", "Web Development", "Languages", "Mobile Development", "Database" ]
@@ -17,6 +18,7 @@ const database = [msSQL, msAzure, redis, mongoDB, sql, oracle];
 
 const TechStack = () => {
 
+
   const [activeSection, setActiveSection] = useState(buttons[0]);
 
   const sections = {
@@ -27,10 +29,27 @@ const TechStack = () => {
     "Database": database,
   };
 
+
   const handleActiveSection = (btn) => setActiveSection(btn);
 
+  // For Framer Motion
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Ensures animation runs only once
+    threshold: 0.2,    // Triggers when 20% of the element is in view
+  });
+  const headingVariants = {
+    hidden: { opacity: 0, y: 50 }, // Start off-screen and faded
+    visible: { opacity: 1, y: 0 }, // End in place and fully visible
+  };
+
   return (
-    <section className="w-full bg-green-950 mt-10 py-20 pb-40 ">
+    <motion.section ref={ref} variants={headingVariants}
+    initial="hidden"
+    animate={inView ? "visible" : "hidden"}
+    transition={{
+      duration: 1, // Animation duration
+      ease: "easeOut", // Smooth easing
+    }} className="w-full bg-green-950 mt-10 py-20 pb-40 ">
       <ContentWrapper>
         <h1 className="poppins-semibold text-white text-[2rem] md:text-[3rem] mb-10">
           Our Tech Stack
@@ -69,7 +88,7 @@ const TechStack = () => {
           </AnimatePresence>
         </div>
       </ContentWrapper>
-    </section>
+    </motion.section>
   );
 };
 

@@ -27,7 +27,7 @@ import HeaderTopLinks from "./header-top-links/HeaderTopLinks";
 import SplitTextAnimation from "./splite-text-animation/SplitTextAnimation"
 import CountUpAnimation from "./count-up-animation/CountUpAnimation";
 import ContactUs from "./contact-us/ContactUs";
-
+import ProductCard from "./products-card/ProductCard";
 
 export {
   Header,
@@ -58,5 +58,6 @@ export {
   HeaderTopLinks,
   SplitTextAnimation,
   CountUpAnimation,
-  ContactUs
+  ContactUs,
+  ProductCard
 };

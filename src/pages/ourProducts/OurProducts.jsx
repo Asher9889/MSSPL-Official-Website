@@ -1,7 +1,7 @@
 import { ContentWrapper } from "../../components";
 import vehicle from "../../assets/vehicle.png";
 import vWorkShop from "../../assets/vWorkShop.png";
-import Elibrary from "../../assets/eLibrary.png";
+
 import { docs, smartClass, kiosk, facial, inventory } from "../../assets";
 
 const data = [
@@ -15,7 +15,7 @@ const data = [
     },
     {
         title: "E-Library Management System",
-        img: Elibrary
+        img: ""
     },
     {
         title: "Document Management System",

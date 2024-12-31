@@ -1,4 +1,5 @@
-import { libraryComp, library_quality, fts} from "../../assets";
+import { libraryComp, library_quality, fts, mobileDev} from "../../assets";
+import { cSoftwareDev, ProjManagment, qualityAssurance, techSupport, uiux, wSoftwareDev } from "../links/links";
 
 
 
@@ -437,4 +438,65 @@ const headerOption = [
         },
       ];
 
-export { requirementsAnalysis, options, products, headerOption, softGranthInfo, libraryAutomationServices, campSysInfo, digitalAcademicsCampus, systemFeatures, rfidSystemInfo };
+//  App.jsx => Service Componet
+const data = [
+  {
+    title: "Custom Software Development",
+    pic: cSoftwareDev,
+    paragraph1: "Web and mobile application development",
+    paragraph2: "Business analysis",
+    paragraph3: "Software architecture",
+    paragraph4: "Maintenance",
+    link: "/products/android_apps",
+  },
+  {
+    title: "Web Application Development",
+    pic: wSoftwareDev,
+    paragraph1: "Frontend development",
+    paragraph2: "Backend development",
+    paragraph3: "Software architecture",
+    paragraph4: "Maintenance of legacy systems",
+    link: "/products/library_automation_system",
+  },
+  {
+    title: "UI/UX Design",
+    pic: uiux,
+    paragraph1: "Mobile app design",
+    paragraph2: "Business analysis",
+    paragraph3: "Software architecture",
+    paragraph4: "Maintenance",
+    link: "/products/campsys_erp_management",
+  },
+  {
+    title: "Mobile App Development",
+    pic: mobileDev,
+    paragraph1: "iOS app development",
+    paragraph2: "Android App development",
+    paragraph3: "Cross-platform development",
+  },
+  {
+    title: "Quality Assurance",
+    pic: qualityAssurance,
+    paragraph1: "Manual Testing",
+    paragraph2: "Automation Testing",
+    paragraph3: "Functional Testing",
+    paragraph4: "Security Testing",
+  },
+  {
+    title: "Technical Support",
+    pic: techSupport,
+    paragraph1: "Software Maintenance",
+    paragraph2: "Infrastructure Support",
+  },
+  {
+    title: "Project Management",
+    pic: ProjManagment,
+    paragraph1: "Project portfolio management",
+    paragraph2: "Change management",
+    paragraph3: "Project management consultation",
+    paragraph4: "Project scoping and delivery",
+    link: "/products/e-commerce_development",
+  },
+];
+
+export { requirementsAnalysis, options, products, headerOption, softGranthInfo, libraryAutomationServices, campSysInfo, digitalAcademicsCampus, systemFeatures, rfidSystemInfo, data };

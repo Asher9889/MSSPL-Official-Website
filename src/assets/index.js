@@ -3,8 +3,7 @@ import smartClass from "./smartClass.png";
 import kiosk from "./kiosk.png";
 import facial from "./facial.png";
 import inventory from "./inventory.png";
-import clutch from "./clutch.webp";
-import mobile from "./mobile.webp";
+// import mobile from "./mobile.webp";
 import bg from "./bg.webp";
 import star from "./star.svg";
 import eye from "./eyes.webp";
@@ -48,16 +47,40 @@ import msspl_logo from "./msspl_logo.webp";
 import gmail from "./gmail.png";
 import map from "./map.webp";
 import phone from "./phone.webp";
+import eLibrary from "./eLibrary.webp";
+import pngwing from "./pngwing.webp";
+import attendance from "./attendance.webp";
+import vehicle from "./vehicle.png";
+import vtss from "./vtss.webp";
+import vwmss from "./vwmss.webp";
+import escrap from "./escrap.webp";
+import inventorys from "./inventorys.webp";
+import advertisement from "./advertisement.webp";
+import face from "./face.webp";
+import pole from "./pole.webp";
+import dmss from "./dmss.webp";
+import opac from "./opac.webp";
 
 
 export {
+  opac,
+  dmss,
+  pole,
+  face,
+  advertisement,
+  inventorys,
+  escrap,
+  vwmss,
+  vtss,
+  vehicle,
+  attendance,
+  pngwing,
   docs,
   smartClass,
   kiosk,
   facial,
   inventory,
-  clutch,
-  mobile,
+  // mobile,
   bg,
   star,
   eye,
@@ -100,5 +123,6 @@ export {
   msspl_logo,
   gmail,
   map,
-  phone
+  phone,
+  eLibrary,
 };

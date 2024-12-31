@@ -24,15 +24,20 @@ const qualities = [
   },
 ];
 
-// Framer Motion animation variants
-const textVariants = {
-  hidden: { opacity: 0, y: 50 }, // Initial state (off-screen below)
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }, // Final state (on-screen)
-};
+
 
 const WorkSatisfaction = () => {
   // Intersection observer for in-view animations
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
+  // Framer Motion animation variants
+  const textVariants = {
+    hidden: { opacity: 0, y: 50 }, // Initial state (off-screen below)
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }, // Final state (on-screen)
+  };
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Ensures animation runs only once
+    threshold: 0.2,    // Triggers when 20% of the element is in view
+  });
+ 
 
   return (
     <div className="w-full pt-32 pb-32">
@@ -40,13 +45,17 @@ const WorkSatisfaction = () => {
       <ContentWrapper>
         <div className="w-full">
           {/* Header section */}
-          <div className="flex flex-row flex-wrap gap-20 md:gap-28">
+          <div   ref={ref} className="flex flex-row flex-wrap gap-20 md:gap-28">
             {/* Title section with animation */}
             <motion.div
-              ref={ref}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              variants={textVariants}
+
+            variants={textVariants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            transition={{
+              duration: 1, // Animation duration
+              ease: "easeOut", // Smooth easing
+            }}
               className="w-full flex-1"
             >
               <h1 className="poppins-bold text-[32px] text-[--main-text-color]">
