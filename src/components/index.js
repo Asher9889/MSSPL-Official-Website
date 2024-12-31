@@ -28,6 +28,10 @@ import SplitTextAnimation from "./splite-text-animation/SplitTextAnimation"
 import CountUpAnimation from "./count-up-animation/CountUpAnimation";
 import ContactUs from "./contact-us/ContactUs";
 import ProductCard from "./products-card/ProductCard";
+import ClientCorousal from "./corousal-banner/ClientCorousal";
+
+
+
 
 export {
   Header,
@@ -59,5 +63,6 @@ export {
   SplitTextAnimation,
   CountUpAnimation,
   ContactUs,
-  ProductCard
+  ProductCard,
+  ClientCorousal
 };

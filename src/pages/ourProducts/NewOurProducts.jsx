@@ -1,22 +1,22 @@
-import { eLibrary, pngwing, attendance,  vtss, vwmss, escrap, inventorys, advertisement, face, pole, dmss, opac } from "../../assets";
+import { eLibrary, pngwing, attendance,  vtss, vwmss, escrap, inventorys, advertisement, face, pole, dmss, opac, assests, workflow, erp, attendances, health } from "../../assets";
 import { ContentWrapper, ProductCard } from "../../components";
 // import { vwms, elib, vts, dms, attandence } from "../../assets";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+// import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 import "./style.css";
 import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
-import { useRef } from "react";
+// import { useRef } from "react";
 
 const productArray = [
   {
-    name: "DigiLib Library Management System(ERP)",
-    description: "An advanced Library Management System designed to revolutionize library functions using RFID/Barcode technology with a user-friendly interface.",
+    name: "DigiLib Library Management System",
+    description: "It is an advanced Library Management System (ERP) designed to revolutionize library function in the digital age. It combines the latest RFID/Barcode technology with a user-friendly interface, offering a seamless solution for managing library operations.",
     img: eLibrary
   },
   {
     name: "Digital Library / e-Library",
-    description: "Transforms traditional libraries into dynamic digital spaces for managing, accessing, and sharing digital resources efficiently.",
+    description: "It is an innovative platform that transforms traditional libraries into dynamic digital spaces. This e-Library system offers a versatile and comprehensive solution for managing, accessing, and sharing digital resources efficiently.",
     img: pngwing
   },
   {
@@ -26,23 +26,28 @@ const productArray = [
   },
   {
     name: "Vehicle Tracking System (VTS)",
-    description: "Real-time tracking and monitoring system ensuring optimal route management, reduced fuel consumption, and timely service delivery.",
+    description: "Our system offers real-time tracking and monitoring of all vehicles, ensuring optimal route management, reduced fuel consumption, and timely service delivery.",
     img: vtss
   },
   {
     name: "Vehicle Workshop Management System (VWMS)",
-    description: "Optimizes workshop operations with solutions for managing customer service, vehicle repairs, inventory, and overall efficiency.",
+    description: "It is designed to optimize the operations of workshops. VWMS offers an end-to-end solution for managing customer service, vehicle repairs, inventory, and overall workshop efficiency.",
     img: vwmss
   },
   {
     name: "e-Scrap (Landfill Automation)",
-    description: "An innovative platform for optimizing the handling and tracking of scrap materials in industrial environments.",
+    description: "The Digital Management of Scraps system is an innovative platform designed to optimize the handling and tracking of scrap materials in industrial and manufacturing environments.",
     img: escrap
   },
   {
     name: "Inventory Management System",
-    description: "Streamlines inventory management across industries with real-time visibility, automated processes, and comprehensive reporting.",
+    description: "It is a powerful and intuitive platform designed to streamline the management of inventory across industries. This system offers real-time visibility, automated processes, GIS Mapping and comprehensive reporting to help businesses optimize their inventory control.",
     img: inventorys
+  },
+  {
+    name: "Attendance Management System(Face/Biometric/RFID Based)",
+    description : "It is an advanced solution designed to automate and streamline the tracking process using cutting-edge Face Recognition, Biometric, and RFID technologies. This provides a secure, accurate, and efficient way to monitor employee attendance",
+    img: attendances
   },
   // {
   //   name: "Legal Management System",
@@ -81,7 +86,7 @@ const productArray = [
   // },
   {
     name: "Advertisement Management System",
-    description: "Optimizes the planning, execution, and analysis of advertising campaigns.",
+    description: "Our Advertisement Management Automation System is an advanced solution designed to streamline and optimize the planning, execution, and analysis of advertising campaigns.",
     img: advertisement
   },
   // {
@@ -111,50 +116,50 @@ const productArray = [
   // },
   {
     name: "Face Recognition and Detection Using AI",
-    description: "Leverages RFID and AI for accurate and efficient face recognition.",
+    description: "The Face Recognition and Detection System Using AI leverages advanced artificial intelligence algorithms to identify and verify individuals based on facial features.",
     img: face
   },
-  // {
-  //   name: "Digital Academic System (DAS-ERP)",
-  //   description: "An ERP solution for managing academic operations effectively.",
-  //   img: ""
-  // },
-  // {
-  //   name: "Asset Management System (RFID)",
-  //   description: "Tracks and manages assets using RFID and GIS Mapping.",
-  //   img: ""
-  // },
+  {
+    name: "Digital Academic System (DAS-ERP)",
+    description: "DAS ERP (Enterprise Resource Planning) is an integrated software solution designed to streamline and optimize the core business processes of organizations across various industries.",
+    img: erp
+  },
+  {
+    name: "Asset Management System (RFID)",
+    description: "It is a robust and efficient solution for tracking and managing assets using Radio Frequency Identification (RFID) technology and GIS Mapping.",
+    img: assests
+  },
   {
     name: "Pole and Street Light Management System",
-    description: "Manages street lights and poles, including inventory and operational status.",
+    description: "The Pole and Street Light Management System isdesigned to efficiently manage and track the inventory of street lights and poles. This system provides a comprehensive asset database, including asset ID, location, type, installation date, and operational status.",
     img: pole
   },
-  // {
-  //   name: "Workflow Management System",
-  //   description: "Centralizes document, workflow, and communication management to enhance organizational efficiency.",
-  //   img: ""
-  // },
+  {
+    name: "Workflow Management System",
+    description: "The e-Office Management system offers a centralized solution for managing documents, workflows, communication, and administrative tasks, empowering organizations to enhance efficiency, reduce paper usage, and maintain a well-organized digital workspace.",
+    img: workflow
+  },
   {
     name: "Document Management System (DMS)",
-    description: "Streamlines the storage, management, and retrieval of digital documents.",
+    description: "DMS is a robust solution designed to streamline the storage, management, and retrieval of digital documents and records. Our DMS enhances organizational efficiency, reduces operational costs, and improves compliance and security.",
     img: dmss
   },
   {
     name: "OPAC",
-    description: "Online Public Access Catalog system for libraries to provide easy collection access.",
+    description: "Our Online Public Access Catalog (OPAC) systemis a user-friendly, web-based tool that allows libraries to offer patrons easy access to their collections.",
     img: opac
   },
   {
     name: "Health Management System",
-    description: "Enhances healthcare facility management, patient care, and administrative tasks.",
-    img: ""
+    description: "It is a comprehensive solution designed to streamline and enhance the management of healthcare facilities, patient care, and administrative tasks.",
+    img: health
   }
 ];
 
 
 
 const NewOurProducts = () => {
-  const scrollRef = useRef(null)
+  // const scrollRef = useRef(null)
   const [ref, inView] = useInView({
     triggerOnce: true, // Ensures animation runs only once
     threshold: 0.1, // Triggers when 20% of the element is in view
@@ -164,15 +169,15 @@ const NewOurProducts = () => {
     visible: { opacity: 1, y: 0 }, // End in place and fully visible
   };
 
-  function handleLeftScroll (){
-    console.log("Left")
-    scrollRef.current.scrollBy({ left: -400, behavior: 'smooth' });
-  }
+  // function handleLeftScroll (){
+  //   console.log("Left")
+  //   scrollRef.current.scrollBy({ left: -400, behavior: 'smooth' });
+  // }
 
-  function handleRightScroll (){
-    console.log("Right")
-    scrollRef.current.scrollBy({ left: 400, behavior: 'smooth' });
-  }
+  // function handleRightScroll (){
+  //   console.log("Right")
+  //   scrollRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+  // }
 
   return (
     <div className="">
@@ -357,22 +362,23 @@ const NewOurProducts = () => {
               </div>
             </motion.div> */}
           </div>
+
         </div>
 
 
-        <div className="relative">  
-          <div ref={scrollRef} className="custom-scroller w-full h-[500px] flex flex-row items-center gap-10 overflow-x-scroll px-10">
+        <div className="">  
+          <div  className="w-full  flex flex-row flex-wrap w-full h-fit justify-center  items-start gap-6 px-10">
 
-            <button onClick={handleRightScroll} className="absolute -right-10 z-20  bg-yellow-200 p-4 rounded-full scale-[0.8] hover:scale-[0.99] transition-all duration-300 hover:bg-yellow-400">
+            {/* <button onClick={handleRightScroll} className="absolute -right-10 z-20  bg-yellow-200 p-4 rounded-full scale-[0.8] hover:scale-[0.99] transition-all duration-300 hover:bg-yellow-400">
               <FaArrowRight className="text-3xl"/>
-            </button>
+            </button> */}
 
-            <button onClick={handleLeftScroll} className="absolute -left-10 z-20 bg-yellow-200 p-4 rounded-full scale-[0.8] hover:scale-[0.99] transition-all duration-300 hover:bg-yellow-400">
+            {/* <button onClick={handleLeftScroll} className="absolute -left-10 z-20 bg-yellow-200 p-4 rounded-full scale-[0.8] hover:scale-[0.99] transition-all duration-300 hover:bg-yellow-400">
               <FaArrowLeft className="text-3xl"/>
-            </button>
+            </button> */}
 
             {productArray.map((product) => (
-              <div key={product.name} className="w-[30%] h-[400px] shrink-0 hover:scale-[1.03] transition-all duration-300">
+              <div key={product.name} className="w-[30%] h-fit shrink-0 hover:scale-[1.03] transition-all duration-300">
 
               <ProductCard img={product.img} name={product.name} description={product.description}/>
             </div>

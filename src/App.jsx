@@ -17,9 +17,9 @@ function App() {
 
       <LandingPage />
      
-      <OurProducts />
-      <NewOurProducts />
+      {/* <OurProducts /> */}
       <Outcome />
+      <NewOurProducts />
 
       {/* <Work /> */}
       {/* <OurServices /> */}

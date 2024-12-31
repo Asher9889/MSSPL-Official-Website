@@ -11,7 +11,7 @@
     flex-direction: column;
     /* gap: 0; */
     /* align-items: left; */
-    /* position: relative; */
+    position: relative;
     transition: all .5s ease;
   }
   

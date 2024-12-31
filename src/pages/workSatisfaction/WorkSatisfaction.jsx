@@ -75,7 +75,7 @@ const WorkSatisfaction = () => {
               className="flex-1 poppins-regular text-[18px] text-[--main-text-color]"
             >
               <p className="text-wrap w-full font-semibold">
-                In 19+ years of work, we have helped more than 35 companies
+                In 19+ years of work, we have helped more than 200+ Clients and 
                 develop their products. We have successfully completed various projects like Library Management, Vehicle Tracking, Mobile Software, Retail Sales Software, E-commerce Website Design and Development, and many more. We are trusted by companies around India.
               </p>
             </motion.div>

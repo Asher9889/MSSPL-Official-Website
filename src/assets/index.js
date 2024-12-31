@@ -60,9 +60,19 @@ import face from "./face.webp";
 import pole from "./pole.webp";
 import dmss from "./dmss.webp";
 import opac from "./opac.webp";
+import assests from "./assests.webp";
+import workflow from "./workflow.webp";
+import erp from "./erp.webp";
+import attendances from "./attendances.webp";
+import health from "./health.webp";
 
 
 export {
+  health,
+  attendances,
+  erp,
+  workflow,
+  assests,
   opac,
   dmss,
   pole,
