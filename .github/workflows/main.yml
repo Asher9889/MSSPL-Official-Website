@@ -155,9 +155,9 @@ jobs:
 
           # Stop IIS site
           Write-Output "Stopping IIS site..."
-          Import-Module WebAdministration -SkipEditionCheck
+          Import-Module WebAdministration 
           Stop-WebAppPool -Name "Official Website"
-          
+
           # Debug: Verify application pool existence
             Write-Output "Checking if application pool 'Official Website' exists..."
             if (!(Get-WebAppPoolState -Name "Official Website")) {
