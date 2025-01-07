@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: windows-latest
+    runs-on: windows-latest 
 
     steps:
     - name: Checkout code
@@ -26,7 +26,10 @@ jobs:
 
     - name: Deploy to IIS Server
       run: |
-        powershell -File "$env:GITHUB_WORKSPACE\deploy.ps1"
+       
+        powershell -File "D:\MSSPL_Company\MSSPL_Official_Websites\Official_Website\deploy.ps1"
+        
+      # powershell -File "$env:GITHUB_WORKSPACE\deploy.ps1"
       # env:
       #   BUILD_OUTPUT_PATH: ${{ github.workspace }}\dist
       #   IIS_DEPLOY_PATH: C:\IIS_Server\dist
