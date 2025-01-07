@@ -155,7 +155,7 @@ jobs:
 
           # Stop IIS site
           Write-Output "Stopping IIS site..."
-          Import-Module WebAdministration 
+          Start-Process powershell.exe -ArgumentList "-NoExit", "-Command", "Import-Module WebAdministration"
           Stop-WebAppPool -Name "Official Website"
 
           # Debug: Verify application pool existence
