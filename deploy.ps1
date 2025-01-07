@@ -72,7 +72,7 @@ if ($LASTEXITCODE -ne 0) {
 #     Write-Error "Failed to copy built files to IIS server directory. Exiting script."
 #     exit 1
 # }
-Copy-Item "D:\MSSPL Company\MSSPL Official Websites\Official Website\dist\*" "C:\IIS_Server\dist" -Recurse -Force
+Copy-Item "D:\MSSPL_Company\MSSPL_Official_Websites\Official_Website\dist\*" "C:\IIS_Server\dist" -Recurse -Force
 # Step 6: Restart IIS (Optional)
 Write-Output "Restarting IIS server to apply changes..."
 iisreset
