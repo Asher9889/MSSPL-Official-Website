@@ -1,0 +1,36 @@
+name: Deploy to IIS Server
+
+on:
+  push:
+    branches:
+      - main  # Replace 'main' with your branch name if different
+
+jobs:
+  deploy:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 22  # Replace with your Node.js version
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build the project
+      run: npm run build
+
+    - name: Deploy to IIS Server
+      run: |
+        powershell -Command "& { \
+          cd $env:GITHUB_WORKSPACE; \
+          .\deploy.ps1 \
+        }"
+      env:
+        BUILD_OUTPUT_PATH: ${{ github.workspace }}\dist
+        IIS_DEPLOY_PATH: C:\IIS_Server\dist
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
