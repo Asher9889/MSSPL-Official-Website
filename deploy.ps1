@@ -1,14 +1,14 @@
 # Define paths
 $projectPath = "D:\MSSPL_Company\MSSPL_Official_Websites\Official_Website"
-$buildOutputPath = "$projectPath\dist"
-$iisServerPath = "C:\IIS_Server\dist"
-
-# Use environment variables for paths
 $buildOutputPath = $env:BUILD_OUTPUT_PATH
 $iisServerPath = $env:IIS_DEPLOY_PATH
 
 # Step 1: Navigate to the project directory
 Write-Output "Navigating to project directory: $projectPath"
+if (!(Test-Path $projectPath)) {
+    Write-Error "Project path does not exist: $projectPath"
+    exit 1
+}
 cd $projectPath
 
 # Step 2: Pull the latest changes from GitHub
@@ -35,22 +35,26 @@ if ($LASTEXITCODE -ne 0) {
     exit 1
 }
 
-Step 5: Deploy the built files to IIS server
-Write-Output "Deploying files to IIS server directory: $iisServerPath"
-if (Test-Path $iisServerPath) {
-    Remove-Item "$iisServerPath\*" -Recurse -Force
-    Write-Output "Cleared existing files in IIS server directory."
-} else {
+# Step 5: Deploy the built files to IIS server
+if (!(Test-Path $buildOutputPath)) {
+    Write-Error "Build output path does not exist: $buildOutputPath"
+    exit 1
+}
+if (!(Test-Path $iisServerPath)) {
     Write-Output "IIS server directory does not exist. Creating directory: $iisServerPath"
     New-Item -ItemType Directory -Path $iisServerPath
 }
 
-Copy-Item "$buildOutputPath\*" $iisServerPath -Recurse -Force
+Write-Output "Clearing existing files in IIS server directory: $iisServerPath"
+Get-ChildItem -Path $iisServerPath -Recurse | Remove-Item -Recurse -Force
+
+Write-Output "Copying files from $buildOutputPath to $iisServerPath..."
+Copy-Item -Path "$buildOutputPath\*" -Destination $iisServerPath -Recurse -Force
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Failed to copy built files to IIS server directory. Exiting script."
     exit 1
 }
-# Copy-Item "D:\MSSPL_Company\MSSPL_Official_Websites\Official_Website\dist\*" "C:\IIS_Server\dist" -Recurse -Force
+
 # Step 6: Restart IIS (Optional)
 Write-Output "Restarting IIS server to apply changes..."
 iisreset

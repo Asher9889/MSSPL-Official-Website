@@ -7,39 +7,33 @@ on:
 
 jobs:
   deploy:
-    runs-on: windows-latest 
+    runs-on: windows-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      # Step 1: Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 22  # Replace with your Node.js version
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16  # Replace with your Node.js version
 
-    - name: Install dependencies
-      run: npm install
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
 
-    - name: Build the project
-      run: npm run build
+      # Step 4: Build the project
+      - name: Build the project
+        run: npm run build
 
-    - name: Deploy to IIS Server
-      run: |
-       
-        powershell -File "D:\MSSPL_Company\MSSPL_Official_Websites\Official_Website\deploy.ps1"
-        
-      # powershell -File "$env:GITHUB_WORKSPACE\deploy.ps1"
-      # env:
-      #   BUILD_OUTPUT_PATH: ${{ github.workspace }}\dist
-      #   IIS_DEPLOY_PATH: C:\IIS_Server\dist
-      #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      env:
+      # Step 5: Deploy to IIS Server
+      - name: Deploy to IIS Server
+        run: |
+          Write-Output "Starting deployment process..."
+          powershell -File "$env:GITHUB_WORKSPACE\deploy.ps1"
+        env:
           BUILD_OUTPUT_PATH: ${{ github.workspace }}\dist
           IIS_DEPLOY_PATH: C:\IIS_Server\dist
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
-     
-
-
