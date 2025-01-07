@@ -26,17 +26,17 @@ jobs:
 
     - name: Deploy to IIS Server
       run: |
-        powershell -Command "& { \
-          cd $env:GITHUB_WORKSPACE; \
-          .\deploy.ps1 \
-        }"
+        powershell -File "$env:GITHUB_WORKSPACE\deploy.ps1"
+      # env:
+      #   BUILD_OUTPUT_PATH: ${{ github.workspace }}\dist
+      #   IIS_DEPLOY_PATH: C:\IIS_Server\dist
+      #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       env:
-        BUILD_OUTPUT_PATH: ${{ github.workspace }}\dist
-        IIS_DEPLOY_PATH: C:\IIS_Server\dist
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BUILD_OUTPUT_PATH: ${{ github.workspace }}\dist
+          IIS_DEPLOY_PATH: C:\IIS_Server\dist
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Run Deployment Script
-        run: |
-          powershell -ExecutionPolicy Bypass -File ./deploy.ps1
+
+     
 
 
