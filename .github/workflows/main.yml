@@ -127,7 +127,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: production-files
-          path: ./build
+          path: ./dist
 
   # Deployment job
   deploy:
@@ -142,7 +142,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: production-files
-          path: ./build
+          path: ./dist
 
       # Step 2: Deploy to IIS Server using PowerShell
       - name: Deploy to IIS Server
@@ -150,7 +150,7 @@ jobs:
           Write-Output "Starting deployment to IIS Server..."
 
           # Define paths
-          $sourcePath = "$env:GITHUB_WORKSPACE\build"
+          $sourcePath = "$env:GITHUB_WORKSPACE\dist"
           $iisPath = "C:\IIS_Server\dist"
 
           # Stop IIS site
