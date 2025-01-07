@@ -34,3 +34,9 @@ jobs:
         BUILD_OUTPUT_PATH: ${{ github.workspace }}\dist
         IIS_DEPLOY_PATH: C:\IIS_Server\dist
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run Deployment Script
+        run: |
+          powershell -ExecutionPolicy Bypass -File ./deploy.ps1
+
+

@@ -21,7 +21,7 @@
 
 
 # Define paths
-$projectPath = "D:\MSSPL Company\MSSPL Official Websites\Official Website"
+$projectPath = "D:\MSSPL_Company\MSSPL_Official_Websites\Official_Website"
 $buildOutputPath = "$projectPath\dist"
 $iisServerPath = "C:\IIS_Server\dist"
 
@@ -58,21 +58,21 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 # Step 5: Deploy the built files to IIS server
-Write-Output "Deploying files to IIS server directory: $iisServerPath"
-if (Test-Path $iisServerPath) {
-    Remove-Item "$iisServerPath\*" -Recurse -Force
-    Write-Output "Cleared existing files in IIS server directory."
-} else {
-    Write-Output "IIS server directory does not exist. Creating directory: $iisServerPath"
-    New-Item -ItemType Directory -Path $iisServerPath
-}
+# Write-Output "Deploying files to IIS server directory: $iisServerPath"
+# if (Test-Path $iisServerPath) {
+#     Remove-Item "$iisServerPath\*" -Recurse -Force
+#     Write-Output "Cleared existing files in IIS server directory."
+# } else {
+#     Write-Output "IIS server directory does not exist. Creating directory: $iisServerPath"
+#     New-Item -ItemType Directory -Path $iisServerPath
+# }
 
-Copy-Item "$buildOutputPath\*" $iisServerPath -Recurse -Force
-if ($LASTEXITCODE -ne 0) {
-    Write-Error "Failed to copy built files to IIS server directory. Exiting script."
-    exit 1
-}
-
+# Copy-Item "$buildOutputPath\*" $iisServerPath -Recurse -Force
+# if ($LASTEXITCODE -ne 0) {
+#     Write-Error "Failed to copy built files to IIS server directory. Exiting script."
+#     exit 1
+# }
+Copy-Item "D:\MSSPL Company\MSSPL Official Websites\Official Website\dist\*" "C:\IIS_Server\dist" -Recurse -Force
 # Step 6: Restart IIS (Optional)
 Write-Output "Restarting IIS server to apply changes..."
 iisreset
