@@ -1,24 +1,28 @@
+# Name for my workflow
 name: Deploy to IIS Server
 
+# When my workflow file trigger
 on:
   push:
+    # Whenever anything push into main branch. This Workflow fill will run
     branches:
       - main
 
 jobs:
-  deploy:
+  build:
     runs-on: windows-latest
 
     steps:
       # Step 1: Checkout code
-      - name: Checkout code
+      - name: Checkout repository
+        # already github provide us built in command to checkout repo
         uses: actions/checkout@v3
 
       # Step 2: Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18  # Ensure the version is 17 or above
+          node-version: 20 # Ensure the version is 17 or above
 
       # Step 3: Install dependencies
       - name: Install dependencies
@@ -28,12 +32,57 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      # Step 5: Deploy to IIS Server
+      # Step 5: upload build file as artifacts
+      - name: upload production ready build files
+        uses: actions/upload-artifact@v3
+        with:
+          name: production-files
+          path: ./build
+
+
+
+  deply:
+    name: Deploy
+    needs: build
+    runs-on: windows-latest
+    if: github.ref == 'ref/heads/main'
+
+    steps: 
+      - name: Download artifact
+      - uses: actions/download-artifact@v3
+        with: 
+          name: production-files
+          path: ./build
+
+         # Deploy to IIS Server using PowerShell
       - name: Deploy to IIS Server
         run: |
-          Write-Output "Starting deployment process..."
-          powershell -File "$env:GITHUB_WORKSPACE\deploy.ps1"
-        env:
-          BUILD_OUTPUT_PATH: ${{ github.workspace }}\dist
-          IIS_DEPLOY_PATH: C:\IIS_Server\dist
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          Write-Output "Starting deployment to IIS Server..."
+        # Define paths (modify as needed)
+          $sourcePath = "$env:GITHUB_WORKSPACE\build"
+          $iisPath = "C:\IIS_Server\dist"
+
+        #Stop IIS site
+          Write-Output "Stopping IIS site..."
+          Import-Module WebAdministration
+          Stop-WebAppPool -Name "Official Website"
+
+        # Clear old files
+          Write-Output "Clearing old files..."
+          Remove-Item -Recurse -Force "$iisPath\*"
+
+        # Copy new files
+          Write-Output "Copying new files..."
+          Copy-Item -Recurse -Force "$sourcePath\*" "$iisPath"
+
+        # Start IIS site
+          Write-Output "Starting IIS site..."
+          Start-WebAppPool -Name "Official Website"
+
+          Write-Output "Deployment to IIS Server completed successfully!"
+
+      # - name: Deploy to iis server 
+      #   uses: 
+      #   with: 
+      #     github_token: ${{ secrets.ACTION_TOKEN_FOR_MSSPL_WEBSITE }}
+      #     publish_dir: ./build

@@ -1,12 +1,13 @@
 # Updated deploy.ps1 script
 # Use GitHub workspace instead of local machine path
+
 $projectPath = "$env:GITHUB_WORKSPACE"  # GitHub workspace path
 $buildOutputPath = "$projectPath\dist"
 $iisServerPath = "C:\IIS_Server\dist"
 
 # Step 1: Navigate to the project directory
 Write-Output "Navigating to project directory: $projectPath"
-cd $projectPath
+Set-Location $projectPath
 
 # Step 2: Pull the latest changes from GitHub
 Write-Output "Pulling latest changes from GitHub..."
