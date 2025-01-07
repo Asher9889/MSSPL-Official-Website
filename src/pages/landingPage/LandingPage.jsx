@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import trident from "../../assets/trident.png";
-import { ContactUsForm, LogoCorousel, SplitTextAnimation } from "../../components";
+import { ClientCorousal, ContactUsForm,  SplitTextAnimation } from "../../components";
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 import { useContext } from "react";
 import { ContactFormContext } from "../../utils/context/context";
@@ -35,7 +35,7 @@ const LandingPage = () => {
               <p className=" poppins-regular text-center">Incubated at IIT Kanpur</p> You Think it. We Build it.
             </h2>
             <button
-              className="relative mt-6 text-xl lg:text-2xl cursor-pointer px-6 py-2 rounded-md text-white poppins-regular bg-[--button-bg-color] hover:bg-[--button-bg-hover-color] transition-all duration-400"
+              className="relative mt-10 text-xl lg:text-2xl cursor-pointer px-6 py-2 rounded-md text-white poppins-regular bg-[--button-bg-color] hover:bg-[--button-bg-hover-color] transition-all duration-400"
               onClick={() => setShowContactForm(!showContactForm)} // Toggle form visibility
             >
               Get in touch
@@ -43,7 +43,8 @@ const LandingPage = () => {
           </div>
         </section>
       </ContentWrapper>
-      <LogoCorousel />
+      <ClientCorousal />
+      {/* <LogoCorousel /> */}
 
       {/* Apply Framer Motion for the Contact Us Form with Centering */}
       {showContactForm && (

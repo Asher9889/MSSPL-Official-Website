@@ -1,7 +1,7 @@
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import { useNavigate } from "react-router";
 import { headerOption } from "../../utils/values/data";
-import { msspl_logo } from "../../assets";
+import {  logo } from "../../assets";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai"; // Hamburger icons
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -75,8 +75,8 @@ const Header = () => {
           {/* Left */}
           <img
             onClick={() => navigate("/")}
-            className="hidden lg:block w-16"
-            src={msspl_logo}
+            className="hidden lg:block w-20 aspect-[3/2] object-contain mix-blend-color-burn bg-transparent"
+            src={logo}
             alt=""
           />
           {/* Middle */}

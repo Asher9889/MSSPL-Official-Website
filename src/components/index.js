@@ -29,11 +29,12 @@ import CountUpAnimation from "./count-up-animation/CountUpAnimation";
 import ContactUs from "./contact-us/ContactUs";
 import ProductCard from "./products-card/ProductCard";
 import ClientCorousal from "./corousal-banner/ClientCorousal";
-
+import SplashCursor from "./bg-splash-effect/SplashCursor";
 
 
 
 export {
+  SplashCursor,
   Header,
   Footer,
   ContentWrapper,

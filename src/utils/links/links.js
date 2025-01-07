@@ -58,5 +58,13 @@ const mongoDB = "https://cdn.prod.website-files.com/6256688a7a5e476c6dbfec98/66d
 const sql = "https://cdn.prod.website-files.com/6256688a7a5e476c6dbfec98/66d8b44b2db95fa566d249d5_MySQL.svg";
 const oracle = "https://cdn.prod.website-files.com/6256688a7a5e476c6dbfec98/66d8b44b65b31624bc6f334e_Oracle_logo.svg";
 
+// Official Website Corusal Images
 
-export { oracle, sql, mongoDB, redis, msAzure, msSQL, kotlin, reactNative, flutter, python, javaScript, typeScript, bootstrap, react, angular, aspDotNetCore, nodeJS, dotNetCore, dotNet,cSoftwareDev, wSoftwareDev, uiux, mobileDev, devOps, qualityAssurance, techSupport, ProjManagment, googleMapUrl };
+const universityC1 = "https://res.cloudinary.com/saurabhbackend/image/upload/v1735816313/MSSPL%20Website/udvqpbnsrvrl3nv9hjgz.png";
+const universityC2 = "https://res.cloudinary.com/saurabhbackend/image/upload/v1735816313/MSSPL%20Website/ltsze1uo1v2diadsxoou.png";
+const universityC3 = "https://res.cloudinary.com/saurabhbackend/image/upload/v1735816313/MSSPL%20Website/xa9ncaxats5ssgflvnto.png";
+const corporateC1 = "https://res.cloudinary.com/saurabhbackend/image/upload/v1735816313/MSSPL%20Website/lx94dmjg2okduejqs57o.png";
+const valuableC1 = "https://res.cloudinary.com/saurabhbackend/image/upload/v1735816313/MSSPL%20Website/scqfttuyu5ovaqnin3ud.png";
+
+
+export { universityC1, universityC2, universityC3, corporateC1, valuableC1, oracle, sql, mongoDB, redis, msAzure, msSQL, kotlin, reactNative, flutter, python, javaScript, typeScript, bootstrap, react, angular, aspDotNetCore, nodeJS, dotNetCore, dotNet,cSoftwareDev, wSoftwareDev, uiux, mobileDev, devOps, qualityAssurance, techSupport, ProjManagment, googleMapUrl };

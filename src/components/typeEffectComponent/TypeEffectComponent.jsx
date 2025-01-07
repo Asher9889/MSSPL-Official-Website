@@ -3,10 +3,12 @@ import Typed from "typed.js";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import { useInView } from "react-intersection-observer";
 import { motion } from "motion/react";
+import {  useNavigate } from "react-router";
 
 
 const TypeEffectComponent = () => {
   const el = useRef(null);
+  const navigate = useNavigate()
 
   const [ref, inView] = useInView({
     triggerOnce: true, // Ensures animation runs only once
@@ -20,9 +22,12 @@ const TypeEffectComponent = () => {
   useEffect(() => {
     const typed = new Typed(el.current, {
       strings: [
-        "Pushing the technology envelope into uncharted territories?",
-        "Can’t-miss deadlines and Impossibly tight budgets?",
-        "New product development requests outpacing your team capacity? ",
+        // "Pushing the technology envelope into uncharted territories?",
+        "Smart Solutions for Smarter Governance.",
+        "Transforming Complex Needs into Seamless Software Solutions.",
+        // "Can’t-miss deadlines and Impossibly tight budgets?",
+        // "New product development requests outpacing your team capacity? ",
+        "Bridging the Gap Between Challenges and Solutions for Public Projects.",
       ],
       typeSpeed: 80, // Typing speed
       backSpeed: 30, // Backspacing speed
@@ -49,7 +54,8 @@ const TypeEffectComponent = () => {
       <ContentWrapper>
         <div className="w-full h-[250px] md:h-60 py-[6%] rounded-[40px] bg-navy-gradient-200 text-wrap my-20">
           <h1 className="text-center poppins-semibold text-[1.8rem] md:text-[2.5rem] text-[--text-builtIt] ">
-            Product challenges? We take them head-on.
+            {/* Product challenges? We take them head-on. */}
+            For More Info. <p onClick={()=> navigate("/contact_us")}  className="inline cursor-pointer hover:underline text-blue-400 hover:text-blue-600 transition-all duration-300">Contact Us Now.</p>
           </h1>
 
           <h3

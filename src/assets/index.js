@@ -43,7 +43,7 @@ import partner from "./partner.webp";
 import partnership from "./partnership.webp";
 import aboutus from "./aboutus.webp";
 import foundermd from "./foundermd.webp";
-import msspl_logo from "./msspl_logo.webp";
+
 import gmail from "./gmail.png";
 import map from "./map.webp";
 import phone from "./phone.webp";
@@ -65,9 +65,22 @@ import workflow from "./workflow.webp";
 import erp from "./erp.webp";
 import attendances from "./attendances.webp";
 import health from "./health.webp";
+import c11 from "./c1.webp";
+import c12 from "./c2.webp";
+import c13 from "./c3.webp";
+import c14 from "./c4.webp";
+import c15 from "./c5.webp";
+import logo from "./logo.webp";
+
 
 
 export {
+  logo,
+  c11,
+  c12,
+  c13,
+  c14,
+  c15,
   health,
   attendances,
   erp,
@@ -130,7 +143,7 @@ export {
   partnership,
   aboutus,
   foundermd,
-  msspl_logo,
+
   gmail,
   map,
   phone,
