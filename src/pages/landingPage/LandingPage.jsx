@@ -29,7 +29,7 @@ const LandingPage = () => {
           <div className="w-full flex flex-col justify-center items-center pt-[10%] gap-3 lg:gap-5">
             {/* <h1 className=" text-center text-gradient poppins-semibold text-[2.5rem] md:text-[3.5rem] "> */}
               {/* Landing Page Heading */}
-             <SplitTextAnimation text="Multifacet Software Systems Pvt. Ltd." className=" relative text-center  poppins-semibold text-[2.5rem] md:text-[3.5rem]" delay={200} />
+             <SplitTextAnimation text="Multifacet Softwares Systems Pvt. Ltd." className=" relative text-center  poppins-semibold text-[2.5rem] md:text-[3.5rem]" delay={200} />
             {/* </h1> */}
             <h2 className="poppins-regular text-[1.6rem] lg:text-3xl text-[--text-builtIt] text-center">
               <p className=" poppins-regular text-center">Incubated at IIT Kanpur</p> You Think it. We Build it.
