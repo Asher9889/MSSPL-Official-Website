@@ -3,7 +3,7 @@ name: Deploy to IIS Server
 on:
   push:
     branches:
-      - main  # Replace 'main' with your branch name if different
+      - main
 
 jobs:
   deploy:
@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 22  # Replace with your Node.js version
+          node-version: 18  # Ensure the version is 17 or above
 
       # Step 3: Install dependencies
       - name: Install dependencies
