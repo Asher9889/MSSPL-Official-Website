@@ -159,7 +159,8 @@ jobs:
 
           # Refresh IIS before checking pools
           Write-Output "Refreshing IIS to ensure pools are loaded..."
-          Start-Service W3SVC
+          Import-Module WebAdministration
+          # Start-Service W3SVC
 
           # Stop IIS application pool
           $appPoolName = "website"
