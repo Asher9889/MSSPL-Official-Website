@@ -86,7 +86,7 @@ jobs:
 
           # Clear the old files in the IIS folder using admin privileges
           Write-Output "Clearing old files in IIS path..."
-          Remove-Item -Path '$iisPath'  -Recurse -Force
+          Remove-Item -Path "$iisPath" -Recurse -Force
 
           # Debug: Confirm old files are removed
           if ((Get-ChildItem -Path $iisPath).Count -gt 0) {
@@ -96,7 +96,9 @@ jobs:
 
           # Copy new files to the IIS folder using admin privileges
           Write-Output "Copying files from $sourcePath to $iisPath..."
-          Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command Copy-Item -Path '$sourcePath' -Destination '$iisPath' -Recurse -Force" -Verb RunAs
+          Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command Copy-Item -Path `"$sourcePath`" -Destination `"$iisPath`" -Recurse -Force" -Verb RunAs
+
+
 
           # Debug: Verify that files were copied successfully
           Write-Output "Contents of Destination Path:"
