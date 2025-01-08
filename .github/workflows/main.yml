@@ -54,6 +54,22 @@ jobs:
 
      
       # Step 2: Deploy to IIS Server
+        # Deployment job
+  deploy:
+    name: Deploy to IIS Server
+    needs: build
+    runs-on: windows-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      # Step 1: Download the artifact
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: production-files
+          path: ./dist
+
+      # Step 2: Deploy to IIS Server
       - name: Deploy to IIS Server
         shell: powershell
         run: |
@@ -89,9 +105,9 @@ jobs:
           Write-Output "Contents of Source Path:"
           Get-ChildItem -Recurse $sourcePath | Write-Output
 
-          # Clear the old files in the IIS folder
+          # Clear the old files in the IIS folder using admin privileges
           Write-Output "Clearing old files in IIS path..."
-          Remove-Item -Recurse -Force "$iisPath\*" -ErrorAction SilentlyContinue
+          Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command Remove-Item -Recurse -Force '$iisPath\*'" -Verb RunAs
 
           # Debug: Confirm old files are removed
           if ((Get-ChildItem -Path $iisPath).Count -gt 0) {
@@ -101,9 +117,9 @@ jobs:
 
           Write-Output "Old files cleared successfully."
 
-          # Copy new files to the IIS folder
+          # Copy new files to the IIS folder using admin privileges
           Write-Output "Copying files from $sourcePath to $iisPath..."
-          Copy-Item -Path "$sourcePath\*" -Destination $iisPath -Recurse -Force
+          Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command Copy-Item -Path '$sourcePath\*' -Destination '$iisPath' -Recurse -Force" -Verb RunAs
 
           # Debug: Verify that files were copied successfully
           Write-Output "Contents of Destination Path:"
@@ -117,11 +133,12 @@ jobs:
 
           Write-Output "Files copied successfully to destination path."
 
-          # Restart IIS services to apply changes
+          # Restart IIS services to apply changes using admin privileges
           Write-Output "Restarting IIS services..."
-          Restart-Service W3SVC
+          Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command Restart-Service W3SVC" -Verb RunAs
 
           Write-Output "Deployment to IIS Server completed successfully!"
+
 
 # # Name for my workflow
 # name: Deploy to IIS Server
