@@ -147,19 +147,22 @@ jobs:
         run: |
           Write-Output "Starting deployment to IIS Server..."
 
+           # Elevate script to run as Administrator
+          Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command & {Write-Output 'Running as Administrator...';" -Verb RunAs
+
           # Define paths
           $sourcePath = "$env:GITHUB_WORKSPACE\build"
           $iisPath = "C:\IIS_Server\dist"
 
           # Ensure the WebAdministration module is loaded
-          if (-not (Get-Module -Name WebAdministration)) {
-              Write-Output "Loading WebAdministration module..."
-              Import-Module WebAdministration
-          }
+          # if (-not (Get-Module -Name WebAdministration)) {
+          #     Write-Output "Loading WebAdministration module..."
+          #     Import-Module WebAdministration
+          # }
 
           # Refresh IIS before checking pools
-          Write-Output "Refreshing IIS to ensure pools are loaded..."
-          Import-Module WebAdministration
+          # Write-Output "Refreshing IIS to ensure pools are loaded..."
+          # Import-Module WebAdministration
           # Start-Service W3SVC
 
           # Stop IIS application pool
@@ -175,7 +178,8 @@ jobs:
           #     }
           # }
 
-          Write-Output "Stopping application pool: $appPoolName..."
+          Write-Output "Stopping application pool: website "
+          Import-Module WebAdministration
           Stop-WebAppPool -Name "website"
 
           # Clear old files
