@@ -146,19 +146,18 @@ jobs:
         run: |
           Write-Output "Starting deployment to IIS Server..."
 
-          #  Ensure the WebAdministration module is loaded
-          # if (-not (Get-Module -Name WebAdministration)) {
-          #     Write-Output "Loading WebAdministration module..."
-          #     Import-Module WebAdministration
-          # }
+          # Ensure the WebAdministration module is loaded
+          if (-not (Get-Module -Name WebAdministration)) {
+              Write-Output "Loading WebAdministration module..."
+              Import-Module WebAdministration
+          }
 
           # Ensure IIS services are running
           Write-Output "Starting IIS services..."
-          Import-Module WebAdministration
           Start-Service W3SVC
 
-          # # Check if the application pool exists
-          $appPoolName = website
+          # Check if the application pool exists
+          $appPoolName = "website"
           # $appPool = Get-WebAppPool | Where-Object { $_.Name -eq $appPoolName }
 
           # if ($appPool) {
