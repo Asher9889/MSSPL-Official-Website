@@ -154,18 +154,19 @@ jobs:
 
           # Ensure IIS services are running
           Write-Output "Starting IIS services..."
+          Import-Module WebAdministration
           Start-Service W3SVC
 
-          # Check if the application pool exists
-          $appPoolName = website
-          $appPool = Get-WebAppPool | Where-Object { $_.Name -eq $appPoolName }
+          # # Check if the application pool exists
+          # $appPoolName = website
+          # $appPool = Get-WebAppPool | Where-Object { $_.Name -eq $appPoolName }
 
-          if ($appPool) {
-              Write-Output "Stopping application pool: $appPoolName"
-              Stop-WebAppPool -Name $appPoolName
-          } else {
-              Write-Output "Application pool '$appPoolName' not found. Skipping stop operation."
-          }
+          # if ($appPool) {
+          #     Write-Output "Stopping application pool: $appPoolName"
+          #     Stop-WebAppPool -Name $appPoolName
+          # } else {
+          #     Write-Output "Application pool '$appPoolName' not found. Skipping stop operation."
+          # }
 
           # Define paths
           $sourcePath = "$env:GITHUB_WORKSPACE\build"
