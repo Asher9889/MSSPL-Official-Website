@@ -1,3 +1,87 @@
+# Name for my workflow
+name: Build for IIS Server
+# Trigger workflow when code is pushed to the 'main' branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  # Build job
+  build:
+    runs-on: windows-latest
+
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20 # Specify Node.js version
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Build the project
+      - name: Build the project
+        run: npm run build
+
+      # Step 5: Upload production-ready build files as artifacts
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-files
+          path: ./dist
+
+  # Deployment job
+  deploy:
+    name: Deploy to IIS Server
+    needs: build
+    runs-on: windows-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      # Step 1: Download the artifact
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: production-files
+          path: ./dist
+
+      # Step 2: Deploy to IIS Server
+      - name: Deploy to IIS Server
+        shell: powershell
+        run: |
+            Write-Output "Starting deployment to IIS Server..."
+
+            # Ensure the WebAdministration module is loaded
+            if (-not (Get-Module -Name WebAdministration)) {
+                Write-Output "Loading WebAdministration module..."
+                Import-Module WebAdministration
+            }
+
+            # Define paths
+            $sourcePath = "$env:GITHUB_WORKSPACE\dist"
+            $iisPath = "C:\IISServer\dist"
+
+            # Clear old files (avoid errors if the folder doesn't exist)
+            Write-Output "Clearing old files in $iisPath..."
+            Remove-Item -Recurse -Force "$iisPath\*" -ErrorAction SilentlyContinue
+
+            # Copy new files to IIS server
+            Write-Output "Copying new files from $sourcePath to $iisPath..."
+            Copy-Item -Recurse -Force "$sourcePath\*" "$iisPath"
+
+            # Restart IIS services (if needed)
+            Write-Output "Restarting IIS services to apply changes..."
+            Restart-Service W3SVC
+
+            Write-Output "Deployment to IIS Server completed successfully!"
+
 # # Name for my workflow
 # name: Deploy to IIS Server
 
@@ -85,87 +169,3 @@
 #       #   with:
 #       #     github_token: ${{ secrets.ACTION_TOKEN_FOR_MSSPL_WEBSITE }}
 #       #     publish_dir: ./build
-
-# Name for my workflow
-name: Build for IIS Server
-# Trigger workflow when code is pushed to the 'main' branch
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  # Build job
-  build:
-    runs-on: windows-latest
-
-    steps:
-      # Step 1: Checkout code
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      # Step 2: Set up Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20 # Specify Node.js version
-
-      # Step 3: Install dependencies
-      - name: Install dependencies
-        run: npm install
-
-      # Step 4: Build the project
-      - name: Build the project
-        run: npm run build
-
-      # Step 5: Upload production-ready build files as artifacts
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v4
-        with:
-          name: production-files
-          path: ./dist
-
-  # Deployment job
-  deploy:
-    name: Deploy to IIS Server
-    needs: build
-    runs-on: windows-latest
-    if: github.ref == 'refs/heads/main'
-
-    steps:
-      # Step 1: Download the artifact
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: production-files
-          path: ./dist
-
-    # Step 2: Deploy to IIS Server
-    - name: Deploy to IIS Server
-      shell: powershell
-      run: |
-        Write-Output "Starting deployment to IIS Server..."
-
-        # Ensure the WebAdministration module is loaded
-        if (-not (Get-Module -Name WebAdministration)) {
-            Write-Output "Loading WebAdministration module..."
-            Import-Module WebAdministration
-        }
-
-        # Define paths
-        $sourcePath = "$env:GITHUB_WORKSPACE\dist"
-        $iisPath = "C:\IISServer\dist"
-
-        # Clear old files (avoid errors if the folder doesn't exist)
-        Write-Output "Clearing old files in $iisPath..."
-        Remove-Item -Recurse -Force "$iisPath\*" -ErrorAction SilentlyContinue
-
-        # Copy new files to IIS server
-        Write-Output "Copying new files from $sourcePath to $iisPath..."
-        Copy-Item -Recurse -Force "$sourcePath\*" "$iisPath"
-
-        # Restart IIS services (if needed)
-        Write-Output "Restarting IIS services to apply changes..."
-        Restart-Service W3SVC
-
-        Write-Output "Deployment to IIS Server completed successfully!"
