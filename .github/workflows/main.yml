@@ -67,7 +67,7 @@ jobs:
 
           # Define paths
           $sourcePath = "$env:GITHUB_WORKSPACE\dist"
-          $iisPath = "C:\IISServer\dist"
+          $iisPath = "C:\IISServer\test"
 
           # Debug: Output paths being used
           Write-Output "Source Path: $sourcePath"
