@@ -104,7 +104,7 @@ jobs:
           # Copy new files to the IIS folder using admin privileges
           Write-Output "Clearing old files in IIS path..."
             try {
-                Remove-Item -Path "$iisPath\*" -Recurse -Force
+                Remove-Item -Path "$iisPath" -Recurse -Force
             } catch {
                 Write-Output "Failed to clear old files. Continuing with deployment..."
             }
