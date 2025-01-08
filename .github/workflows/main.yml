@@ -39,18 +39,16 @@
 #           name: production-files
 #           path: ./build
 
-
-
 #   deply:
 #     name: Deploy
 #     needs: build
 #     runs-on: windows-latest
 #     if: github.ref == 'refs/heads/main'
 
-#     steps: 
+#     steps:
 #       - name: Download artifact
 #       - uses: actions/download-artifact@v3
-#         with: 
+#         with:
 #           name: production-files
 #           path: ./build
 
@@ -82,12 +80,11 @@
 
 #           Write-Output "Deployment to IIS Server completed successfully!"
 
-#       # - name: Deploy to iis server 
-#       #   uses: 
-#       #   with: 
+#       # - name: Deploy to iis server
+#       #   uses:
+#       #   with:
 #       #     github_token: ${{ secrets.ACTION_TOKEN_FOR_MSSPL_WEBSITE }}
 #       #     publish_dir: ./build
-
 
 # Name for my workflow
 name: Deploy to IIS Server
@@ -146,6 +143,7 @@ jobs:
 
       # Step 2: Deploy to IIS Server using PowerShell
       - name: Deploy to IIS Server
+        shell: powershell
         run: |
           Write-Output "Starting deployment to IIS Server..."
 
@@ -153,28 +151,32 @@ jobs:
           $sourcePath = "$env:GITHUB_WORKSPACE\dist"
           $iisPath = "C:\IIS_Server\dist"
 
-          # Stop IIS site
-          Write-Output "Stopping IIS site..."
-          Start-Process powershell.exe -ArgumentList "-NoExit", "-Command", "Import-Module WebAdministration"
-          Stop-WebAppPool -Name "website"
+          # Ensure the WebAdministration module is loaded
+          if (-not (Get-Module -Name WebAdministration)) {
+              Write-Output "Loading WebAdministration module..."
+              Import-Module WebAdministration
+          }
 
-          # Debug: Verify application pool existence
-            Write-Output "Checking if application pool 'Official Website' exists..."
-            if (!(Get-WebAppPoolState -Name "Official Website")) {
-                throw "Application pool 'Official Website' not found. Exiting deployment."
-            }
+          # Stop IIS application pool
+          $appPoolName = "website"
+          Write-Output "Checking if application pool '$appPoolName' exists..."
+          if (!(Get-ChildItem IIS:\AppPools | Where-Object { $_.Name -eq $appPoolName })) {
+              throw "Application pool '$appPoolName' not found. Exiting deployment."
+          }
+
+          Write-Output "Stopping application pool: $appPoolName..."
+          Stop-WebAppPool -Name $appPoolName
 
           # Clear old files
-          Write-Output "Clearing old files..."
-          Remove-Item -Recurse -Force "$iisPath\*"
+          Write-Output "Clearing old files in $iisPath..."
+          Remove-Item -Recurse -Force "$iisPath\*" -ErrorAction SilentlyContinue
 
           # Copy new files
-          Write-Output "Copying new files..."
+          Write-Output "Copying new files from $sourcePath to $iisPath..."
           Copy-Item -Recurse -Force "$sourcePath\*" "$iisPath"
 
-          # Start IIS site
-          Write-Output "Starting IIS site..."
-          Stop-WebAppPool -Name "website"
-          Start-WebAppPool -Name "website"
+          # Start IIS application pool
+          Write-Output "Starting application pool: $appPoolName..."
+          Start-WebAppPool -Name $appPoolName
 
           Write-Output "Deployment to IIS Server completed successfully!"
