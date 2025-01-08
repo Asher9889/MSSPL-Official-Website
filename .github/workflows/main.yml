@@ -38,7 +38,7 @@ jobs:
           path: ./dist
 
   # Deployment job
-    # Deployment job
+  # Deployment job
   deploy:
     name: Deploy to IIS Server
     needs: build
@@ -79,11 +79,6 @@ jobs:
               Exit 1
           }
 
-          # Create the destination folder if it does not exist
-          if (-Not (Test-Path -Path $iisPath)) {
-              Write-Output "Destination path does not exist. Creating it..."
-              New-Item -ItemType Directory -Path $iisPath
-          }
 
           # Debug: Display contents of source path
           Write-Output "Contents of Source Path:"
@@ -91,7 +86,7 @@ jobs:
 
           # Clear the old files in the IIS folder using admin privileges
           Write-Output "Clearing old files in IIS path..."
-          Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command Remove-Item -Recurse -Force '$iisPath\*'" -Verb RunAs
+          Remove-Item -Path '$iisPath'  -Recurse -Force
 
           # Debug: Confirm old files are removed
           if ((Get-ChildItem -Path $iisPath).Count -gt 0) {
@@ -99,16 +94,9 @@ jobs:
               Exit 1
           }
 
-          Write-Output "Old files cleared successfully."
-
           # Copy new files to the IIS folder using admin privileges
-          Write-Output "Clearing old files in IIS path..."
-            try {
-                Remove-Item -Path "$iisPath" -Recurse -Force
-            } catch {
-                Write-Output "Failed to clear old files. Continuing with deployment..."
-            }
-
+          Write-Output "Copying files from $sourcePath to $iisPath..."
+          Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command Copy-Item -Path '$sourcePath' -Destination '$iisPath' -Recurse -Force" -Verb RunAs
 
           # Debug: Verify that files were copied successfully
           Write-Output "Contents of Destination Path:"
@@ -120,14 +108,12 @@ jobs:
               $destinationFiles | Write-Output
           }
 
-          Write-Output "Files copied successfully to destination path."
 
           # Restart IIS services to apply changes using admin privileges
           Write-Output "Restarting IIS services..."
           Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command Restart-Service W3SVC" -Verb RunAs
 
           Write-Output "Deployment to IIS Server completed successfully!"
-
 
 # # Name for my workflow
 # name: Deploy to IIS Server
