@@ -169,7 +169,7 @@ jobs:
           # }
 
           # Define paths
-          $sourcePath = "$env:GITHUB_WORKSPACE\build"
+          $sourcePath = "$env:GITHUB_WORKSPACE\dist"
           $iisPath = "C:\IIS_Server\dist"
 
           # Clear old files
