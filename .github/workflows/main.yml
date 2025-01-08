@@ -102,8 +102,13 @@ jobs:
           Write-Output "Old files cleared successfully."
 
           # Copy new files to the IIS folder using admin privileges
-          Write-Output "Copying files from $sourcePath to $iisPath..."
-          Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command Copy-Item -Path '$sourcePath' -Destination '$iisPath' -Recurse -Force" -Verb RunAs
+          Write-Output "Clearing old files in IIS path..."
+            try {
+                Remove-Item -Path "$iisPath\*" -Recurse -Force
+            } catch {
+                Write-Output "Failed to clear old files. Continuing with deployment..."
+            }
+
 
           # Debug: Verify that files were copied successfully
           Write-Output "Contents of Destination Path:"
