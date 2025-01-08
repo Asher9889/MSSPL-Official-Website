@@ -163,16 +163,16 @@ jobs:
 
           # Stop IIS application pool
           $appPoolName = "website"
-          Write-Output "Checking if application pool '$appPoolName' exists..."
-          $appPool = Get-ChildItem IIS:\AppPools | Where-Object { $_.Name -eq $appPoolName }
-          if (-not $appPool) {
-              Write-Output "Application pool '$appPoolName' not found. Attempting to refresh IIS..."
-              Import-Module WebAdministration -Force
-              $appPool = Get-ChildItem IIS:\AppPools | Where-Object { $_.Name -eq $appPoolName }
-              if (-not $appPool) {
-                  throw "Application pool '$appPoolName' not found. Exiting deployment."
-              }
-          }
+          # Write-Output "Checking if application pool '$appPoolName' exists..."
+          # $appPool = Get-ChildItem IIS:\AppPools | Where-Object { $_.Name -eq $appPoolName }
+          # if (-not $appPool) {
+          #     Write-Output "Application pool $appPoolName not found. Attempting to refresh IIS..."
+          #     Import-Module WebAdministration -Force
+          #     $appPool = Get-ChildItem IIS:\AppPools | Where-Object { $_.Name -eq $appPoolName }
+          #     if (-not $appPool) {
+          #         throw "Application pool '$appPoolName' not found. Exiting deployment."
+          #     }
+          # }
 
           Write-Output "Stopping application pool: $appPoolName..."
           Stop-WebAppPool -Name $appPoolName
