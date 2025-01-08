@@ -96,13 +96,13 @@ jobs:
 
           # Copy new files to the IIS folder using admin privileges
           Write-Output "Copying files from $sourcePath to $iisPath..."
-          Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command Copy-Item -Path `"$sourcePath`" -Destination `"$iisPath`" -Recurse -Force" -Verb RunAs
+          Copy-Item -Path "$sourcePath\*" -Destination "$iisPath" -Recurse
 
 
 
           # Debug: Verify that files were copied successfully
           Write-Output "Contents of Destination Path:"
-          $destinationFiles = Get-ChildItem -Recurse $iisPath
+          $destinationFiles = Get-ChildItem -Recurse "$iisPath"
           if ($destinationFiles.Count -eq 0) {
               Write-Output "ERROR: No files copied to destination path. Deployment aborted."
               Exit 1
