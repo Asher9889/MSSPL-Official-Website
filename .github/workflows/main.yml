@@ -38,23 +38,7 @@ jobs:
           path: ./dist
 
   # Deployment job
-  deploy:
-    name: Deploy to IIS Server
-    needs: build
-    runs-on: windows-latest
-    if: github.ref == 'refs/heads/main'
-
-    steps:
-      # Step 1: Download the artifact
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: production-files
-          path: ./dist
-
-     
-      # Step 2: Deploy to IIS Server
-        # Deployment job
+    # Deployment job
   deploy:
     name: Deploy to IIS Server
     needs: build
