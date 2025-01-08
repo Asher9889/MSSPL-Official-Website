@@ -154,7 +154,7 @@ jobs:
 
         # Define paths
         $sourcePath = "$env:GITHUB_WORKSPACE\dist"
-        $iisPath = "C:\IIS_Server\dist"
+        $iisPath = "C:\IISServer\dist"
 
         # Clear old files (avoid errors if the folder doesn't exist)
         Write-Output "Clearing old files in $iisPath..."
