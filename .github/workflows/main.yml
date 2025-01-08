@@ -163,7 +163,7 @@ jobs:
           # Start-Service W3SVC
 
           # Stop IIS application pool
-          $appPoolName = "website"
+          # $appPoolName = "website"
           # Write-Output "Checking if application pool '$appPoolName' exists..."
           # $appPool = Get-ChildItem IIS:\AppPools | Where-Object { $_.Name -eq $appPoolName }
           # if (-not $appPool) {
@@ -176,7 +176,7 @@ jobs:
           # }
 
           Write-Output "Stopping application pool: $appPoolName..."
-          Stop-WebAppPool -Name $appPoolName
+          Stop-WebAppPool -Name "website"
 
           # Clear old files
           Write-Output "Clearing old files in $iisPath..."
@@ -187,7 +187,7 @@ jobs:
           Copy-Item -Recurse -Force "$sourcePath\*" "$iisPath"
 
           # Start IIS application pool
-          Write-Output "Starting application pool: $appPoolName..."
-          Start-WebAppPool -Name $appPoolName
+          Write-Output "Starting application pool: "website"... "
+          Start-WebAppPool -Name "website"
 
           Write-Output "Deployment to IIS Server completed successfully!"
