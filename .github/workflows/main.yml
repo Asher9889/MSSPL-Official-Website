@@ -86,10 +86,11 @@ jobs:
 
           # Clear the old files in the IIS folder using admin privileges
           Write-Output "Clearing old files in IIS path..."
-          Remove-Item -Path "$iisPath\*" -Recurse
+          # Remove-Item -Path "$iisPath\*" -Recurse
+          Get-ChildItem -Path "$iisPath\*" -Recurse | Where-Object { $_.Name -ne "web.config" } | Remove-Item -Recurse -Force
 
           # Debug: Confirm old files are removed
-          if ((Get-ChildItem -Path $iisPath).Count -gt 0) {
+          if ((Get-ChildItem -Path $iisPath).Count -gt 1) {
               Write-Output "ERROR: Failed to clear old files in IIS path."
               Exit 1
           }
