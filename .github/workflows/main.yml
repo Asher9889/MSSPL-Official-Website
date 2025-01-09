@@ -114,7 +114,8 @@ jobs:
 
           # Restart IIS services to apply changes using admin privileges
           Write-Output "Restarting IIS services..."
-          Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command Restart-Service W3SVC" -Verb RunAs
+          #Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command Restart-Service W3SVC" -Verb RunAs
+          Restart-WebAppPool -Name "website"
 
           Write-Output "Deployment to IIS Server completed successfully!"
 
