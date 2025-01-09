@@ -64,87 +64,86 @@ jobs:
           name: production-files
           path: ./dist
 
-      # Step 2: Deploy to IIS Server
+    # Step 2: Deploy to IIS Server
       - name: Start Deployment to IIS Server
         shell: pwsh
         run: |
-          Write-Output "Starting deployment to IIS Server..."
+            Write-Output "Starting deployment to IIS Server..."
 
-          # Set the path to PowerShell (PowerShell Core)
-          $psPath = "C:\Program Files\PowerShell\7\pwsh.exe"
+            # Path to PowerShell executable
+            $psPath = "C:\Program Files\PowerShell\7\pwsh.exe"
 
-          # Check if PowerShell is available at the specified path
-          if (-not (Test-Path -Path $psPath)) {
-              Write-Output "ERROR: PowerShell not found at $psPath. Deployment aborted."
-              Exit 1
-          } else {
-              Write-Output "PowerShell found at: $psPath"
-          }
+            # Ensure PowerShell exists
+            if (-not (Test-Path -Path $psPath)) {
+                Write-Output "ERROR: PowerShell not found at $psPath. Deployment aborted."
+                Exit 1
+            } else {
+                Write-Output "PowerShell found at: $psPath"
+            }
 
-          # Run the PowerShell script using the specific pwsh.exe
-              Start-Process "$psPath" -ArgumentList "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", "
-              Write-Output 'PowerShell is accessed successfully!'
+            # Define the deployment script
+            $deploymentScript = @"
+            Write-Output 'PowerShell is accessed successfully!'
 
-              # Ensure the WebAdministration module is loaded
-              if (-not (Get-Module -Name WebAdministration)) {
-                  Write-Output "Loading WebAdministration module..."
-                  Import-Module WebAdministration
-              }
+            # Ensure the WebAdministration module is loaded
+            if (-not (Get-Module -Name WebAdministration)) {
+                Write-Output 'Loading WebAdministration module...'
+                Import-Module WebAdministration
+            }
 
-              # Define paths
-              $sourcePath = "$env:GITHUB_WORKSPACE\dist"
-              $iisPath = "C:\Project\MssplWebsite"
+            # Define paths
+            $sourcePath = "$env:GITHUB_WORKSPACE\dist"
+            $iisPath = "C:\Project\MssplWebsite"
 
-              # Debug: Output paths being used
-              Write-Output "Source Path: $sourcePath"
-              Write-Output "Destination Path: $iisPath"
+            # Debug: Output paths being used
+            Write-Output "Source Path: $sourcePath"
+            Write-Output "Destination Path: $iisPath"
 
-              # Check if source path exists
-              if (-Not (Test-Path -Path $sourcePath)) {
-                  Write-Output "ERROR: Source path does not exist. Deployment aborted."
-                  Exit 1
-              }
+            # Check if source path exists
+            if (-Not (Test-Path -Path $sourcePath)) {
+                Write-Output "ERROR: Source path does not exist. Deployment aborted."
+                Exit 1
+            }
 
-              # Checking if iisPath exists
-              if (-Not (Test-Path -Path $iisPath)) {
-                  Write-Output "ERROR: Msspl Website path does not exist. Deployment aborted."
-                  Exit 1
-              }
+            # Check if IIS path exists
+            if (-Not (Test-Path -Path $iisPath)) {
+                Write-Output "ERROR: IIS path does not exist. Deployment aborted."
+                Exit 1
+            }
 
-              # Debug: Display contents of source path
-              Write-Output "Contents of Source Path:"
-              Get-ChildItem -Recurse $sourcePath | Write-Output
+            # Debug: Display contents of source path
+            Write-Output "Contents of Source Path:"
+            Get-ChildItem -Recurse $sourcePath | Write-Output
 
-              # Clear the old files in the IIS folder using admin privileges
-              Write-Output "Clearing old files in IIS path..."
-              Get-ChildItem -Path "$iisPath\*" -Recurse | Where-Object { $_.Name -ne "web.config" } | Remove-Item -Recurse -Force
+            # Clear the old files in the IIS folder except 'web.config'
+            Write-Output "Clearing old files in IIS path..."
+            Get-ChildItem -Path "$iisPath\*" -Recurse | Where-Object { $_.Name -ne "web.config" } | Remove-Item -Recurse -Force
 
-              # Debug: Confirm old files are removed
-              if ((Get-ChildItem -Path $iisPath).Count -gt 1) {
-                  Write-Output "ERROR: Failed to clear old files in IIS path."
-                  Exit 1
-              }
+            # Copy new files to the IIS folder
+            Write-Output "Copying files from $sourcePath to $iisPath..."
+            Copy-Item -Path "$sourcePath\*" -Destination "$iisPath" -Recurse
 
-              # Copy new files to the IIS folder using admin privileges
-              Write-Output "Copying files from $sourcePath to $iisPath..."
-              Copy-Item -Path "$sourcePath\*" -Destination "$iisPath" -Recurse
+            # Verify files copied successfully
+            Write-Output "Contents of Destination Path:"
+            $destinationFiles = Get-ChildItem -Recurse "$iisPath"
+            if ($destinationFiles.Count -gt 1) {
+                Write-Output "ERROR: No files copied to destination path. Deployment aborted."
+                Exit 1
+            } else {
+                $destinationFiles | Write-Output
+            }
 
-              # Debug: Verify that files were copied successfully
-              Write-Output "Contents of Destination Path:"
-              $destinationFiles = Get-ChildItem -Recurse "$iisPath"
-              if ($destinationFiles.Count -eq 0) {
-                  Write-Output "ERROR: No files copied to destination path. Deployment aborted."
-                  Exit 1
-              } else {
-                  $destinationFiles | Write-Output
-              }
+            # Restart IIS application pool
+            Write-Output "Restarting IIS application pool..."
+            Restart-WebAppPool -Name "website"
 
-              # Restart IIS services to apply changes using admin privileges
-              Write-Output "Restarting IIS services..."
-              Restart-WebAppPool -Name "website"
+            Write-Output "Deployment to IIS Server completed successfully!"
+            "@
 
-              Write-Output "Deployment to IIS Server completed successfully!"
-          "  -Verb RunAs
+            # Run the script with administrative privileges
+            Start-Process -FilePath $psPath `
+              -ArgumentList "-NoProfile", "-ExecutionPolicy Bypass", "-Command", $deploymentScript `
+              -Verb RunAs
 
 
 # # Name for my workflow
