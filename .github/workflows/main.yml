@@ -131,6 +131,7 @@ jobs:
           Get-ChildItem "$iisPath\*" -Recurse | Where-Object { $_.Attributes -match "ReadOnly" } | ForEach-Object {
               $_.Attributes = "Normal"
           }
+          Write-Output "Now Attributes are normal"
           Get-ChildItem -Path "$iisPath\*" -Recurse | Where-Object { $_.Name -ne "web.config" } | Remove-Item -Recurse -Force
 
           # Copy new files to the IIS folder
