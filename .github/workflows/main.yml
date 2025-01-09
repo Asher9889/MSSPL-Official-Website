@@ -82,7 +82,7 @@ jobs:
           }
 
           # Run the PowerShell script using the specific pwsh.exe
-          & "$psPath" -NoProfile -ExecutionPolicy Bypass -Command {
+              Start-Process "$psPath" -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command  {
               Write-Output 'PowerShell is accessed successfully!'
 
               # Ensure the WebAdministration module is loaded
@@ -144,7 +144,7 @@ jobs:
               Restart-WebAppPool -Name "website"
 
               Write-Output "Deployment to IIS Server completed successfully!"
-          }
+          }"  -Verb RunAs
 
 
 # # Name for my workflow
