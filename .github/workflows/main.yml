@@ -73,6 +73,7 @@ jobs:
           # Path to PowerShell executable
           $psPath = "C:\Program Files\PowerShell\7\pwsh.exe"
 
+
           # Ensure PowerShell exists
           if (-not (Test-Path -Path $psPath)) {
               Write-Output "ERROR: PowerShell not found at $psPath. Deployment aborted."
@@ -85,10 +86,20 @@ jobs:
          
           Write-Output 'PowerShell is accessed successfully!'
 
+          $path = "C:\Project\MssplWebsite\assets\aboutus-DvEMdZnm.webp"
+
+          # Check if the file exists and is accessible
+          if (Test-Path $path) {
+              Write-Output "File exists: $path"
+              
+          } else {
+              Write-Output "ERROR: File does not exist or access is denied: $path"
+          }
+
           # Ensure the WebAdministration module is loaded
           if (-not (Get-Module -Name WebAdministration)) {
               Write-Output 'Loading WebAdministration module...'
-              Import-Module WebAdministration
+              Import-Module WebAdministration -SkipEditionCheck
           }
 
           # Define paths
