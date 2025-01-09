@@ -16,7 +16,7 @@ function App() {
   return (
     <>
     {/* <div className='bg-[--main-bg-color]'> */}
-      <SplashCursor />
+      {/* <SplashCursor /> */}
       <LandingPage />
      
       {/* <OurProducts /> */}
