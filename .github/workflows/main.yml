@@ -70,6 +70,12 @@ jobs:
         run: |
           Write-Output "Starting deployment to IIS Server..."
 
+          $psPath = (Get-Command powershell -ErrorAction SilentlyContinue).Source
+          if (-not $psPath) {
+                Write-Output "ERROR: PowerShell is not available on this system."
+                Exit 1
+          } else {  Write-Output "Success: PowerShell is available on this system." }
+
           # Ensure the WebAdministration module is loaded
           if (-not (Get-Module -Name WebAdministration)) {
               Write-Output "Loading WebAdministration module..."
