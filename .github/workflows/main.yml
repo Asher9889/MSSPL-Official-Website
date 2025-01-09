@@ -78,7 +78,8 @@ jobs:
 
           # Define paths
           $sourcePath = "$env:GITHUB_WORKSPACE\dist"
-          $iisPath = "C:\IISServer\dist"
+          # $iisPath = "C:\IISServer\dist"
+          $iisPath = "C:\Project\MssplWebsite"
 
           # Debug: Output paths being used
           Write-Output "Source Path: $sourcePath"
@@ -87,6 +88,12 @@ jobs:
           # Check if source path exists
           if (-Not (Test-Path -Path $sourcePath)) {
               Write-Output "ERROR: Source path does not exist. Deployment aborted."
+              Exit 1
+          }
+
+          #Checking if iisPath exists
+          if (-Not (Test-Path -Path $iisPath)) {
+              Write-Output "ERROR: Msspl Website path does not exist. Deployment aborted."
               Exit 1
           }
 
