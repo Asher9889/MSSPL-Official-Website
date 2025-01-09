@@ -66,21 +66,28 @@ jobs:
 
       # Step 2: Deploy to IIS Server
       - name: Deploy to IIS Server
-        shell: powershell
+        #shell: powershell
         run: |
           Write-Output "Starting deployment to IIS Server..."
 
-          $psPath = (Get-Command powershell -ErrorAction SilentlyContinue).Source
-          if (-not $psPath) {
-                Write-Output "ERROR: PowerShell is not available on this system."
-                Exit 1
-          } else {  Write-Output "Success: PowerShell is available on this system." }
+          # Set the path to PowerShell (Windows PowerShell)
+          $psPath = '"C:\Program Files\PowerShell\7\pwsh.exe"'
 
-          # Ensure the WebAdministration module is loaded
-          if (-not (Get-Module -Name WebAdministration)) {
-              Write-Output "Loading WebAdministration module..."
-              Import-Module WebAdministration
+          # Check if PowerShell is available at the specified path
+          if (-not (Test-Path -Path $psPath)) {
+              Write-Output "ERROR: PowerShell not found at $psPath. Deployment aborted."
+              Exit 1
+          } else {
+              Write-Output "PowerShell found at: $psPath"
           }
+
+          # Run the PowerShell script using the specific powershell.exe
+          & "$psPath" -NoProfile -ExecutionPolicy Bypass -Command {
+              # Ensure the WebAdministration module is loaded
+              if (-not (Get-Module -Name WebAdministration)) {
+                  Write-Output "Loading WebAdministration module..."
+                  Import-Module WebAdministration
+              }
 
           # Define paths
           $sourcePath = "$env:GITHUB_WORKSPACE\dist"
