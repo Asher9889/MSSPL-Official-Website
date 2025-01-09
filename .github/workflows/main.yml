@@ -91,7 +91,7 @@ jobs:
           # Check if the file exists and is accessible
           if (Test-Path $path) {
               Write-Output "File exists: $path"
-              
+
           } else {
               Write-Output "ERROR: File does not exist or access is denied: $path"
           }
@@ -99,7 +99,7 @@ jobs:
           # Ensure the WebAdministration module is loaded
           if (-not (Get-Module -Name WebAdministration)) {
               Write-Output 'Loading WebAdministration module...'
-              Import-Module WebAdministration -SkipEditionCheck
+              Import-Module WebAdministration 
           }
 
           # Define paths
