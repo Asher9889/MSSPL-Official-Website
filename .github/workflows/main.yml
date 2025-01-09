@@ -26,6 +26,17 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Create .env file with secrets
+        run: |
+          echo "VITE_GMAP_KEY=${{ secrets.VITE_GMAP_KEY }}" >> .env
+          echo "VITE_EMAILJS_PUBLIC_KEY=${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}" >> .env
+          echo "VITE_EMAILJS_SERVICE_ID=${{ secrets.VITE_EMAILJS_SERVICE_ID }}" >> .env
+          echo "VITE_EMAILJS_TEMPLATE_ID=${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}" >> .env
+          echo "VITE_EMAILJS_TEMPLATE_ID_CAREER=${{ secrets.VITE_EMAILJS_TEMPLATE_ID_CAREER }}" >> .env
+          echo "VITE_CLOUDINARY_API_KEY=${{ secrets.VITE_CLOUDINARY_API_KEY }}" >> .env
+          echo "VITE_CLOUDINARY_API_SECRET=${{ secrets.VITE_CLOUDINARY_API_SECRET }}" >> .env
+          echo "VITE_CLOUDINARY_CLOUD_NAME=${{ secrets.VITE_CLOUDINARY_CLOUD_NAME }}" >> .env
+
       # Step 4: Build the project
       - name: Build the project
         run: npm run build
