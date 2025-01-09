@@ -2,7 +2,7 @@ import { LandingPage, NewOurProducts,  Outcome, TechStack } from './pages/index.
 
 import './App.css'
 import { ContactUs, 
-  // SplashCursor, 
+  SplashCursor, 
   TypeEffectComponent } from './components'
 import Services from './pages/services/Services'
 import WorkSatisfaction from './pages/workSatisfaction/WorkSatisfaction'
@@ -16,7 +16,7 @@ function App() {
   return (
     <>
     {/* <div className='bg-[--main-bg-color]'> */}
-      {/* <SplashCursor /> */}
+      <SplashCursor />
       <LandingPage />
      
       {/* <OurProducts /> */}
