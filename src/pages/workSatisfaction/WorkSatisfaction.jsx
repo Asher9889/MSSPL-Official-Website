@@ -14,7 +14,7 @@ const qualities = [
   {
     title: "HQ office",
     description:
-      "Our Head Quarter office is based in 109/421, 80 feet road, Kanpur(U.P), India. We welcome clients to visit us.",
+      "Our headquarters office is located at 109/421, 80 Feet Road, Kanpur (U.P.), India. We welcome clients to visit us.",
   },
   {
     title: "10 lakhs+ users",
@@ -84,7 +84,7 @@ const WorkSatisfaction = () => {
           </div>
 
           {/* Qualities section */}
-          <div className="flex flex-row flex-wrap md:gap-8">
+          <div className="w-full flex  items-center flex-wrap lg:justify-center flex-row  md:gap-8">
             {qualities.map((quality, index) => (
               <DevServiceCard
                 key={index}

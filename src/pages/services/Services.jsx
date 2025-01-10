@@ -41,7 +41,7 @@ const Services = () => {
           </motion.h1>
 
           {/* Services Grid */}
-          <div ref={ref}  className="flex flex-row justify-center md:justify-center flex-wrap gap-8">
+          <div ref={ref}  className="flex flex-row justify-center md:justify-center flex-wrap gap-4 lg:gap-8">
             {data.map((elem, index) => (
               <motion.div  variants={headingVariants}
               initial="hidden"

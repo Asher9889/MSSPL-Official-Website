@@ -21,7 +21,7 @@ const DevServiceCard = ({title, icon, description}) => {
       duration: 1, // Animation duration
       ease: "easeOut", // Smooth easing
     }}  className="flex flex-row mt-20 border-[1px] border-zinc-400 rounded-3xl ">
-      <div className="px-12 bg-[--card-bg-color] w-[400px] h-[300px] rounded-3xl text-[20px] flex flex-col justify-center gap-10 hover:scale-[1.02] hover:border-[1px] transition-all duration-300 hover:border-zinc-800">
+      <div className="px-12 bg-[--card-bg-color] lg:w-[400px] h-[300px] rounded-3xl text-[20px] flex flex-col justify-center gap-10 hover:scale-[1.02] hover:border-[1px] transition-all duration-300 hover:border-zinc-800">
         <span>
           {/* <icon className="text-yellow-500 text-[24px]" />
           {} */}
