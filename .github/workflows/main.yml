@@ -154,8 +154,10 @@ jobs:
           }
 
           # Restart IIS application pool
-          Write-Output "Restarting IIS application pool..."
-          Restart-WebAppPool -Name "MssplWebsite"
+          #Write-Output "Restarting IIS application pool..."
+          #Restart-WebAppPool -Name "MssplWebsite"
+
+          Write-Output "Script Done"
 
          
 
