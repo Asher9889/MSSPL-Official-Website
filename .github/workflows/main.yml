@@ -118,6 +118,10 @@ jobs:
           Write-Output "Contents of Source Path:"
           Get-ChildItem -Recurse $sourcePath | Write-Output
 
+          Write-Output "Testing access permission"
+          Test-Path "C:\Project\MssplWebsite"
+
+
           # Clear the old files in the IIS folder except 'web.config'
           Write-Output "Clearing old files in IIS path..."
           # Get-Item "C:\Project\MssplWebsite\assets\aboutus-DvEMdZnm.webp" | Format-List Attributes,Access
