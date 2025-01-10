@@ -146,7 +146,7 @@ jobs:
           # Verify files copied successfully
           Write-Output "Contents of Destination Path:"
           $destinationFiles = Get-ChildItem -Recurse "$iisPath"
-          if ($destinationFiles.Count -gt 1) {
+          if ($destinationFiles.Count -lt 1) {
               Write-Output "ERROR: No files copied to destination path. Deployment aborted."
               Exit 1
           } else {
