@@ -52,7 +52,7 @@ const Footer = forwardRef((_, ref) => {
               {/* <IoIosCall className="text-3xl" /> */}
               <img className="w-10" src={phone} alt="phone_number" />
               <p className="text-[20px] poppins-medium cursor-pointer hover:scale-[1.01] transition-all duration-300">
-                +91-9336810652, 9335148620, 9621509393
+              +91-9336652601, 9519510543
               </p>
             </span>
 
