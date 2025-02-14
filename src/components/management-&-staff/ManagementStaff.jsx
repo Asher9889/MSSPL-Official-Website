@@ -21,19 +21,19 @@ const mssplData = {
     },
     services: [
       {
-        title: "Software Designing Kanpur",
+        title: "Software Designing",
         description: "To design, develop, deploy, and sustain Information Technology according to the customer’s needs.",
       },
       {
-        title: "Client Server Application Kanpur",
+        title: "Client Server Application",
         description: "To provide Quality software at the lowest IT cost.",
       },
       {
-        title: "Web Hosting Services Kanpur",
+        title: "Web Hosting Services",
         description: "To deliver Business solutions and services on time to our clients.",
       },
       {
-        title: "System Integration Management Kanpur",
+        title: "System Integration Management",
         description: "To utilize the best and latest proven technologies.",
       },
       {
@@ -45,16 +45,16 @@ const mssplData = {
         description: "To maintain customer satisfaction as our highest goal.",
       },
       {
-        title: "Mobile Software Kanpur",
+        title: "Mobile Software",
         description: "To make ourselves and our clients globally competitive.",
       },
       {
-        title: "CRM Solution Kanpur",
+        title: "CRM Solution",
         description:
           "To be a reliable, dependable, and long-lasting IT solutions and services provider.",
       },
       {
-        title: "CMS Website Kanpur",
+        title: "CMS Website",
         description:
           "To attract talented and committed people, develop an entrepreneurial culture, and focus on continuous learning.",
       },
