@@ -72,6 +72,10 @@ import c14 from "./c4.webp";
 import c15 from "./c5.webp";
 import logo from "./logo.webp";
 
+import kiosk01 from "./kiosk-01-selfCheckout.webp";
+import kiosk02 from "./Kiosk-02-secureGate.webp";
+import kiosk03 from "./Kiosk-03-returnIssue.webp.webp";
+
 
 
 export {
@@ -139,6 +143,9 @@ export {
   kiosk2,
   kiosk3,
   kiosk4,
+  kiosk01,
+  kiosk02,
+  kiosk03,
   partner,
   partnership,
   aboutus,

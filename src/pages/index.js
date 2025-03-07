@@ -4,7 +4,7 @@ import TechStack from "./techStack/TechStack";
 import OurProducts from "./ourProducts/OurProducts";
 // import Work from "./work/Work";
 import OurServices from "./ourServices/OurServices";
-import NewOurProducts from "./ourProducts/newOurProducts";
+import NewOurProducts from "./ourProducts/NewOurProducts";
 import ContactUs from "./contact-us/ContactUs";
 import OurProcesses from "./our-processes/OurProcesses";
 import Products from "./products/Products";
