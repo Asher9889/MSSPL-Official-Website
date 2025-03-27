@@ -1,67 +1,177 @@
 import ContentWrapper from "../contentWrapper/ContentWrapper";
-import { e_secure_hardware } from "../../assets";
-import { kiosk01, kiosk02, kiosk03} from "../../assets";
-import { div } from "motion/react-client";
-
-
-// const images = [kiosk1, kiosk2, kiosk3, kiosk4];
+import { kiosk01, kiosk02, kiosk03, 
+  // kiosk04 
+} from "../../assets";
 
 const libraryData = [
-    {
-      title: "E-Secure Self-Checkout Stations",
-      description:
-        "Enhance the library experience with E-Secure RFID-enabled self-checkout kiosks, allowing users to borrow books effortlessly. By simply placing items near the RFID reader, patrons can complete transactions independently, minimizing wait times and reducing congestion at the circulation desk. This automated checkout process improves efficiency while ensuring a seamless and user-friendly borrowing experience.",
-      image: kiosk01, // Add image URL here
-    },
-    {
-      title: "E-Secure Gate",
-      description:
-        "The E-Secure Gate is an advanced RFID-based solution designed to safeguard library collections by preventing unauthorized removal of books and other materials. The system automatically scans items as they pass through, verifying whether they have been properly checked out. If an unissued item is detected, the system instantly triggers an alert, helping to deter theft and unauthorized access. Seamlessly integrated with the library’s database, the E-Secure Gate provides real-time tracking, ensuring accuracy and security. By implementing this solution, libraries can minimize losses, enhance security, and maintain a well-monitored yet user-friendly environment.",
-      image: kiosk02, // Add image URL here
-    },
-    {
-      title: "E-Secure Issue/Return",
-      description:
-        "The E-Secure Issue/Return system automates the borrowing and returning process with RFID-enabled transactions, ensuring fast, accurate, and secure checkouts and returns. This system reduces manual workload, minimizes errors, and provides real-time tracking of library materials. With seamless system integration, it enhances circulation efficiency while ensuring a smooth and secure experience for both patrons and library staff.",
-      image: kiosk03, // Add image URL here
-    },
-  ];
+  {
+    title: "Self-Checkout Kiosk",
+    description:
+      "Revolutionize transactions with our intuitive Self-Checkout Kiosk. Designed for efficiency, it enhances check-ins and check-outs using advanced RFID technology, a biometric reader, and a high-speed thermal printer. The 22-inch touchscreen ensures a seamless user experience, making it perfect for modern libraries and workspaces.",
+    features: [
+      {
+        name: "Sleek, Durable Kiosk Enclosure",
+        detail:
+          "Built to last with a stylish yet functional design, ensuring longevity and a professional appearance.",
+      },
+      {
+        name: "Advanced RFID Reader with PAD Antenna",
+        detail:
+          "Seamlessly reads RFID-enabled cards and tags for quick, secure, and contactless transactions.",
+      },
+      {
+        name: "22-inch LED Touchscreen Monitor",
+        detail:
+          "A high-resolution display provides an intuitive interface for smooth user interactions.",
+      },
+      {
+        name: "High-Speed Thermal Slip Printer",
+        detail:
+          "Prints receipts instantly, improving transaction speed and convenience.",
+      },
+      {
+        name: "Biometric Reader for Added Security",
+        detail:
+          "Fingerprint authentication ensures secure user verification and prevents unauthorized use.",
+      },
+      {
+        name: "Ultra-Small CPU",
+        detail:
+          "Powerful yet compact CPU ensures fast, responsive performance with minimal space usage.",
+      },
+      {
+        name: "Smart-RFID Client Software",
+        detail:
+          "Guides users through the process, providing real-time feedback and a seamless experience.",
+      },
+    ],
+    image: kiosk01,
+  },
+  {
+    title: "Book Drop Box",
+    description:
+      "Simplify and secure book returns with the RFID-enabled Book Drop Box. Featuring a durable enclosure, biometric authentication, and a cushion-drop system, it ensures safe, efficient, and automated returns.",
+    features: [
+      {
+        name: "Sturdy, Secure Book Drop Enclosure",
+        detail:
+          "Designed for durability and security, perfect for high-traffic areas.",
+      },
+      {
+        name: "Advanced RFID Reader with PAD Antenna",
+        detail:
+          "Instantly detects RFID-enabled books, ensuring quick and contactless check-ins.",
+      },
+      {
+        name: "22-inch LED Touch Screen Monitor",
+        detail:
+          "User-friendly display for guided returns and clear on-screen instructions.",
+      },
+      {
+        name: "High-Speed Thermal Slip Printer",
+        detail:
+          "Provides instant return receipts for user confirmation.",
+      },
+      {
+        name: "Biometric Reader for Enhanced Security",
+        detail:
+          "Ensures that the correct individual returns the books, reducing errors.",
+      },
+      {
+        name: "Books Cushion Drop & Receiving Cart",
+        detail:
+          "Minimizes book damage while safely storing returned materials.",
+      },
+      {
+        name: "Smart Client Software",
+        detail:
+          "Offers real-time feedback and guides users through the return process.",
+      },
+    ],
+    image: kiosk02,
+  },
+  {
+    title: "RFID Library Security Gate",
+    description:
+      "Protect your library’s collection with the RFID Library Security Gate. Designed to prevent unauthorized book removals, this system seamlessly integrates with library databases for real-time monitoring.",
+    features: [
+      { name: "Operating Frequency", detail: "950-956 MHz for reliable RFID performance." },
+      { name: "Power Supply", detail: "DC (9V-30V) / 2A (60W) for stable operation." },
+      { name: "Read Range", detail: "Up to 1 meter with paired gates for optimal accuracy." },
+      { name: "Communication Interfaces", detail: "RS-232, RS-485, Wiegand, RJ45, I/O for seamless integration." },
+      { name: "Operating Temperature", detail: "-40°C to +70°C, ensuring durability in all environments." },
+    ],
+    image: kiosk03,
+  },
+  // {
+  //   title: "RFID Handheld Device",
+  //   description:
+  //     "Enhance inventory management and asset tracking with our RFID Handheld Device. Featuring high-speed scanning, long battery life, and an ergonomic design, it's perfect for logistics, retail, and library operations.",
+  //   features: [
+  //     { name: "High Performance", detail: "3GB RAM & 16GB ROM for smooth operation." },
+  //     { name: "4-inch IPS Touchscreen", detail: "Vibrant display for easy navigation." },
+  //     { name: "Long Battery Life", detail: "Up to 16 hours of continuous use." },
+  //     { name: "Lightweight & Portable", detail: "Only 690g, ensuring easy handling." },
+  //     { name: "RFID Scanning", detail: "Fast and accurate for improved efficiency." },
+  //     { name: "Software License Included", detail: "One-year license for updates and support." },
+  //     { name: "One-Year Warranty", detail: "Protects your investment with reliable support." },
+  //   ],
+  //   image: "kiosk04",
+  // },
+];
 
+const ESecure = () => {
+  return (
+    <section className=" py-20">
+      <ContentWrapper>
+        <h1 className="poppins-bold text-[--main-text-color] text-center text-3xl md:text-4xl underline hover:scale-[1.02] transition-all duration-300 mb-12">
+          E-Secure Products
+        </h1>
 
-const ESecure = ()=>{
-    return (
-        <section>
-            <ContentWrapper>
-                <div className="py-20">
-                    <h1 className="poppins-bold text-[--main-text-color] text-center text-[2rem] md:text-[1.8rem] underline hover:scale-[1.02] transition-all duration-300 mb-10">
-                        {"E-Secure Products".toUpperCase()}
-                     </h1>
-                    {/* <img className=" w-full md:w-[80vw] mx-auto  border-[1px] border-zinc-200 my-10 md:my-20 drop-shadow-2xl hover:scale-[1.02] transition-all duration-300" src={e_secure_hardware} alt="" /> */}
-                    <div>
-                        {libraryData && libraryData.map((data,index)=> (
-                            <div key={index * 20}>
-                                <h1 className="poppins-bold text-[28px] poppins-bold text-[--main-text-color] ">
-                                    {data.title}
-                                </h1>
-                                <p className="text-[20px] poppins-medium text-[--main-text-color] ">{data.description}</p>
-                                <div className="flex flex-row gap-2 justify-center mt-6">
-                                    {/* {images.map((image,index) => ( */}
-                                        <img className="w-60 hover:scale-[1.02] transition-all duration-300 drop-shadow-2xl" key={index * 10} src={data.image} alt="" />
-                                    {/* ))} */}
-                                </div>
-                            </div>   
-                        ))}
-                        {/* <h1 className="poppins-bold text-[28px] poppins-bold text-[--main-text-color] ">Kiosk</h1> */}
-                        {/* <p className="text-[20px] poppins-medium text-[--main-text-color] ">Kiosk is primarily for self issue and return of books in Library. With its inbuilt screen and printer, patrons can view & print transaction related information such as number of books issued, outstanding fine (if any) etc. Customized information can also be printed on the transaction slip.</p> */}
-                        {/* <div className="flex flex-row gap-2 justify-center mt-6">
-                           
-                        </div> */}
-                       
-                    </div>
+        <div className="grid gap-12">
+          {libraryData.map((data, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-lg p-6 rounded-xl hover:scale-[1.02] transition-all duration-300"
+            >
+              <div className="flex flex-col md:flex-row gap-8 items-center">
+                {/* Image */}
+                <img
+                  className="w-60 md:w-80 rounded-lg shadow-lg"
+                  src={data.image}
+                  alt={data.title}
+                />
+                
+                {/* Content */}
+                <div>
+                  <h2 className="poppins-bold text-2xl text-[--main-text-color]">
+                    {data.title}
+                  </h2>
+                  <p className="text-lg text-gray-600 mt-2">{data.description}</p>
+
+                  {/* Features List */}
+                  <ul className="mt-4 space-y-2">
+                    {data.features.map((feature, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-start gap-2 text-gray-700"
+                      >
+                        <span className="text-blue-500 font-bold">•</span>
+                        <div>
+                          <span className="font-semibold">{feature.name}:</span>{" "}
+                          {feature.detail}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-            </ContentWrapper>
-        </section>
-    )
-}
+              </div>
+            </div>
+          ))}
+        </div>
+      </ContentWrapper>
+    </section>
+  );
+};
 
 export default ESecure;
