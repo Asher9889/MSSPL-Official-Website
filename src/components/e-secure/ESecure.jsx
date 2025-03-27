@@ -1,7 +1,7 @@
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import { kiosk01, kiosk02, kiosk03, 
   // kiosk04 
-} from "../../assets";
+} from "../../assets/index.js";
 
 const libraryData = [
   {
